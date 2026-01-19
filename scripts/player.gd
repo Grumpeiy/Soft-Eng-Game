@@ -4,7 +4,7 @@ const speed = 100
 var current_dir = "none"
 
 func _ready():
-	$AnimatedSprite2D.play("front_idle")
+	$Animations.play("front_idle")
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -41,7 +41,7 @@ func player_movement(delta):
 	
 func play_anim(movement):
 	var dir =  current_dir
-	var anim = $AnimatedSprite2D
+	var anim = $Animations
 	
 	if dir == "right":
 		anim.flip_h = false
