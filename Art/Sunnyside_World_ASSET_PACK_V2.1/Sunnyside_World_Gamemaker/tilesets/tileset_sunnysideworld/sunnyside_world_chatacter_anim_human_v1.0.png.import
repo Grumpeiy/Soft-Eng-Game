@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2t1lvol68bvy"
-path="res://.godot/imported/sunnyside_world_chatacter_anim_human_v1.0.png-0dbda7d26906677e8ec05b099fd7609c.ctex"
+path="res://.godot/imported/sunnyside_world_chatacter_anim_human_v1.0.png-4bbe49c5ec8309f5adb82d7b59abeff2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/sunnyside_world_chatacter_anim_human_v1.0.png"
-dest_files=["res://.godot/imported/sunnyside_world_chatacter_anim_human_v1.0.png-0dbda7d26906677e8ec05b099fd7609c.ctex"]
+source_file="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Gamemaker/tilesets/tileset_sunnysideworld/sunnyside_world_chatacter_anim_human_v1.0.png"
+dest_files=["res://.godot/imported/sunnyside_world_chatacter_anim_human_v1.0.png-4bbe49c5ec8309f5adb82d7b59abeff2.ctex"]
 
 [params]
 
