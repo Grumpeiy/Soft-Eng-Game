@@ -7,7 +7,7 @@ func _ready():
 	$Animations.play("front_idle")
 
 func _physics_process(delta):
-	player_movement(delta)
+	player_movememnt(delta)
 	
 func player_movement(delta):
 	pass
