@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmu6iqb0o5lwx"]
+
+[ext_resource type="PackedScene" uid="uid://0sj2plbcbhu4" path="res://scenes/sample_game.tscn" id="1_mb2p4"]
+[ext_resource type="PackedScene" uid="uid://homuvwxrj621" path="res://scenes/player.tscn" id="2_vi86k"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="sampleGame" parent="." instance=ExtResource("1_mb2p4")]
+position = Vector2(-12, 24)
+
+[node name="player" parent="." instance=ExtResource("2_vi86k")]
+visible = false
+position = Vector2(34, 19)
