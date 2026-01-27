@@ -775,15 +775,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 3.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
+collision_layer = 3
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_apa73")
-animation = &"back_attack"
-frame_progress = 0.3621252
+animation = &"front_attack"
 
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
