@@ -885,8 +885,7 @@ animation = &"front_attack"
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_cbf1i")
-animation = &"death"
-frame_progress = 0.9915712
+animation = &"front_idle"
 offset = Vector2(0, -2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
