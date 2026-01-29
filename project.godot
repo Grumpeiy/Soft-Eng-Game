@@ -23,6 +23,13 @@ window/stretch/scale=4.0
 
 project/assembly_name="SoftEng"
 
+[input]
+
+interact={
+"deadzone": 0.2,
+"events": []
+}
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
