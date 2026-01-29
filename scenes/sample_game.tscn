@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=4 uid="uid://0sj2plbcbhu4"]
+[gd_scene load_steps=203 format=4 uid="uid://0sj2plbcbhu4"]
 
 [ext_resource type="PackedScene" uid="uid://d2x31gs6cgc3x" path="res://scenes/sample_player.tscn" id="1_08ed4"]
 [ext_resource type="Texture2D" uid="uid://cliexkiff4g5m" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_a5wds"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://c2aq0wau1wvp4" path="res://Art/Sprites/Egg_And_Nest.png" id="9_ouf8x"]
 [ext_resource type="Texture2D" uid="uid://ly3s86180725" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/VFX/Fire/spr_deco_fire_01_strip4.png" id="9_xmqxn"]
 [ext_resource type="Texture2D" uid="uid://doqefb7calr8r" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/VFX/Chimney Smoke/chimneysmoke_04_strip30.png" id="10_1nvih"]
-[ext_resource type="PackedScene" uid="uid://djhy01saixd2e" path="res://scenes/npc.tscn" id="12_ouf8x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkpwf"]
 texture = ExtResource("2_rdp3i")
@@ -95176,6 +95175,3 @@ tile_set = SubResource("TileSet_k8fvo")
 position = Vector2(54, 70)
 tile_map_data = PackedByteArray("AAAAAAIAAAApAAIAAAABAAIAAAApAAIAAAD//wIAAAAmAAIAAAA=")
 tile_set = SubResource("TileSet_h28fp")
-
-[node name="NPC" parent="." instance=ExtResource("12_ouf8x")]
-position = Vector2(-82, -9)

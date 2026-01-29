@@ -1,44 +1,40 @@
 extends CharacterBody2D
 
-const speed = 100	
-var current_dir = "none"
+const SPEED = 100
+const ACCEL = 1000      #max speed (higher = snappier)
+const FRICTION = 1200   #higher = more precise stop
+
+var current_dir = "down" # Default to down so it isn't "none" at start
 
 func _ready():
 	$Animations.play("front_idle")
 
 func _physics_process(delta):
 	player_movement(delta)
-	
+
 func player_movement(delta):
-	pass
+	var input_vector = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
-	if Input.is_action_pressed("ui_right"):
-		current_dir = "right"
-		play_anim(1)
-		velocity.x = speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_left"):
-		current_dir = "left"
-		play_anim(1)
-		velocity.x = -speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_down"):
-		current_dir = "down"
-		play_anim(1)
-		velocity.y = speed
-		velocity.x = 0
-	elif Input.is_action_pressed("ui_up"):
-		current_dir = "up"
-		play_anim(1)
-		velocity.y = -speed
-		velocity.x = 0
+	if input_vector == Vector2.ZERO:
+		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+		play_anim(0) 
 	else:
-		play_anim(0)
-		velocity.x = 0
-		velocity.y = 0
+		velocity = velocity.move_toward(input_vector * SPEED, ACCEL * delta)
+		update_animation_direction(input_vector)
+		play_anim(1)
 	
 	move_and_slide()
-	
+
+func update_animation_direction(input_vector):
+	if input_vector.x > 0:
+		current_dir = "right"
+	elif input_vector.x < 0:
+		current_dir = "left"
+	elif input_vector.y > 0:
+		current_dir = "down"
+	elif input_vector.y < 0:
+		current_dir = "up"
+
 func play_anim(movement):
 	var dir =  current_dir
 	var anim = $Animations

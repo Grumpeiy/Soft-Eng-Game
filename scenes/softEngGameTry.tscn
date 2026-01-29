@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmu6iqb0o5lwx"]
+[gd_scene load_steps=4 format=3 uid="uid://cmu6iqb0o5lwx"]
 
 [ext_resource type="PackedScene" uid="uid://0sj2plbcbhu4" path="res://scenes/sample_game.tscn" id="1_mb2p4"]
 [ext_resource type="PackedScene" uid="uid://homuvwxrj621" path="res://scenes/player.tscn" id="2_vi86k"]
+[ext_resource type="PackedScene" uid="uid://djhy01saixd2e" path="res://scenes/npc.tscn" id="3_vi86k"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,3 +12,6 @@ position = Vector2(-12, 24)
 [node name="player" parent="." instance=ExtResource("2_vi86k")]
 visible = false
 position = Vector2(34, 19)
+
+[node name="NPC" parent="." instance=ExtResource("3_vi86k")]
+position = Vector2(-97, 8)
