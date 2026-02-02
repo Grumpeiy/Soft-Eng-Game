@@ -15,10 +15,6 @@ run/main_scene="uid://homuvwxrj621"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
-[autoload]
-
-event_handler="*res://scripts/event_handler.gd"
-
 [display]
 
 window/stretch/scale=4.0
