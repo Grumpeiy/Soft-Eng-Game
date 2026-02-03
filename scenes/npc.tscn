@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://djhy01saixd2e"]
+[gd_scene load_steps=17 format=3 uid="uid://djhy01saixd2e"]
 
 [ext_resource type="Script" uid="uid://cppc764ux2bq7" path="res://scenes/npc.gd" id="1_abqhh"]
 [ext_resource type="Texture2D" uid="uid://y4cjj3142mh8" path="res://Art/Sprites/Basic Charakter Spritesheet.png" id="2_abqhh"]
+[ext_resource type="PackedScene" uid="uid://btm4vm18s77s8" path="res://dialogue/dialogueSample.tscn" id="3_rv78h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv78h"]
 atlas = ExtResource("2_abqhh")
@@ -105,15 +106,12 @@ animations = [{
 radius = 4.980248
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rv78h"]
-radius = 26.06893
+radius = 30.115704
 
 [node name="NPC" type="CharacterBody2D"]
 position = Vector2(12, 1)
 scale = Vector2(0.99671745, 0.9912596)
 script = ExtResource("1_abqhh")
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-12.03952, -1.0088176)
@@ -131,6 +129,16 @@ shape = SubResource("CircleShape2D_abqhh")
 position = Vector2(-12.03952, 1.0088176)
 shape = SubResource("CircleShape2D_rv78h")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Dialogue" parent="." instance=ExtResource("3_rv78h")]
+offset_left = -157.51706
+offset_top = -20.176352
+offset_right = -117.51706
+offset_bottom = 19.823648
+
 [connection signal="body_entered" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="dialogueFinished" from="Dialogue" to="." method="_on_dialogue_dialogue_finished"]

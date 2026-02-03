@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://d2x31gs6cgc3x"]
+[gd_scene load_steps=19 format=3 uid="uid://d2x31gs6cgc3x"]
 
-[ext_resource type="Texture2D" uid="uid://y4cjj3142mh8" path="res://assets/Sprites/Basic Charakter Spritesheet.png" id="1_kx4v3"]
+[ext_resource type="Script" uid="uid://cxlct4c24bveg" path="res://scenes/sample_player.gd" id="1_gdh1n"]
+[ext_resource type="Texture2D" uid="uid://y4cjj3142mh8" path="res://Art/Sprites/Basic Charakter Spritesheet.png" id="1_kx4v3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1jmp"]
 atlas = ExtResource("1_kx4v3")
@@ -147,6 +148,7 @@ animations = [{
 radius = 4.0
 
 [node name="samplePlayer" type="CharacterBody2D"]
+script = ExtResource("1_gdh1n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)

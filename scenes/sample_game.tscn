@@ -1,8 +1,8 @@
-[gd_scene load_steps=203 format=4 uid="uid://0sj2plbcbhu4"]
+[gd_scene load_steps=204 format=4 uid="uid://0sj2plbcbhu4"]
 
 [ext_resource type="PackedScene" uid="uid://d2x31gs6cgc3x" path="res://scenes/sample_player.tscn" id="1_08ed4"]
 [ext_resource type="Texture2D" uid="uid://cliexkiff4g5m" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_a5wds"]
-[ext_resource type="Script" path="res://scripts/sample_player.gd" id="2_ch5yc"]
+[ext_resource type="Script" uid="uid://opw2f80f4ric" path="res://scripts/sample_player.gd" id="2_ch5yc"]
 [ext_resource type="Texture2D" uid="uid://drahiyl4mug8e" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="2_rdp3i"]
 [ext_resource type="Texture2D" uid="uid://dv5n8jxqh0qho" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/SUNNYSIDE_WORLD_BUILDINGS_V0.01.png" id="3_a5wds"]
 [ext_resource type="Texture2D" uid="uid://cxj50fsqeq5ac" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHIMNEYSMOKE_v1.0/SUNNYSIDE_WORLD_CHIMNEYSMOKE/chimneysmoke_01_strip30.png" id="4_wtexr"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c2aq0wau1wvp4" path="res://Art/Sprites/Egg_And_Nest.png" id="9_ouf8x"]
 [ext_resource type="Texture2D" uid="uid://ly3s86180725" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/VFX/Fire/spr_deco_fire_01_strip4.png" id="9_xmqxn"]
 [ext_resource type="Texture2D" uid="uid://doqefb7calr8r" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/VFX/Chimney Smoke/chimneysmoke_04_strip30.png" id="10_1nvih"]
+[ext_resource type="PackedScene" uid="uid://djhy01saixd2e" path="res://scenes/npc.tscn" id="12_ouf8x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkpwf"]
 texture = ExtResource("2_rdp3i")
@@ -95116,8 +95117,11 @@ tile_set = SubResource("TileSet_0hexj")
 tile_map_data = PackedByteArray("AAD9//v/AAAbAAIAAAA=")
 tile_set = SubResource("TileSet_fuy1p")
 
+[node name="NPC" parent="." instance=ExtResource("12_ouf8x")]
+position = Vector2(-88, -15)
+
 [node name="samplePlayer" parent="." instance=ExtResource("1_08ed4")]
-position = Vector2(27, -28)
+position = Vector2(25, -27)
 script = ExtResource("2_ch5yc")
 
 [node name="Camera2D" type="Camera2D" parent="samplePlayer"]
