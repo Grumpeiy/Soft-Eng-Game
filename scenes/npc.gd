@@ -13,6 +13,11 @@ var isChatting = false
 var sampPlayer
 var playerInChatZone = false
 
+var canInteract = false:
+	set(value):
+		canInteract = value
+		
+
 enum {
 	IDLE,
 	newDir,
@@ -46,10 +51,10 @@ func _process(delta): #code for NPC animations walking directions
 				move(delta) 	 
 	if Input.is_action_just_pressed("interact") and playerInChatZone == true:
 		print("chatting with NPC")
-		$Dialogue.start()
 		isRoaming = false
 		isChatting = true
 		$AnimatedSprite2D.play("IDLE")
+		$Dialogue.start()	
 		dialogueStarted.emit()
 
 func choose(array):
@@ -61,12 +66,13 @@ func move(delta): #actual movement of charac
 		position += dir * speed * delta
 
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
-	if body.has_method("sampPlayer"):
+	if body is Player:
+		print("body enter")
 		sampPlayer = body
 		playerInChatZone = true 
 
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
-	if body.has_method("sampPlayer"):
+	if body is Player:
 		playerInChatZone = false 
 
 func _on_timer_timeout() -> void:

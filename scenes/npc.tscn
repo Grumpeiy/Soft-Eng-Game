@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://djhy01saixd2e"]
+[gd_scene load_steps=18 format=3 uid="uid://djhy01saixd2e"]
 
 [ext_resource type="Script" uid="uid://cppc764ux2bq7" path="res://scenes/npc.gd" id="1_abqhh"]
 [ext_resource type="Texture2D" uid="uid://y4cjj3142mh8" path="res://Art/Sprites/Basic Charakter Spritesheet.png" id="2_abqhh"]
 [ext_resource type="PackedScene" uid="uid://btm4vm18s77s8" path="res://dialogue/dialogueSample.tscn" id="3_rv78h"]
+[ext_resource type="PackedScene" uid="uid://chlxpf60jht84" path="res://scenes/interaction_space.tscn" id="4_7n8xq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rv78h"]
 atlas = ExtResource("2_abqhh")
@@ -137,6 +138,9 @@ offset_left = -157.51706
 offset_top = -20.176352
 offset_right = -117.51706
 offset_bottom = 19.823648
+
+[node name="InteractionSpace" parent="." instance=ExtResource("4_7n8xq")]
+position = Vector2(-12.03952, 1.0088158)
 
 [connection signal="body_entered" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_exited"]
