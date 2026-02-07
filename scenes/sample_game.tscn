@@ -1,8 +1,6 @@
-[gd_scene load_steps=204 format=4 uid="uid://0sj2plbcbhu4"]
+[gd_scene load_steps=203 format=4 uid="uid://0sj2plbcbhu4"]
 
-[ext_resource type="PackedScene" uid="uid://d2x31gs6cgc3x" path="res://scenes/sample_player.tscn" id="1_08ed4"]
 [ext_resource type="Texture2D" uid="uid://cliexkiff4g5m" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_forest_32px.png" id="2_a5wds"]
-[ext_resource type="Script" uid="uid://opw2f80f4ric" path="res://scripts/sample_player.gd" id="2_ch5yc"]
 [ext_resource type="Texture2D" uid="uid://drahiyl4mug8e" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="2_rdp3i"]
 [ext_resource type="Texture2D" uid="uid://dv5n8jxqh0qho" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/SUNNYSIDE_WORLD_BUILDINGS_V0.01.png" id="3_a5wds"]
 [ext_resource type="Texture2D" uid="uid://cxj50fsqeq5ac" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHIMNEYSMOKE_v1.0/SUNNYSIDE_WORLD_CHIMNEYSMOKE/chimneysmoke_01_strip30.png" id="4_wtexr"]
@@ -12,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ly3s86180725" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/VFX/Fire/spr_deco_fire_01_strip4.png" id="9_xmqxn"]
 [ext_resource type="Texture2D" uid="uid://doqefb7calr8r" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Elements/VFX/Chimney Smoke/chimneysmoke_04_strip30.png" id="10_1nvih"]
 [ext_resource type="PackedScene" uid="uid://djhy01saixd2e" path="res://scenes/npc.tscn" id="12_ouf8x"]
+[ext_resource type="PackedScene" uid="uid://homuvwxrj621" path="res://scenes/player.tscn" id="13_1fyvc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkpwf"]
 texture = ExtResource("2_rdp3i")
@@ -94986,15 +94985,15 @@ tile_set = SubResource("TileSet_5wcgc")
 
 [node name="tree2" type="TileMapLayer" parent="tilted grass"]
 position = Vector2(-5, -38)
-tile_map_data = PackedByteArray("AAD0//X/AAAFAAMAAAD0//b/AAAFAAQAAAD1//X/AAAGAAMAAAD1//b/AAAGAAQAAADy//b/AAAFAAMAAADy//f/AAAFAAQAAADz//b/AAAGAAMAAADz//f/AAAGAAQAAAD9//j/AAAFAAMAAAD9//n/AAAFAAQAAAD+//j/AAAGAAMAAAD+//n/AAAGAAQAAAD7//f/AAAFAAMAAAD7//j/AAAFAAQAAAD8//f/AAAGAAMAAAD8//j/AAAGAAQAAAD5//j/AAAFAAMAAAD5//n/AAAFAAQAAAD6//j/AAAGAAMAAAD6//n/AAAGAAQAAAD2//f/AAAFAAMAAAD2//j/AAAFAAQAAAD3//f/AAAGAAMAAAD3//j/AAAGAAQAAADy//n/AAAFAAMAAADy//r/AAAFAAQAAADz//n/AQA7AAYAAADz//r/AQA7AAcAAADz//j/AQA7AAUAAAD0//j/AQA8AAUAAAD0//n/AQA8AAYAAAD0//r/AQA8AAcAAAA=")
+tile_map_data = PackedByteArray("AAD0//X/AAAFAAMAAAD0//b/AAAFAAQAAAD1//X/AAAGAAMAAAD1//b/AAAGAAQAAADy//b/AAAFAAMAAADy//f/AAAFAAQAAADz//b/AAAGAAMAAADz//f/AAAGAAQAAAD9//j/AAAHAAMAAAD9//n/AAANAAQAAAD+//j/AAAIAAMAAAD+//n/AAAOAAQAAAD7//f/AAAFAAMAAAD7//j/AAAFAAQAAAD8//f/AAAGAAMAAAD8//j/AAAGAAQAAAD5//j/AAAFAAMAAAD5//n/AAAFAAQAAAD6//j/AAAGAAMAAAD6//n/AAAGAAQAAAD2//f/AAAFAAMAAAD3//f/AAAGAAMAAAD3//j/AAAGAAQAAADy//n/AAAFAAMAAADy//r/AAAFAAQAAADz//n/AQA7AAYAAADz//r/AQA7AAcAAAD0//n/AQA8AAYAAAD0//r/AQA8AAcAAAD9//r/AAANAAUAAAD+//r/AAAOAAUAAAD2//j/AAAFAAQAAAD0//j/AQA8AAUAAADz//j/AQA7AAUAAAA=")
 tile_set = SubResource("TileSet_xmqxn")
 
 [node name="treeFiller23" type="TileMapLayer" parent="tilted grass/tree2"]
-tile_map_data = PackedByteArray("AAD1//j/AQARAAUAAAD1//n/AQANAAQAAAD2//j/AQAPAAMAABD2//n/AQAOAAQAAAD0//f/AQAQAAQAAAD0//j/AQAQAAUAAAD1//f/AQARAAQAAAD2//f/AQAKAAIAAADz//f/AQALAAIAAADz//b/AQAHAAMAAAD0//b/AQAIAAMAAAD1//b/AQAHAAMAAAD2//b/AQAIAAMAAAD9//f/AAAiAAIAAAA=")
+tile_map_data = PackedByteArray("AAD1//j/AQARAAUAAAD1//n/AQANAAQAAAD2//j/AQAPAAMAABD2//n/AQAOAAQAAAD0//f/AQAQAAQAAAD0//j/AQAQAAUAAAD1//f/AQARAAQAAAD2//f/AQAKAAIAAADz//f/AQALAAIAAADz//b/AQAHAAMAAAD0//b/AQAIAAMAAAD1//b/AQAHAAMAAAD2//b/AQAIAAMAAAD9//f/AAAiAAIAAAD3//n/AQAOAAUAAAA=")
 tile_set = SubResource("TileSet_0k6x0")
 
 [node name="treeFiller24" type="TileMapLayer" parent="tilted grass/tree2/treeFiller23"]
-tile_map_data = PackedByteArray("AADy//f/AQA7AAUAAADz//f/AQA8AAUAAAD5//r/AAANAAUAAAD6//r/AAAOAAUAAAD7//n/AAANAAUAAAD8//n/AAAOAAUAAAD1//r/AAANAAUAAAD2//r/AAAOAAUAAAD2//n/AAANAAUAAAD4//b/AAALAAMAAAD4//f/AAALAAQAAAD5//b/AAALAAMAABD5//f/AAALAAQAABD4//j/AAANAAUAAAD5//j/AAAOAAUAAAD3//v/AAALAAUAAAD3//n/AAAFAAMAAAD3//r/AAAFAAQAAAD4//n/AAAGAAMAAAD4//r/AAAGAAQAAAA=")
+tile_map_data = PackedByteArray("AADy//f/AQA7AAUAAADz//f/AQA8AAUAAAD5//r/AAANAAUAAAD6//r/AAAOAAUAAAD7//n/AAANAAUAAAD8//n/AAAOAAUAAAD1//r/AAANAAUAAAD2//r/AAAOAAUAAAD2//n/AAANAAUAAAD4//b/AAALAAMAAAD4//f/AAALAAQAAAD5//b/AAALAAMAABD5//f/AAALAAQAABD4//j/AAANAAUAAAD5//j/AAAOAAUAAAD3//v/AAALAAUAAAD3//n/AAAHAAMAAAD3//r/AAAFAAQAAAD4//n/AAAIAAMAAAD4//r/AAAGAAQAAAA=")
 tile_set = SubResource("TileSet_qvoew")
 
 [node name="fences" type="TileMapLayer" parent="tilted grass"]
@@ -95035,7 +95034,7 @@ tile_map_data = PackedByteArray("AAD8/wUAAAAmAAMAAAD9/wUAAAAmAAMAAAAAAAUAAAAmAAM
 tile_set = SubResource("TileSet_vrxoe")
 
 [node name="building1" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAPf/AAABAAgAAAABAPf/AAACAAgAAAACAPf/AAADAAgAAAABAPn/AAABAAQAAAAAAPn/AAABAAoAAAAAAPj/AAABAAkAAAABAPj/AAACAAkAAAACAPj/AAADAAkAAAACAPn/AAADAAoAAAD///j/AAAAAAkAAAD///f/AAAAAAgAAAADAPf/AAAEAAgAAAADAPj/AAAEAAkAAAA=")
+tile_map_data = PackedByteArray("AAD///f/AAAAAAgAAAD///j/AAAAAAkAAAAAAPf/AAABAAgAAAAAAPj/AAABAAkAAAAAAPn/AAABAAoAAAABAPf/AAACAAgAAAABAPj/AAACAAkAAAABAPn/AAABAAQAAAACAPf/AAADAAgAAAACAPj/AAADAAkAAAACAPn/AAADAAoAAAADAPf/AAAEAAgAAAADAPj/AAAEAAkAAAA=")
 tile_set = SubResource("TileSet_lmrrs")
 
 [node name="decos" type="TileMapLayer" parent="building1"]
@@ -95110,22 +95109,21 @@ tile_map_data = PackedByteArray("AAD/////AAAoABAAAAD9//3/AAAlABEAAAD+//3/AAAmABE
 tile_set = SubResource("TileSet_5mdla")
 
 [node name="farmDecos" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD8//n/AAAoABMAAAD9//n/AAApABMAAAD9//r/AAApABQAAAD9//v/AAApABUAAAD8//r/AAAoABQAAAD8//v/AAAoABUAAAADAAAAAAAgAAUAAAD+//r/AAAfAAQAABA=")
+tile_map_data = PackedByteArray("AAADAAAAAAAgAAUAAAD+//r/AAAfAAQAABD8//r/AAAlABUAAAD8//v/AAAlABYAAAD9//r/AAAmABUAAAD9//v/AAAmABYAAAA=")
 tile_set = SubResource("TileSet_0hexj")
 
 [node name="farmDecosP2" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD9//v/AAAbAAIAAAA=")
+tile_map_data = PackedByteArray("AAD9//v/AAAbAAIAAAD9//r/AAAnABQAAAA=")
 tile_set = SubResource("TileSet_fuy1p")
 
 [node name="NPC" parent="." instance=ExtResource("12_ouf8x")]
 position = Vector2(-88, -15)
 
-[node name="samplePlayer" parent="." instance=ExtResource("1_08ed4")]
-position = Vector2(25, -27)
-script = ExtResource("2_ch5yc")
+[node name="player" parent="." instance=ExtResource("13_1fyvc")]
+position = Vector2(2, -23)
 
-[node name="Camera2D" type="Camera2D" parent="samplePlayer"]
-position = Vector2(0, 3)
+[node name="Camera2D2" type="Camera2D" parent="player"]
+position = Vector2(23, -1)
 
 [node name="building1decosCover" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAPn/AAAoAAkAAAA=")

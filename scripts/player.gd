@@ -1,7 +1,9 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var walk: AudioStreamPlayer2D = $walk
 @onready var animations = $Animations
+var canMove = true
 
 const SPEED = 100
 const ACCEL = 1000
@@ -10,7 +12,11 @@ var current_dir = "down"
 
 func _ready():
 	animations.play("front_idle")
-	walk.pitch_scale = 0.75 
+	walk.pitch_scale = 0.75
+	
+	var trigger = get_parent().get_node("NPC")
+	trigger.dialogueStarted.connect(inDialogue)
+	trigger.get_node("Dialogue").dialogueFinished.connect(outOfDialogue) 
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -71,3 +77,14 @@ func play_anim(movement):
 			anim.play("back_walk")
 		elif movement == 0:
 			anim.play("back_idle")
+
+func samplePlayer():
+	pass #player identifier, stub
+	
+func inDialogue():
+	print("in dialogue")
+	canMove = false	
+
+func outOfDialogue():
+	print("out dialogue")
+	canMove = true

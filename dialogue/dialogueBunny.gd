@@ -30,11 +30,7 @@ func _input(event):
 	if !dActive:
 		return
 	if event.is_action_pressed("ui_accept"):
-		if $AnimationPlayer.is_playing():
-			$AnimationPlayer.stop()
-			$NinePatchRect/Text.visible_ratio = 1.0
-		else:
-			next_script()
+		next_script()
 		
 func next_script():
 	currentDialogueID += 1
@@ -44,19 +40,25 @@ func next_script():
 		emit_signal("dialogueFinished")
 		return
 		
+		# 1. Update content
 	$NinePatchRect/Name.text = dialogue[currentDialogueID]['Name']
 	var current_text = dialogue[currentDialogueID]['Text']
 	$NinePatchRect/Text.text = current_text
 	
+	# 2. Reset visibility so it starts invisible
 	$NinePatchRect/Text.visible_ratio = 0.0
 	
+	# 3. Calculate Duration based on text length
 	var duration = current_text.length() * type_speed
 	
+	# 4. Set Animation Speed
+	# Assuming your animation in the editor is exactly 1.0 second long
 	if duration > 0:
 		$NinePatchRect/AnimationPlayer.speed_scale = 1.0 / duration
 	else:
 		$AnimationPlayer.speed_scale = 1.0
-
+	
+	# 5. Play!
 	$NinePatchRect/AnimationPlayer.play("typewriterfx")
 		
 	
