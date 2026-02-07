@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
-const SPEED = 100
-const ACCEL = 1000      #max speed (higher = snappier)
-const FRICTION = 1200   #higher = more precise stop
+@onready var walk: AudioStreamPlayer2D = $walk
+@onready var animations = $Animations
 
-var current_dir = "down" # Default to down so it isn't "none" at start
+const SPEED = 100
+const ACCEL = 1000
+const FRICTION = 1200
+var current_dir = "down"
 
 func _ready():
-	$Animations.play("front_idle")
+	animations.play("front_idle")
+	walk.pitch_scale = 0.75 
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -22,6 +25,8 @@ func player_movement(delta):
 		velocity = velocity.move_toward(input_vector * SPEED, ACCEL * delta)
 		update_animation_direction(input_vector)
 		play_anim(1)
+		if not walk.playing:
+			walk.play()
 	
 	move_and_slide()
 
@@ -36,8 +41,8 @@ func update_animation_direction(input_vector):
 		current_dir = "up"
 
 func play_anim(movement):
-	var dir =  current_dir
-	var anim = $Animations
+	var dir = current_dir
+	var anim = animations
 	
 	if dir == "right":
 		anim.flip_h = false
@@ -54,14 +59,14 @@ func play_anim(movement):
 			anim.play("side_idle")
 			
 	if dir == "down":
-		anim.flip_h = true
+		anim.flip_h = false 
 		if movement == 1:
 			anim.play("front_walk")
 		elif movement == 0:
 			anim.play("front_idle")
 			
 	if dir == "up":
-		anim.flip_h = true
+		anim.flip_h = false
 		if movement == 1:
 			anim.play("back_walk")
 		elif movement == 0:
