@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddsr1tnvhbnhg"]
+
+[ext_resource type="Texture2D" uid="uid://c5bj3dxtylv8s" path="res://Art/cutsceneBorder.png" id="1_10ij1"]
+[ext_resource type="Texture2D" uid="uid://ofadxwmoajuw" path="res://Art/cloudsSample.png" id="2_nexnk"]
+[ext_resource type="Texture2D" uid="uid://dc3lenhg4yrgj" path="res://Art/cloudTransition1.png" id="3_6542o"]
+
+[sub_resource type="Animation" id="Animation_ls5ud"]
+resource_name = "borderTransition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BorderTransition/Node2D/blackBorderTOP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.0000014, -116.00001), Vector2(3.0000014, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BorderTransition/Node2D/blackBorderBOT:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.0000014, 117), Vector2(-1.5497208e-06, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_442pk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BorderTransition/Node2D/blackBorderTOP:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5000014, -118)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BorderTransition/Node2D/blackBorderBOT:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.9999976, 124)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_djilo"]
+_data = {
+&"RESET": SubResource("Animation_442pk"),
+&"borderTransition": SubResource("Animation_ls5ud")
+}
+
+[node name="cutSceneTransition" type="Node2D"]
+
+[node name="BorderTransition" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_djilo")
+}
+
+[node name="Node2D" type="Node2D" parent="BorderTransition"]
+position = Vector2(176, 38)
+
+[node name="blackBorderTOP" type="Sprite2D" parent="BorderTransition/Node2D"]
+position = Vector2(1.5000014, -118)
+scale = Vector2(11.59375, 1.125)
+texture = ExtResource("1_10ij1")
+
+[node name="blackBorderBOT" type="Sprite2D" parent="BorderTransition/Node2D"]
+position = Vector2(4.9999976, 124)
+scale = Vector2(11.21875, 1.1249999)
+texture = ExtResource("1_10ij1")
+
+[node name="CloudsSample" type="Sprite2D" parent="."]
+position = Vector2(182, 43)
+texture = ExtResource("2_nexnk")
+
+[node name="CloudTransition1" type="Sprite2D" parent="."]
+position = Vector2(183, -402)
+texture = ExtResource("3_6542o")

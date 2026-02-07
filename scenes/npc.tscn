@@ -134,10 +134,10 @@ shape = SubResource("CircleShape2D_rv78h")
 autostart = true
 
 [node name="Dialogue" parent="." instance=ExtResource("3_rv78h")]
-offset_left = -157.51706
-offset_top = -20.176352
-offset_right = -117.51706
-offset_bottom = 19.823648
+offset_left = -165.54341
+offset_top = -18.158714
+offset_right = -125.54341
+offset_bottom = 21.841286
 
 [node name="InteractionSpace" parent="." instance=ExtResource("4_7n8xq")]
 position = Vector2(-12.03952, 1.0088158)
