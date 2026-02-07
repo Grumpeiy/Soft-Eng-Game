@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var walk: AudioStreamPlayer2D = $walk
+
 var character_name : String = "Skeleton"
 var lvl : int = 49
 var speed = 50
@@ -18,11 +20,13 @@ func _physics_process(delta):
 			
 		$AnimatedSprite2D.play("walk")
 		
+		if not walk.playing:
+			walk.play()
+		
 		if collision:
 			var body = collision.get_collider()
 			if body.is_in_group("player"):
 				player_chase = false
-				#event_handler.battle_started.emit(character_name, lvl)
 				event_handler.battle_started.emit(self, character_name, lvl)
 				
 	else:
