@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8koqft4m03kn"]
+
+[ext_resource type="Script" uid="uid://q0557gao7sos" path="res://cutsceneIntroduction.gd" id="1_q4v7e"]
+
+[node name="DialogueUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q4v7e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 368.0
+offset_bottom = 101.0
+color = Color(0, 0, 0, 0.4117647)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 58.0
+offset_right = 367.0
+offset_bottom = 84.0
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "[font=res://Art/Minecraftia-Regular.ttf]There once a thriving farm in Biringan.."
