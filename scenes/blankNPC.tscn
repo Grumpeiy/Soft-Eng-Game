@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dy5ryv4fvgxmf"]
+[gd_scene format=3 uid="uid://dy5ryv4fvgxmf"]
 
 [ext_resource type="Texture2D" uid="uid://dslh6e14mq0sd" path="res://Art/Eris Esra's Character Template 4.0/16x16/16x16 All Animations-Sheet.png" id="1_5wg6o"]
 [ext_resource type="Texture2D" uid="uid://dryrhskfsfcs8" path="res://Art/16x16 Walk-Sheet upd.png" id="2_aob3o"]
