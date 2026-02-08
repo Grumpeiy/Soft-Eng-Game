@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2t1lvol68bvy" path="res://Art/sunnyside_world_chatacter_anim_human_v1.0.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://caewt8tv08n8i" path="res://Art/mystic_woods_free_2.2/sprites/characters/player.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://cxavr2n6xllch" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/BASE CHARACTER/PNG/WITH_FX/spr_death_strip13.png" id="4_dqkch"]
-[ext_resource type="AudioStream" uid="uid://ctso5dea38vwj" path="res://sfx/grass_walk.mp3" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://cjk8l2ix3h1ky" path="res://sfx/grass_walk.mp3" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -890,6 +890,10 @@ animation = &"front_idle"
 offset = Vector2(0, -2)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1013920901]
+limit_left = -500
+limit_top = -591
+limit_right = 1511
+limit_bottom = 470
 position_smoothing_speed = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1973195231]

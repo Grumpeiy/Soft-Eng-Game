@@ -25,6 +25,7 @@ event_handler="*res://scripts/event_handler.gd"
 
 [display]
 
+window/size/mode=4
 window/stretch/scale=4.0
 
 [dotnet]
