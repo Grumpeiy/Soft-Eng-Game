@@ -1,10 +1,84 @@
-[
-	{"Text": "There was once a thriving farm in Biringan..."},
-	{"Text": "With your Grandfather's hardwork, it was sparkled with produce, vegetables and fruits, left and right!"}
-	{"Text": "It was a place of harmony. And he always had a blast taking care of his plants."}
-	{"Text": "However, a terrible news had struck his farm.."}
-	{"Text": "Biringan encountered its driest season yet"}
-	{"Text": "Your Grandfather's farm was no exception, all of the water turned into dust."}
-	{"Text": "Without water, vegetation can't continue. And soon enough, all the plant life will start to dry out!"}
-	{"Text": "You are tasked to find all the water in your province and put an end to it!"}
-]
+[gd_scene load_steps=7 format=3 uid="uid://btm4vm18s77s8"]
+
+[ext_resource type="Script" uid="uid://gesym4vv2x7h" path="res://dialogue/dialogueBunny.gd" id="1_ajdv3"]
+[ext_resource type="Texture2D" uid="uid://djx5iaumnk3r1" path="res://Art/SampleNpcDialogueBox2.png" id="1_hwebn"]
+[ext_resource type="Script" uid="uid://bc03umi7t818a" path="res://dialogue/typewriterfx.gd" id="3_0py07"]
+
+[sub_resource type="Animation" id="Animation_xtcad"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_qv5is"]
+resource_name = "typewriterfx"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect/Text:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ix8sh"]
+_data = {
+&"RESET": SubResource("Animation_xtcad"),
+&"typewriterfx": SubResource("Animation_qv5is")
+}
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ajdv3")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 40.0
+offset_right = 283.0
+offset_bottom = 105.0
+texture = ExtResource("1_hwebn")
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 45.0
+offset_right = 203.0
+offset_bottom = 85.0
+scale = Vector2(0.3, 0.3)
+bbcode_enabled = true
+text = "[font=res://Art/Minecraftia-Regular.ttf]NAME"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 16.0
+offset_right = 302.5
+offset_bottom = 96.0
+scale = Vector2(0.4, 0.4)
+bbcode_enabled = true
+text = "[font=res://Art/Minecraftia-Regular.ttf]yadayadayada"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NinePatchRect"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ix8sh")
+}
+autoplay = "typewriterfx"
+script = ExtResource("3_0py07")

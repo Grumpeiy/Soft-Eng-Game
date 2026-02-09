@@ -1,11 +1,11 @@
-[gd_scene format=4 uid="uid://c3gojh0hfp1df"]
+[gd_scene load_steps=0 format=4 uid="uid://c3gojh0hfp1df"]
 
 [ext_resource type="Texture2D" uid="uid://cxj8toff2cutu" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_BUILDINGS_V0.01/SUNNYSIDE_WORLD_BUILDINGS_V0.01.png" id="1_gswej"]
 [ext_resource type="Texture2D" uid="uid://drahiyl4mug8e" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="2_hflhd"]
 [ext_resource type="PackedScene" uid="uid://djhy01saixd2e" path="res://scenes/npc.tscn" id="3_3ukku"]
 [ext_resource type="PackedScene" uid="uid://homuvwxrj621" path="res://scenes/player.tscn" id="3_hflhd"]
 [ext_resource type="PackedScene" uid="uid://cimg2aw6ff0yr" path="res://scenes/enemy.tscn" id="3_kamyo"]
-[ext_resource type="Script" uid="uid://cauy0745ph2qs" path="res://scripts/battlescene.gd" id="5_f3uvx"]
+[ext_resource type="Script" uid="uid://dkbakw0fabrln" path="res://scripts/battlescene.gd" id="5_f3uvx"]
 [ext_resource type="Texture2D" uid="uid://bn20obvys6hja" path="res://Art/Battle Background.PNG" id="5_jl2ly"]
 [ext_resource type="Texture2D" uid="uid://db3sovqnfi2l" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/BASE CHARACTER/PNG/WITH_FX/spr_idle_strip9.png" id="6_fv5mv"]
 [ext_resource type="Texture2D" uid="uid://dy40t1obxb5dm" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_idle_strip6.png" id="7_elhde"]
