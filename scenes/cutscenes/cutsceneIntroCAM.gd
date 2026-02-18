@@ -3,7 +3,7 @@ extends Camera2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_anchor_mode(Camera2D.ANCHOR_MODE_DRAG_CENTER)
-	set_zoom(Vector2(0.9,0.8))
+	zoom = Vector2(0.95, 0.95)
 	pass # Replace with functio n body.
 
 

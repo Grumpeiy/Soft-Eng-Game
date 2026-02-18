@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dy5ryv4fvgxmf"]
+[gd_scene load_steps=20 format=3 uid="uid://dy5ryv4fvgxmf"]
 
 [ext_resource type="Texture2D" uid="uid://dslh6e14mq0sd" path="res://Art/Eris Esra's Character Template 4.0/16x16/16x16 All Animations-Sheet.png" id="1_5wg6o"]
 [ext_resource type="Texture2D" uid="uid://dryrhskfsfcs8" path="res://Art/16x16 Walk-Sheet upd.png" id="2_aob3o"]
@@ -14,6 +14,10 @@ region = Rect2(160, 0, 20, 20)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ooyvg"]
 atlas = ExtResource("1_5wg6o")
 region = Rect2(180, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wg6o"]
+atlas = ExtResource("1_5wg6o")
+region = Rect2(80, 0, 20, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rpuef"]
 atlas = ExtResource("2_aob3o")
@@ -79,6 +83,24 @@ animations = [{
 "name": &"IDLE",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"IDLELove",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wg6o")
+}],
+"loop": true,
+"name": &"IDLENorth",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rpuef")
@@ -138,5 +160,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_ak0in")
-animation = &"walkEast"
-frame_progress = 0.9665687
+animation = &"new_animation"

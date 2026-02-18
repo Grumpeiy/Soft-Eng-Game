@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://doqfrctxmuoop"]
+
+[ext_resource type="Texture2D" uid="uid://s17pahvjem20" path="res://Art/wellSprites.png" id="1_4ocnc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ocnc"]
+atlas = ExtResource("1_4ocnc")
+region = Rect2(50, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmdy8"]
+atlas = ExtResource("1_4ocnc")
+region = Rect2(100, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx3n7"]
+atlas = ExtResource("1_4ocnc")
+region = Rect2(0, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k87q"]
+atlas = ExtResource("1_4ocnc")
+region = Rect2(50, 0, 50, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8pin"]
+atlas = ExtResource("1_4ocnc")
+region = Rect2(100, 0, 50, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmdy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ocnc")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmdy8")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx3n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k87q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8pin")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_xmdy8")
+animation = &"2"

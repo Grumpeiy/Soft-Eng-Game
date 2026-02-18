@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://homuvwxrj621"]
+[gd_scene load_steps=118 format=3 uid="uid://homuvwxrj621"]
 
 [ext_resource type="Script" uid="uid://cxet40yek53bx" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b2t1lvol68bvy" path="res://Art/sunnyside_world_chatacter_anim_human_v1.0.png" id="2_g2els"]
@@ -873,32 +873,32 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 3.0
 
-[node name="player" type="CharacterBody2D" unique_id=592342335 groups=["player"]]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_g2els")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=883222756]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_apa73")
 animation = &"front_attack"
 
-[node name="Animations" type="AnimatedSprite2D" parent="." unique_id=2045376121]
+[node name="Animations" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_cbf1i")
 animation = &"front_idle"
 offset = Vector2(0, -2)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1013920901]
+[node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -500
 limit_top = -591
 limit_right = 1511
 limit_bottom = 470
 position_smoothing_speed = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1973195231]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_qhqgy")
 
-[node name="walk" type="AudioStreamPlayer2D" parent="." unique_id=1776022209]
+[node name="walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qlg0r")

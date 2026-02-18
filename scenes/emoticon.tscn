@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://cdosdr8qjidwb"]
+
+[ext_resource type="Texture2D" uid="uid://blq2fwkxiqql3" path="res://Art/Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes.png" id="1_j2vl5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjgnd"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(768, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6e88"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(800, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqwxl"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(832, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj3kb"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(480, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cseod"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(512, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd0ak"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(544, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2vl5"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kewc0"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q70uy"]
+atlas = ExtResource("1_j2vl5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kewc0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjgnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6e88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqwxl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj3kb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cseod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd0ak")
+}],
+"loop": true,
+"name": &"sad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2vl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kewc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q70uy")
+}],
+"loop": true,
+"name": &"surprise",
+"speed": 5.0
+}]
+
+[node name="emoticon" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_kewc0")
+animation = &"sad"
