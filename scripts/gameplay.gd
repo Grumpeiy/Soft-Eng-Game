@@ -11,7 +11,7 @@ func _on_audio_pressed() -> void:
 
 
 func _on_gameplay_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/Gameplay.tscn")
+	pass
 
 func _on_other_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Options/Other.tscn")

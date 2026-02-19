@@ -14,7 +14,7 @@ func _on_gameplay_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Options/Gameplay.tscn")
 
 func _on_other_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/Other.tscn")
-
+	pass
+	
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/options/main_menu.tscn")

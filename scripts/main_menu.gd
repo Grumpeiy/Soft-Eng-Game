@@ -9,7 +9,7 @@ func _on_start_pressed():
 	$fade_transition/AnimationPlayer.play("fade_in" )
 
 func _on_option_pressed():
-	get_tree().change_scene_to_file("res://scenes/options.tscn")
+	get_tree().change_scene_to_file("res://scenes/Options/options.tscn")
 	#button_type = "options"
 
 func _on_quit_pressed():

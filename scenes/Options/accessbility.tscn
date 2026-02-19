@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_5q6yb"]
 [ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_x4es0"]
 [ext_resource type="Texture2D" uid="uid://81cpdynhek86" path="res://Art/Buttons/Options/large.png" id="4_dr352"]
-[ext_resource type="Texture2D" uid="uid://wnwdl2qjaxt7" path="res://Art/Buttons/Options/displaybar.png" id="5_rybls"]
 [ext_resource type="Texture2D" uid="uid://cctqcvfagvhho" path="res://Art/Buttons/Options/accessibility.png" id="6_3n08u"]
 [ext_resource type="Texture2D" uid="uid://dus12pdsyy5ki" path="res://Art/Buttons/Options/ACCESSIBILITY_CLICKED.png" id="7_dlu75"]
 [ext_resource type="Texture2D" uid="uid://g6u3wxypg3bg" path="res://Art/Buttons/Options/audio.png" id="8_rgqam"]
@@ -49,14 +48,6 @@ offset_top = -24.0
 offset_right = 81.0
 offset_bottom = 218.5
 texture = ExtResource("4_dr352")
-expand_mode = 1
-
-[node name="DisplayBar" type="TextureRect" parent="." unique_id=1472786770]
-offset_left = -176.0
-offset_top = -8.0
-offset_right = 69.0
-offset_bottom = 204.0
-texture = ExtResource("5_rybls")
 expand_mode = 1
 
 [node name="Accessibility" type="TextureButton" parent="." unique_id=1186315259]
@@ -116,6 +107,57 @@ offset_right = 69.0
 offset_bottom = 204.0
 texture = ExtResource("15_dkhfd")
 expand_mode = 1
+
+[node name="TextSettings" type="VBoxContainer" parent="." unique_id=1778434131]
+offset_left = 7.0
+offset_top = -4.0
+offset_right = 64.0
+offset_bottom = 88.0
+theme_override_constants/separation = 7
+
+[node name="TextSize" type="OptionButton" parent="TextSettings" unique_id=1614473607]
+layout_mode = 2
+
+[node name="TextCaptilization" type="OptionButton" parent="TextSettings" unique_id=966118027]
+layout_mode = 2
+
+[node name="SpeechAndNarration" type="VBoxContainer" parent="." unique_id=584916852]
+offset_left = 45.0
+offset_top = 46.0
+offset_right = 69.0
+offset_bottom = 101.0
+theme_override_constants/separation = 5
+
+[node name="Speech" type="CheckBox" parent="SpeechAndNarration" unique_id=1342920882]
+layout_mode = 2
+
+[node name="Narration" type="CheckBox" parent="SpeechAndNarration" unique_id=349599649]
+layout_mode = 2
+
+[node name="Sensory Settings" type="VBoxContainer" parent="." unique_id=678208929]
+offset_left = 45.0
+offset_top = 114.0
+offset_right = 69.0
+offset_bottom = 158.0
+theme_override_constants/separation = -4
+
+[node name="SoundCues" type="CheckBox" parent="Sensory Settings" unique_id=2040700287]
+layout_mode = 2
+
+[node name="Motion Effects" type="CheckBox" parent="Sensory Settings" unique_id=1507872876]
+layout_mode = 2
+
+[node name="TextSize" type="OptionButton" parent="." unique_id=1988874675]
+offset_left = 7.0
+offset_top = 159.0
+offset_right = 64.0
+offset_bottom = 179.0
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=590833061]
+offset_left = 45.0
+offset_top = 178.0
+offset_right = 69.0
+offset_bottom = 202.0
 
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
