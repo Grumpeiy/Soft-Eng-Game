@@ -1,46 +1,26 @@
 extends CharacterBody2D
 
+signal dialogueStarted
 
-const SPEED = 70.0
-@onready var anim = $AnimatedSprite2D
-var canMove = true
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+var inDialogue = false
 
-func _physics_process(_delta: float) -> void:
-	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if not canMove:
-		direction = Vector2.ZERO
-	# 1. Get the input direction for all 4 directions.
-	# get_vector returns a normalized vector (length of 1), so diagonal movement isn't faster.
-	# 2. Apply movement.
+func _physics_process(delta: float) -> void:
+	#if InputInput.is_action_just_pressed("interact") :
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity = direction * SPEED
-		if direction.x > 0:
-			anim.play("MoveRight")
-		elif direction.x < 0:
-			anim.play("MoveLeft")
-		elif direction.y > 0:
-			anim.play("MoveDown")
-		elif direction.y < 0:
-			anim.play("MoveUp")
+		velocity.x = direction * SPEED
 	else:
-		# This brings the character to a smooth stop (friction).
-		# You can adjust the last parameter (SPEED) to change how strictly it stops.
-		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
-		anim.stop()
-		
-	move_and_slide()
-	
-func samplePlayer():
-	pass #player identifier, stub
-func _ready():
-	var trigger = get_parent().get_node("NPC")
-	trigger.dialogueStarted.connect(inDialogue)
-	trigger.get_node("Dialogue").dialogueFinished.connect(outOfDialogue)
-	
-func inDialogue():
-	print("in dialogue")
-	canMove = false	
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-func outOfDialogue():
-	print("out dialogue")
-	canMove = true
+	move_and_slide()

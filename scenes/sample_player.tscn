@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2x31gs6cgc3x"]
+[gd_scene format=3 uid="uid://d2x31gs6cgc3x"]
 
-[ext_resource type="Script" uid="uid://cxlct4c24bveg" path="res://scenes/sample_player.gd" id="1_gdh1n"]
+[ext_resource type="Script" uid="uid://sy17t0vnje6" path="res://scripts/sample_player.gd" id="1_gdh1n"]
 [ext_resource type="Texture2D" uid="uid://y4cjj3142mh8" path="res://Art/Sprites/Basic Charakter Spritesheet.png" id="1_kx4v3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1jmp"]
