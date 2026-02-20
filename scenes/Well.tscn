@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dapwwe7rda61x" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_death_strip10.png" id="12_dudei"]
 [ext_resource type="Texture2D" uid="uid://d14vpl6xayf1v" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_hurt_strip7.png" id="13_g4yyb"]
 [ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="18_dudei"]
+[ext_resource type="PackedScene" uid="uid://bsui6v0wystr3" path="res://scenes/background_music_#1.tscn" id="19_dudei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_81p7c"]
 texture = ExtResource("1_gswej")
@@ -2735,6 +2736,8 @@ shape = SubResource("RectangleShape2D_g4yyb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=515466476]
 position = Vector2(-511, -227.5)
 shape = SubResource("RectangleShape2D_6djb5")
+
+[node name="Background Music #1" parent="." unique_id=1222372059 instance=ExtResource("19_dudei")]
 
 [connection signal="pressed" from="CanvasLayer/battlescene/Panel/answer_button" to="CanvasLayer/battlescene" method="_on_answer_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/battlescene/Panel/run_button" to="CanvasLayer/battlescene" method="_on_run_button_pressed"]

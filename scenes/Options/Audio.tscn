@@ -108,9 +108,43 @@ offset_bottom = 204.0
 texture = ExtResource("14_dledk")
 expand_mode = 1
 
+[node name="Audio Settings 1" type="MarginContainer" parent="." unique_id=1467653802]
+offset_left = -107.0
+offset_top = 13.0
+offset_right = 59.0
+offset_bottom = 29.0
+
+[node name="Audio Settings" type="VBoxContainer" parent="Audio Settings 1" unique_id=1782442264]
+layout_mode = 2
+
+[node name="Volume Slider" type="HSlider" parent="Audio Settings 1/Audio Settings" unique_id=434068653]
+layout_mode = 2
+
+[node name="Audio Settings 2" type="MarginContainer" parent="." unique_id=946914097]
+offset_left = -107.0
+offset_top = 57.0
+offset_right = 59.0
+offset_bottom = 113.0
+
+[node name="Audio balance" type="VBoxContainer" parent="Audio Settings 2" unique_id=1636514580]
+layout_mode = 2
+
+[node name="Music" type="HSlider" parent="Audio Settings 2/Audio balance" unique_id=916495459]
+layout_mode = 2
+
+[node name="Dialogue" type="HSlider" parent="Audio Settings 2/Audio balance" unique_id=14169900]
+layout_mode = 2
+
+[node name="SFX" type="HSlider" parent="Audio Settings 2/Audio balance" unique_id=851484311]
+layout_mode = 2
+
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
 [connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
 [connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]
 [connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Audio Settings 1/Audio Settings/Volume Slider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="Audio Settings 2/Audio balance/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Audio Settings 2/Audio balance/Dialogue" to="." method="_on_dialogue_value_changed"]
+[connection signal="value_changed" from="Audio Settings 2/Audio balance/SFX" to="." method="_on_sfx_value_changed"]

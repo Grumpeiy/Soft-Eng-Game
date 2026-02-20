@@ -22,12 +22,12 @@ config/icon="res://Art/icon.svg"
 [autoload]
 
 event_handler="*res://scripts/event_handler.gd"
+MenuMusic="*uid://bmxoe0kn4ymc6"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/scale=4.0

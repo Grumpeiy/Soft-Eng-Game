@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bsui6v0wystr3"]
+
+[ext_resource type="AudioStream" uid="uid://bcvjcmn71jot" path="res://sfx/music/freesound_community-8bit-music-for-game-68698.mp3" id="1_6asrf"]
+
+[node name="Background Music #1" type="Node2D" unique_id=1222372059]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=445245487]
+stream = ExtResource("1_6asrf")
+autoplay = true
+max_polyphony = 2
+panning_strength = 0.0

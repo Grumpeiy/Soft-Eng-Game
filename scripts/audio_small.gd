@@ -4,21 +4,21 @@ var button_type = null
 
 func _on_accessibility_pressed() -> void:
 	pass
-	#wget_tree().change_scene_to_file("res://scenes/options/accessbility.tscn")
+	get_tree().change_scene_to_file("res://scenes/options/accessbilitySmall.tscn")
 
 
 func _on_audio_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/Audio.tscn")
+	pass
 
 
 func _on_gameplay_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/Gameplay.tscn")
+	pass
 
 func _on_other_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/Other.tscn")
+	pass
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/options/main_menu.tscn")
+	pass
 
 
 func _on_text_size_item_selected(index: int) -> void:
