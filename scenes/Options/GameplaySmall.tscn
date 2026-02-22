@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dogple0ivpmic"]
+
+[ext_resource type="Script" uid="uid://chtirylyr5pqr" path="res://scripts/gameplay_small.gd" id="1_va03u"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_npkty"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_f6ed1"]
+[ext_resource type="Texture2D" uid="uid://81cpdynhek86" path="res://Art/Buttons/Options/large.png" id="4_gvecj"]
+[ext_resource type="Texture2D" uid="uid://bcqf7m1e0b4de" path="res://Art/Buttons/Options/small gameplay/small gameplay.png" id="5_npkty"]
+[ext_resource type="Texture2D" uid="uid://vw1v8xijyxj0" path="res://Art/Buttons/Options/small access/small  access.png" id="6_f6ed1"]
+[ext_resource type="Texture2D" uid="uid://cb121looy2rxc" path="res://Art/Buttons/Options/small access/access small clicked.png" id="7_gvecj"]
+[ext_resource type="Texture2D" uid="uid://cypcv3wemy168" path="res://Art/Buttons/Options/small access/small audio.png" id="8_j0ekm"]
+[ext_resource type="Texture2D" uid="uid://dtt6wgif0yigh" path="res://Art/Buttons/Options/small access/audio small clicked.png" id="9_lx3qf"]
+[ext_resource type="Texture2D" uid="uid://ckrsmpxd1whxv" path="res://Art/Buttons/Options/small access/small game.png" id="10_ibkqp"]
+[ext_resource type="Texture2D" uid="uid://b1780axyn571n" path="res://Art/Buttons/Options/small access/gameplay small clicked.png" id="11_838f5"]
+[ext_resource type="Texture2D" uid="uid://dfa7kuttdasas" path="res://Art/Buttons/Options/small access/small group.png" id="12_1gcj5"]
+[ext_resource type="Texture2D" uid="uid://vdx3vxb48aw6" path="res://Art/Buttons/Options/small access/other small clicked.png" id="13_bxejg"]
+[ext_resource type="Texture2D" uid="uid://cgbm0bctan2u8" path="res://Art/Buttons/Options/small access/small back.png" id="14_lgna7"]
+[ext_resource type="Texture2D" uid="uid://yvw245hmxvdb" path="res://Art/Buttons/Options/small access/small  access clicked.png" id="15_kag7j"]
+
+[node name="GameplaySmall" type="Node2D" unique_id=1719991470]
+position = Vector2(387, 40)
+script = ExtResource("1_va03u")
+
+[node name="background" type="TextureRect" parent="." unique_id=144256320]
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.869
+offset_left = -389.0
+offset_top = -41.0
+offset_right = 114.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_npkty")
+expand_mode = 1
+
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("3_f6ed1")]
+visible = false
+offset_left = -387.0
+offset_top = -50.0
+offset_right = 109.0
+offset_bottom = 260.0
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
+
+[node name="BigBar" type="TextureRect" parent="." unique_id=1850037059]
+offset_left = -367.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 218.5
+texture = ExtResource("4_gvecj")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1484893120]
+offset_left = -176.0
+offset_top = -8.0
+offset_right = 69.0
+offset_bottom = 204.0
+texture = ExtResource("5_npkty")
+expand_mode = 1
+
+[node name="Accessibility" type="TextureButton" parent="." unique_id=99891012]
+offset_left = -348.0
+offset_top = -8.0
+offset_right = -183.0
+offset_bottom = 28.0
+texture_normal = ExtResource("6_f6ed1")
+texture_hover = ExtResource("7_gvecj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Audio" type="TextureButton" parent="." unique_id=948381921]
+offset_left = -348.0
+offset_top = 35.0
+offset_right = -183.0
+offset_bottom = 71.0
+texture_normal = ExtResource("8_j0ekm")
+texture_hover = ExtResource("9_lx3qf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Gameplay" type="TextureButton" parent="." unique_id=1934380694]
+offset_left = -348.0
+offset_top = 78.0
+offset_right = -183.0
+offset_bottom = 114.0
+texture_normal = ExtResource("10_ibkqp")
+texture_hover = ExtResource("11_838f5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Other" type="TextureButton" parent="." unique_id=884094173]
+offset_left = -348.0
+offset_top = 123.0
+offset_right = -182.7
+offset_bottom = 159.0
+texture_normal = ExtResource("12_1gcj5")
+texture_hover = ExtResource("13_bxejg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Back" type="TextureButton" parent="." unique_id=1855621864]
+offset_left = -348.0
+offset_top = 167.0
+offset_right = -278.0
+offset_bottom = 204.0
+texture_normal = ExtResource("14_lgna7")
+texture_hover = ExtResource("15_kag7j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
+[connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]
+[connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,12 +1,12 @@
-[gd_scene load_steps=0 format=3 uid="uid://cimg2aw6ff0yr"]
+[gd_scene format=3 uid="uid://cimg2aw6ff0yr"]
 
 [ext_resource type="Texture2D" uid="uid://bwy3jllcsavte" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_attack_strip7.png" id="1_epg4t"]
-[ext_resource type="Script" uid="uid://dwd1yhirl6x2k" path="res://scripts/enemy.gd" id="1_wujgv"]
+[ext_resource type="Script" uid="uid://bjthy2o4wccos" path="res://scripts/enemy.gd" id="1_wujgv"]
 [ext_resource type="Texture2D" uid="uid://dapwwe7rda61x" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_death_strip10.png" id="2_3yqyl"]
 [ext_resource type="Texture2D" uid="uid://d14vpl6xayf1v" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_hurt_strip7.png" id="3_wujgv"]
 [ext_resource type="Texture2D" uid="uid://dy40t1obxb5dm" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_idle_strip6.png" id="4_hb8ge"]
 [ext_resource type="Texture2D" uid="uid://c6vq3kjer60ag" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_walk_strip8.png" id="5_e1ltt"]
-[ext_resource type="AudioStream" uid="uid://ctso5dea38vwj" path="res://sfx/grass_walk.mp3" id="7_nenq2"]
+[ext_resource type="AudioStream" uid="uid://cjk8l2ix3h1ky" path="res://Sounds/SFX/grass_walk.mp3" id="7_nenq2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxifv"]
 atlas = ExtResource("1_epg4t")
@@ -331,6 +331,8 @@ shape = SubResource("CircleShape2D_nettl")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="." unique_id=837291051]
 stream = ExtResource("7_nenq2")
+volume_db = -7.298
+pitch_scale = 0.69
 
 [connection signal="body_entered" from="AnimatedSprite2D/detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="AnimatedSprite2D/detection_area" to="." method="_on_detection_area_body_exited"]

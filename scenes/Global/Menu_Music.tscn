@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bmxoe0kn4ymc6"]
 
-[ext_resource type="AudioStream" uid="uid://o73vlrbc1pg3" path="res://sfx/music/Menu.mp3" id="1_1dn28"]
+[ext_resource type="AudioStream" uid="uid://uuc78ma3wqrp" path="res://sfx/music/MenuMusic.mp3" id="1_1dn28"]
 [ext_resource type="Script" uid="uid://cqfoqsnbnthad" path="res://scripts/menu_music.gd" id="1_a1vrq"]
 
 [node name="MenuMusic" type="AudioStreamPlayer" unique_id=69371795]

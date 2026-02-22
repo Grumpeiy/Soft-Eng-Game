@@ -1,37 +1,30 @@
-extends Node2D
+extends Node
 
-var button_type = null
+signal volume_changed(bus_name, value)
 
-func _on_accessibility_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/accessbility.tscn")
+var master_volume := 2.0
+var music_volume := 2.0
+var sfx_volume := 2.0
+var dialogue_volume := 2.0
 
+func set_bus_volume(bus_name: String, value: float) -> void:
+	var bus_index = AudioServer.get_bus_index(bus_name)
+	var normalized_value = value / 2.0
 
-func _on_audio_pressed() -> void:
-	pass
-	#get_tree().change_scene_to_file("res://scenes/Options/Audio.tscn")
+	if normalized_value <= 0.0:
+		AudioServer.set_bus_mute(bus_index, true)
+	else:
+		AudioServer.set_bus_mute(bus_index, false)
+		AudioServer.set_bus_volume_db(bus_index, linear_to_db(normalized_value))
 
+	match bus_name:
+		"Master":
+			master_volume = value
+		"MUSIC":
+			music_volume = value
+		"SFX":
+			sfx_volume = value
+		"Dialogue":
+			dialogue_volume = value
 
-func _on_gameplay_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/Gameplay.tscn")
-
-func _on_other_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/Other.tscn")
-
-func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/options/main_menu.tscn")
-
-
-func _on_volume_slider_value_changed(value: float) -> void:
-	pass # Replace with function body.
-
-
-func _on_music_value_changed(value: float) -> void:
-	pass # Replace with function body.
-
-
-func _on_dialogue_value_changed(value: float) -> void:
-	pass # Replace with function body.
-
-
-func _on_sfx_value_changed(value: float) -> void:
-	pass # Replace with function body.
+	emit_signal("volume_changed", bus_name, value)

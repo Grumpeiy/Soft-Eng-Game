@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bykbe0fa18nce" path="res://Art/Buttons/Options/OTHER_CLICKED.png" id="13_ecx2w"]
 [ext_resource type="Texture2D" uid="uid://dhml8fq8k4xuy" path="res://Art/Buttons/Options/BACK_NORMAL.png" id="14_msmic"]
 [ext_resource type="Texture2D" uid="uid://bv7i4jaytcdbd" path="res://Art/Buttons/Options/back.png" id="15_8jbil"]
-[ext_resource type="Texture2D" uid="uid://dksjxlk13rgkp" path="res://Art/Buttons/Options/ACCESSIBILITY_OPENED.png" id="15_dkhfd"]
+[ext_resource type="Texture2D" uid="uid://cpi8v5bv45vo7" path="res://Art/Buttons/Options/ACCESSIBILITY_new.png" id="15_ngjdn"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="16_ngjdn"]
 
 [node name="Accessibility" type="Node2D" unique_id=1719991470]
@@ -106,7 +106,7 @@ offset_left = -176.0
 offset_top = -8.0
 offset_right = 69.0
 offset_bottom = 204.0
-texture = ExtResource("15_dkhfd")
+texture = ExtResource("15_ngjdn")
 expand_mode = 1
 
 [node name="TextSettings" type="VBoxContainer" parent="." unique_id=1778434131]
@@ -124,7 +124,7 @@ selected = 1
 item_count = 2
 popup/item_0/text = "Small"
 popup/item_0/id = 0
-popup/item_1/text = "Normal"
+popup/item_1/text = "Large"
 popup/item_1/id = 1
 
 [node name="3 settings" type="VBoxContainer" parent="." unique_id=584916852]

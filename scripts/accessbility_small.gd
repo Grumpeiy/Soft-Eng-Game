@@ -12,13 +12,16 @@ func _on_audio_pressed() -> void:
 
 
 func _on_gameplay_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/Options/GameplaySmall.tscn")
+
 
 func _on_other_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/Options/OtherSmall.tscn")
+
 
 func _on_back_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/Options/main_menuSmall.tscn")
+
 
 
 func _on_text_size_item_selected(index: int) -> void:

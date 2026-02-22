@@ -8,7 +8,7 @@ func _on_accessibility_pressed() -> void:
 
 
 func _on_audio_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/Audio.tscn")
+	get_tree().change_scene_to_file("res://scenes/Options/AudioLarge.tscn")
 
 
 func _on_gameplay_pressed() -> void:

@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://cbyrhr6xbhwge"]
+
+[ext_resource type="Script" uid="uid://cd78jpebiwwlb" path="res://scripts/main_menu_small.gd" id="1_necep"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_pums3"]
+[ext_resource type="Texture2D" uid="uid://cs23st3oy3puh" path="res://Art/Buttons/Student Profile.png" id="3_nsj0d"]
+[ext_resource type="Texture2D" uid="uid://d176v6sjttbt1" path="res://Art/Buttons/small menu/small quest tab.png" id="4_ecp7h"]
+[ext_resource type="Texture2D" uid="uid://tjkmkfoe04w8" path="res://Art/Buttons/Badges.png" id="4_ltm4m"]
+[ext_resource type="Texture2D" uid="uid://dr8oitkb3631o" path="res://Art/Buttons/MENU_BG.png" id="6_5k7rh"]
+[ext_resource type="Texture2D" uid="uid://djc2702mdfjcu" path="res://Art/Buttons/small menu/small start.png" id="6_ecp7h"]
+[ext_resource type="Texture2D" uid="uid://kleabmmhqph7" path="res://Art/Buttons/small menu/small start click.png" id="7_necep"]
+[ext_resource type="Texture2D" uid="uid://iuwj83elspgb" path="res://Art/Buttons/small menu/small options.png" id="8_pums3"]
+[ext_resource type="Texture2D" uid="uid://dtfjqy7f5wupc" path="res://Art/Buttons/small menu/small options cliocked.png" id="9_nsj0d"]
+[ext_resource type="Texture2D" uid="uid://cky2yiodyurt3" path="res://Art/Buttons/small menu/small exit.png" id="10_ltm4m"]
+[ext_resource type="Texture2D" uid="uid://brrl82y3hk3" path="res://Art/Buttons/small menu/small exit game clicked.png" id="11_bmlos"]
+[ext_resource type="Texture2D" uid="uid://ds5npbeosx8em" path="res://Art/Buttons/small menu/small progress.png" id="12_5k7rh"]
+[ext_resource type="Texture2D" uid="uid://dnnhjodor1d6h" path="res://Art/Buttons/small menu/small progress clicked.png" id="13_lkk5j"]
+[ext_resource type="Texture2D" uid="uid://b3ci78qh14xj2" path="res://Art/Buttons/small menu/small badges.png" id="14_qxhgj"]
+[ext_resource type="Texture2D" uid="uid://bqbapy88nt855" path="res://Art/Buttons/small menu/small badges clicked.png" id="15_08vt1"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="17_kkh8n"]
+
+[node name="Main Menu Small" type="Node2D" unique_id=1719991470]
+position = Vector2(387, 40)
+script = ExtResource("1_necep")
+
+[node name="background" type="TextureRect" parent="." unique_id=144256320]
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.869
+offset_left = -389.0
+offset_top = -41.0
+offset_right = 114.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pums3")
+expand_mode = 1
+
+[node name="Student Profile" type="TextureRect" parent="." unique_id=1463688815]
+offset_left = -122.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 61.0
+texture = ExtResource("3_nsj0d")
+expand_mode = 1
+
+[node name="Badges" type="TextureRect" parent="." unique_id=933165845]
+offset_left = -122.0
+offset_top = 171.0
+offset_right = 81.0
+offset_bottom = 218.5
+texture = ExtResource("4_ltm4m")
+expand_mode = 1
+
+[node name="Quest" type="TextureRect" parent="." unique_id=784879559]
+offset_left = -122.0
+offset_top = 71.0
+offset_right = 81.0
+offset_bottom = 156.0
+texture = ExtResource("4_ecp7h")
+expand_mode = 1
+
+[node name="GreenBG" type="TextureRect" parent="." unique_id=2137098979]
+offset_left = -367.0
+offset_top = -24.0
+offset_right = -162.0
+offset_bottom = 218.48761
+texture = ExtResource("6_5k7rh")
+expand_mode = 1
+
+[node name="Start" type="TextureButton" parent="." unique_id=2092931484]
+offset_left = -348.0
+offset_top = -8.0
+offset_right = -183.0
+offset_bottom = 28.0
+texture_normal = ExtResource("6_ecp7h")
+texture_hover = ExtResource("7_necep")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Option" type="TextureButton" parent="." unique_id=1699791284]
+offset_left = -348.0
+offset_top = 35.0
+offset_right = -183.0
+offset_bottom = 71.0
+texture_normal = ExtResource("8_pums3")
+texture_hover = ExtResource("9_nsj0d")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Quit" type="TextureButton" parent="." unique_id=581517196]
+offset_left = -348.0
+offset_top = 167.0
+offset_right = -183.0
+offset_bottom = 204.0
+texture_normal = ExtResource("10_ltm4m")
+texture_hover = ExtResource("11_bmlos")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Progress" type="TextureButton" parent="." unique_id=2030933053]
+offset_left = -348.0
+offset_top = 78.0
+offset_right = -183.0
+offset_bottom = 114.0
+texture_normal = ExtResource("12_5k7rh")
+texture_hover = ExtResource("13_lkk5j")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1089471628]
+offset_left = -348.0
+offset_top = 123.0
+offset_right = -183.0
+offset_bottom = 159.0
+texture_normal = ExtResource("14_qxhgj")
+texture_hover = ExtResource("15_08vt1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("17_kkh8n")]
+visible = false
+offset_left = -387.0
+offset_top = -50.0
+offset_right = 109.0
+offset_bottom = 260.0
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

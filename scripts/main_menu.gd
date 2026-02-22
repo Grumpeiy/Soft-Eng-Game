@@ -1,7 +1,7 @@
 extends Node2D
 
 var button_type = null
-@onready var transition_fx = preload("res://sfx/music/Menu.mp3")
+@onready var transition_fx = preload("res://Sounds/music/MenuMusic.mp3")
 
 func _ready():
 	MenuMusic.play_music_level()

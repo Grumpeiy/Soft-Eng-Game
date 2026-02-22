@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cxet40yek53bx" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://b2t1lvol68bvy" path="res://Art/sunnyside_world_chatacter_anim_human_v1.0.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://cxavr2n6xllch" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/BASE CHARACTER/PNG/WITH_FX/spr_death_strip13.png" id="4_dqkch"]
-[ext_resource type="AudioStream" uid="uid://cjk8l2ix3h1ky" path="res://sfx/grass_walk.mp3" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://cjk8l2ix3h1ky" path="res://Sounds/SFX/grass_walk.mp3" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")

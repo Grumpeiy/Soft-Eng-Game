@@ -14,6 +14,7 @@ func _ready():
 	animations.play("front_idle")
 	walk.pitch_scale = 0.75
 	
+	
 	var trigger = get_parent().get_node("NPC")
 	trigger.dialogueStarted.connect(inDialogue)
 	trigger.get_node("Dialogue").dialogueFinished.connect(outOfDialogue) 
