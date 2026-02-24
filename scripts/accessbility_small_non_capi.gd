@@ -6,23 +6,18 @@ func _on_accessibility_pressed() -> void:
 	pass
 	#wget_tree().change_scene_to_file("res://scenes/options/accessbility.tscn")
 
-
 func _on_audio_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/AudioSmall.tscn")
-
+	get_tree().change_scene_to_file("res://scenes/Options/AudioSmallNonCapi.tscn")
 
 func _on_gameplay_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/GameplaySmall.tscn")
-
+	get_tree().change_scene_to_file("res://scenes/Options/GameplaySmallNonCapi.tscn")
 
 func _on_other_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/OtherSmall.tscn")
+	get_tree().change_scene_to_file("res://scenes/Options/OtherSmallNonCapi.tscn")
 
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Options/main_menuSmall.tscn")
-
-
+	get_tree().change_scene_to_file("res://scenes/Options/MainMenuNonCapiSmall.tscn")
 
 func _on_text_size_item_selected(index: int) -> void:
 	match index:
@@ -35,4 +30,10 @@ func _on_capitilzation_pressed() -> void:
 	var checkbox = $"3 settings/Capitilzation"
 	Settings.capitalization_enabled = checkbox.button_pressed
 	
-	get_tree().change_scene_to_file("res://scenes/Options/accessbilitySmallNonCapi.tscn")
+	get_tree().change_scene_to_file("res://scenes/Options/accessbilitySmall.tscn")
+
+
+func _ready() -> void:
+	var checkbox = $"3 settings/Capitilzation"
+	checkbox.button_pressed = Settings.capitalization_enabled
+	

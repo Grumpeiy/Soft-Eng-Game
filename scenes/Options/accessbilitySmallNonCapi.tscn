@@ -1,25 +1,25 @@
-[gd_scene format=3 uid="uid://dsk8pun72138m"]
+[gd_scene format=3 uid="uid://7jcys5figfu"]
 
-[ext_resource type="Script" uid="uid://k7rig4x0krqp" path="res://scripts/accessbility_small.gd" id="1_suu5j"]
-[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_31a1d"]
-[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_536i3"]
-[ext_resource type="Texture2D" uid="uid://81cpdynhek86" path="res://Art/Buttons/Options/large.png" id="4_2cr6p"]
-[ext_resource type="Texture2D" uid="uid://vw1v8xijyxj0" path="res://Art/Buttons/Options/small access/small  access.png" id="4_u6fhj"]
-[ext_resource type="Texture2D" uid="uid://cb121looy2rxc" path="res://Art/Buttons/Options/small access/access small clicked.png" id="5_suu5j"]
-[ext_resource type="Texture2D" uid="uid://cypcv3wemy168" path="res://Art/Buttons/Options/small access/small audio.png" id="6_31a1d"]
-[ext_resource type="Texture2D" uid="uid://dtt6wgif0yigh" path="res://Art/Buttons/Options/small access/audio small clicked.png" id="7_536i3"]
-[ext_resource type="Texture2D" uid="uid://ckrsmpxd1whxv" path="res://Art/Buttons/Options/small access/small game.png" id="8_2cr6p"]
-[ext_resource type="Texture2D" uid="uid://b1780axyn571n" path="res://Art/Buttons/Options/small access/gameplay small clicked.png" id="9_rn7im"]
-[ext_resource type="Texture2D" uid="uid://dfa7kuttdasas" path="res://Art/Buttons/Options/small access/small group.png" id="10_iiwak"]
-[ext_resource type="Texture2D" uid="uid://vdx3vxb48aw6" path="res://Art/Buttons/Options/small access/other small clicked.png" id="11_sj7nw"]
-[ext_resource type="Texture2D" uid="uid://cgbm0bctan2u8" path="res://Art/Buttons/Options/small access/small back.png" id="12_pm0ln"]
-[ext_resource type="Texture2D" uid="uid://yvw245hmxvdb" path="res://Art/Buttons/Options/small access/small  access clicked.png" id="13_pby43"]
-[ext_resource type="Texture2D" uid="uid://cvkthhg00j5vr" path="res://Art/Buttons/Options/small access/small accesii.png" id="14_wrkl2"]
-[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="16_oamp3"]
+[ext_resource type="Script" uid="uid://c6fs24b0vvww8" path="res://scripts/accessbility_small_non_capi.gd" id="1_ut46y"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_jk8pe"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_us0jj"]
+[ext_resource type="Texture2D" uid="uid://cwj0ovwt8eq2y" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped access.png" id="4_3b82o"]
+[ext_resource type="Texture2D" uid="uid://81cpdynhek86" path="res://Art/Buttons/Options/large.png" id="4_gxbjl"]
+[ext_resource type="Texture2D" uid="uid://b88vsqb87387s" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped access clicked.png" id="5_ut46y"]
+[ext_resource type="Texture2D" uid="uid://dt1c2fpuw7yxp" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped audio.png" id="6_jk8pe"]
+[ext_resource type="Texture2D" uid="uid://duhjpb0o1ysbe" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped audio clicked.png" id="7_us0jj"]
+[ext_resource type="Texture2D" uid="uid://bvh23owc8xcm4" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped gameplay.png" id="8_gxbjl"]
+[ext_resource type="Texture2D" uid="uid://c78r61uqyfobv" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped gameplay clicked.png" id="9_anvmi"]
+[ext_resource type="Texture2D" uid="uid://bsgxqt0gnkgxv" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped other.png" id="10_rq5y4"]
+[ext_resource type="Texture2D" uid="uid://b7ylnri7pjmxd" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped other clicked.png" id="11_oq2wj"]
+[ext_resource type="Texture2D" uid="uid://cl0rng2arj888" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped back.png" id="12_o1bon"]
+[ext_resource type="Texture2D" uid="uid://bo8pae72261qe" path="res://Art/Buttons/small menu non cap/small non capi access/small non capped back clicked.png" id="13_1nev2"]
+[ext_resource type="Texture2D" uid="uid://bekr6al8vfdo" path="res://Art/Buttons/small menu non cap/small non capi access/Group 136.png" id="14_3b82o"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="16_85u3g"]
 
-[node name="AccessibilitySmall" type="Node2D" unique_id=1719991470]
+[node name="AccessibilitySmallnoncapi" type="Node2D" unique_id=1719991470]
 position = Vector2(387, 40)
-script = ExtResource("1_suu5j")
+script = ExtResource("1_ut46y")
 
 [node name="background" type="TextureRect" parent="." unique_id=144256320]
 anchors_preset = -1
@@ -31,10 +31,10 @@ offset_right = 114.0
 offset_bottom = 254.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_31a1d")
+texture = ExtResource("2_jk8pe")
 expand_mode = 1
 
-[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("3_536i3")]
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("3_us0jj")]
 visible = false
 offset_left = -387.0
 offset_top = -50.0
@@ -48,7 +48,7 @@ offset_left = -367.0
 offset_top = -24.0
 offset_right = 81.0
 offset_bottom = 218.5
-texture = ExtResource("4_2cr6p")
+texture = ExtResource("4_gxbjl")
 expand_mode = 1
 
 [node name="Accessibility" type="TextureButton" parent="." unique_id=1186315259]
@@ -56,8 +56,8 @@ offset_left = -348.0
 offset_top = -8.0
 offset_right = -183.0
 offset_bottom = 28.0
-texture_normal = ExtResource("4_u6fhj")
-texture_hover = ExtResource("5_suu5j")
+texture_normal = ExtResource("4_3b82o")
+texture_hover = ExtResource("5_ut46y")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -66,8 +66,8 @@ offset_left = -348.0
 offset_top = 35.0
 offset_right = -183.0
 offset_bottom = 71.0
-texture_normal = ExtResource("6_31a1d")
-texture_hover = ExtResource("7_536i3")
+texture_normal = ExtResource("6_jk8pe")
+texture_hover = ExtResource("7_us0jj")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -76,8 +76,8 @@ offset_left = -348.0
 offset_top = 78.0
 offset_right = -183.0
 offset_bottom = 114.0
-texture_normal = ExtResource("8_2cr6p")
-texture_hover = ExtResource("9_rn7im")
+texture_normal = ExtResource("8_gxbjl")
+texture_hover = ExtResource("9_anvmi")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -86,8 +86,8 @@ offset_left = -348.0
 offset_top = 123.0
 offset_right = -182.7
 offset_bottom = 159.0
-texture_normal = ExtResource("10_iiwak")
-texture_hover = ExtResource("11_sj7nw")
+texture_normal = ExtResource("10_rq5y4")
+texture_hover = ExtResource("11_oq2wj")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -96,8 +96,8 @@ offset_left = -348.0
 offset_top = 167.0
 offset_right = -278.0
 offset_bottom = 204.0
-texture_normal = ExtResource("12_pm0ln")
-texture_hover = ExtResource("13_pby43")
+texture_normal = ExtResource("12_o1bon")
+texture_hover = ExtResource("13_1nev2")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -106,7 +106,7 @@ offset_left = -176.0
 offset_top = -8.0
 offset_right = 69.0
 offset_bottom = 204.0
-texture = ExtResource("14_wrkl2")
+texture = ExtResource("14_3b82o")
 expand_mode = 1
 
 [node name="TextSettings" type="VBoxContainer" parent="." unique_id=1778434131]
@@ -139,19 +139,19 @@ theme_override_constants/separation = 5
 [node name="Capitilzation" type="CheckBox" parent="3 settings" unique_id=2012512901]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("16_oamp3")
+theme_override_fonts/font = ExtResource("16_85u3g")
 theme_override_font_sizes/font_size = 9
 
 [node name="Speech" type="CheckBox" parent="3 settings" unique_id=331616386]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("16_oamp3")
+theme_override_fonts/font = ExtResource("16_85u3g")
 theme_override_font_sizes/font_size = 9
 
 [node name="Narration" type="CheckBox" parent="3 settings" unique_id=999433107]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("16_oamp3")
+theme_override_fonts/font = ExtResource("16_85u3g")
 theme_override_font_sizes/font_size = 9
 
 [node name="Sensory Settings" type="VBoxContainer" parent="." unique_id=678208929]
