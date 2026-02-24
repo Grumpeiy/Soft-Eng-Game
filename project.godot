@@ -16,15 +16,15 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="SoftEng"
 run/main_scene="uid://homuvwxrj621"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
 [autoload]
 
 event_handler="*res://scripts/event_handler.gd"
-MenuMusic="*uid://bmxoe0kn4ymc6"
-Audio="*uid://41b1dala7a58"
-Settings="*uid://dv7m1u2rllojj"
+MenuMusic="*res://scenes/Global/Menu_Music.tscn"
+Audio="*res://scripts/audio.gd"
+Settings="*res://scripts/settings.gd"
 
 [display]
 
