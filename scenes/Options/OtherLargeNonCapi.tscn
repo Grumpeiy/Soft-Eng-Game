@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://uaicdkppx23w"]
+
+[ext_resource type="Script" uid="uid://snbynrolou6a" path="res://other_large_non_capi.gd" id="1_ptwc7"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_xay18"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_hawm7"]
+[ext_resource type="Texture2D" uid="uid://nrbl65ixsuwa" path="res://Art/Buttons/Options/large other non capitalized/otherlargenoncapi.png" id="4_k413l"]
+[ext_resource type="Texture2D" uid="uid://81cpdynhek86" path="res://Art/Buttons/Options/large.png" id="4_rjr1p"]
+[ext_resource type="Texture2D" uid="uid://c8qc37t2uyp0" path="res://Art/Buttons/Options/large access non capitalized/Group 83-1.png" id="5_ptwc7"]
+[ext_resource type="Texture2D" uid="uid://bvpjy6buxylm8" path="res://Art/Buttons/Options/large access non capitalized/Group 83.png" id="6_xay18"]
+[ext_resource type="Texture2D" uid="uid://cre63bqauliu5" path="res://Art/Buttons/Options/large access non capitalized/Group 118-1.png" id="7_hawm7"]
+[ext_resource type="Texture2D" uid="uid://cyitot3xothxk" path="res://Art/Buttons/Options/large access non capitalized/Group 118.png" id="8_rjr1p"]
+[ext_resource type="Texture2D" uid="uid://ddb1crosnqvhv" path="res://Art/Buttons/Options/large access non capitalized/Group 84-1.png" id="9_4ideh"]
+[ext_resource type="Texture2D" uid="uid://cag4yoxx7m01g" path="res://Art/Buttons/Options/large access non capitalized/Group 84.png" id="10_uoq2w"]
+[ext_resource type="Texture2D" uid="uid://bv810j378a7w1" path="res://Art/Buttons/Options/large access non capitalized/Group 132-1.png" id="11_mmv5d"]
+[ext_resource type="Texture2D" uid="uid://cpfh1oabs0400" path="res://Art/Buttons/Options/large access non capitalized/Group 132.png" id="12_vrwvt"]
+[ext_resource type="Texture2D" uid="uid://d0etly8wo13x1" path="res://Art/Buttons/Options/large access non capitalized/Group 81-1.png" id="13_wk5hy"]
+[ext_resource type="Texture2D" uid="uid://ccir53mnn1g7h" path="res://Art/Buttons/Options/large access non capitalized/Group 81.png" id="14_4h282"]
+
+[node name="Other" type="Node2D" unique_id=1719991470]
+position = Vector2(387, 40)
+script = ExtResource("1_ptwc7")
+
+[node name="background" type="TextureRect" parent="." unique_id=144256320]
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.869
+offset_left = -389.0
+offset_top = -41.0
+offset_right = 114.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xay18")
+expand_mode = 1
+
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("3_hawm7")]
+visible = false
+offset_left = -387.0
+offset_top = -50.0
+offset_right = 109.0
+offset_bottom = 260.0
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
+
+[node name="BigBar" type="TextureRect" parent="." unique_id=1850037059]
+offset_left = -367.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 218.5
+texture = ExtResource("4_rjr1p")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1484893120]
+offset_left = -176.0
+offset_top = -8.0
+offset_right = 69.0
+offset_bottom = 204.0
+texture = ExtResource("4_k413l")
+expand_mode = 1
+
+[node name="TextSize" type="OptionButton" parent="." unique_id=1215962459]
+offset_left = 2.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 52.0
+size_flags_stretch_ratio = 0.37
+theme_override_font_sizes/font_size = 5
+selected = 0
+item_count = 2
+popup/item_0/text = "ENGLISH"
+popup/item_0/id = 0
+popup/item_1/text = "TAGALOG"
+popup/item_1/id = 1
+
+[node name="Accessibility" type="TextureButton" parent="." unique_id=1671497228]
+offset_left = -348.0
+offset_top = -8.0
+offset_right = -183.0
+offset_bottom = 28.0
+texture_normal = ExtResource("5_ptwc7")
+texture_hover = ExtResource("6_xay18")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Audio" type="TextureButton" parent="." unique_id=1308112605]
+offset_left = -348.0
+offset_top = 35.0
+offset_right = -183.0
+offset_bottom = 71.0
+texture_normal = ExtResource("7_hawm7")
+texture_hover = ExtResource("8_rjr1p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Gameplay" type="TextureButton" parent="." unique_id=1686190349]
+offset_left = -348.0
+offset_top = 78.0
+offset_right = -183.0
+offset_bottom = 114.0
+texture_normal = ExtResource("9_4ideh")
+texture_hover = ExtResource("10_uoq2w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Other" type="TextureButton" parent="." unique_id=1081914770]
+offset_left = -348.0
+offset_top = 123.0
+offset_right = -182.7
+offset_bottom = 159.0
+texture_normal = ExtResource("11_mmv5d")
+texture_hover = ExtResource("12_vrwvt")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Back" type="TextureButton" parent="." unique_id=1839764710]
+offset_left = -348.0
+offset_top = 167.0
+offset_right = -278.0
+offset_bottom = 204.0
+texture_normal = ExtResource("13_wk5hy")
+texture_hover = ExtResource("14_4h282")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
+[connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]
+[connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

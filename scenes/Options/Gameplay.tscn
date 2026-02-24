@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dhml8fq8k4xuy" path="res://Art/Buttons/Options/BACK_NORMAL.png" id="13_f0ivg"]
 [ext_resource type="Texture2D" uid="uid://bv7i4jaytcdbd" path="res://Art/Buttons/Options/back.png" id="14_2y2g5"]
 [ext_resource type="Texture2D" uid="uid://bvwxi31ups0qw" path="res://Art/Buttons/Options/Gameplaybar.png" id="15_uqjlw"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="16_owgqo"]
 
 [node name="Gameplay" type="Node2D" unique_id=1719991470]
 position = Vector2(387, 40)
@@ -107,6 +108,38 @@ offset_right = 69.0
 offset_bottom = 204.0
 texture = ExtResource("15_uqjlw")
 expand_mode = 1
+
+[node name="gameplay" type="VBoxContainer" parent="." unique_id=921571181]
+layout_direction = 3
+offset_left = -69.0
+offset_top = -6.0
+offset_right = -45.0
+offset_bottom = 105.0
+theme_override_constants/separation = 3
+
+[node name="difficulty" type="CheckBox" parent="gameplay" unique_id=1758657126]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_owgqo")
+theme_override_font_sizes/font_size = 9
+
+[node name="guided" type="CheckBox" parent="gameplay" unique_id=290771372]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_owgqo")
+theme_override_font_sizes/font_size = 9
+
+[node name="tutorial" type="CheckBox" parent="gameplay" unique_id=774654890]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_owgqo")
+theme_override_font_sizes/font_size = 9
+
+[node name="autoplay" type="CheckBox" parent="gameplay" unique_id=1791680559]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_owgqo")
+theme_override_font_sizes/font_size = 9
 
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]

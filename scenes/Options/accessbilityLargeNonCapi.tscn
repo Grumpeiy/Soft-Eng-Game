@@ -1,25 +1,25 @@
-[gd_scene format=3 uid="uid://bu3r04qb427kk"]
+[gd_scene format=3 uid="uid://cxys8fjk3pwfw"]
 
-[ext_resource type="Script" uid="uid://dycwlr8vbsnl0" path="res://scripts/accessbility.gd" id="1_5q6yb"]
-[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_5q6yb"]
-[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_x4es0"]
-[ext_resource type="Texture2D" uid="uid://81cpdynhek86" path="res://Art/Buttons/Options/large.png" id="4_dr352"]
-[ext_resource type="Texture2D" uid="uid://cctqcvfagvhho" path="res://Art/Buttons/Options/accessibility.png" id="6_3n08u"]
-[ext_resource type="Texture2D" uid="uid://dus12pdsyy5ki" path="res://Art/Buttons/Options/ACCESSIBILITY_CLICKED.png" id="7_dlu75"]
-[ext_resource type="Texture2D" uid="uid://g6u3wxypg3bg" path="res://Art/Buttons/Options/audio.png" id="8_rgqam"]
-[ext_resource type="Texture2D" uid="uid://v7q311akpfwv" path="res://Art/Buttons/Options/AUDIO_CLICKED.png" id="9_43mei"]
-[ext_resource type="Texture2D" uid="uid://ds54k74jrnp0e" path="res://Art/Buttons/Options/gameplay.png" id="10_6uqio"]
-[ext_resource type="Texture2D" uid="uid://bi0oq5lb4ab5c" path="res://Art/Buttons/Options/GAMEPLAY_CLICKED.png" id="11_oldt0"]
-[ext_resource type="Texture2D" uid="uid://quc13ecd365v" path="res://Art/Buttons/Options/other.png" id="12_quh57"]
-[ext_resource type="Texture2D" uid="uid://bykbe0fa18nce" path="res://Art/Buttons/Options/OTHER_CLICKED.png" id="13_ecx2w"]
-[ext_resource type="Texture2D" uid="uid://dhml8fq8k4xuy" path="res://Art/Buttons/Options/BACK_NORMAL.png" id="14_msmic"]
-[ext_resource type="Texture2D" uid="uid://bv7i4jaytcdbd" path="res://Art/Buttons/Options/back.png" id="15_8jbil"]
-[ext_resource type="Texture2D" uid="uid://cpi8v5bv45vo7" path="res://Art/Buttons/Options/ACCESSIBILITY_new.png" id="15_ngjdn"]
-[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="16_ngjdn"]
+[ext_resource type="Script" uid="uid://dxgxjb0i0bk78" path="res://scripts/accessbility_large_non_capi.gd" id="1_6jh3h"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_pvads"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_mny5l"]
+[ext_resource type="Texture2D" uid="uid://81cpdynhek86" path="res://Art/Buttons/Options/large.png" id="4_rocoo"]
+[ext_resource type="Texture2D" uid="uid://c8qc37t2uyp0" path="res://Art/Buttons/Options/large access non capitalized/Group 83-1.png" id="5_6jh3h"]
+[ext_resource type="Texture2D" uid="uid://bvpjy6buxylm8" path="res://Art/Buttons/Options/large access non capitalized/Group 83.png" id="6_pvads"]
+[ext_resource type="Texture2D" uid="uid://cre63bqauliu5" path="res://Art/Buttons/Options/large access non capitalized/Group 118-1.png" id="7_mny5l"]
+[ext_resource type="Texture2D" uid="uid://cyitot3xothxk" path="res://Art/Buttons/Options/large access non capitalized/Group 118.png" id="8_rocoo"]
+[ext_resource type="Texture2D" uid="uid://ddb1crosnqvhv" path="res://Art/Buttons/Options/large access non capitalized/Group 84-1.png" id="9_e3clo"]
+[ext_resource type="Texture2D" uid="uid://cag4yoxx7m01g" path="res://Art/Buttons/Options/large access non capitalized/Group 84.png" id="10_jussv"]
+[ext_resource type="Texture2D" uid="uid://bv810j378a7w1" path="res://Art/Buttons/Options/large access non capitalized/Group 132-1.png" id="11_t1t1b"]
+[ext_resource type="Texture2D" uid="uid://cpfh1oabs0400" path="res://Art/Buttons/Options/large access non capitalized/Group 132.png" id="12_j1eal"]
+[ext_resource type="Texture2D" uid="uid://d0etly8wo13x1" path="res://Art/Buttons/Options/large access non capitalized/Group 81-1.png" id="13_vlv1n"]
+[ext_resource type="Texture2D" uid="uid://ccir53mnn1g7h" path="res://Art/Buttons/Options/large access non capitalized/Group 81.png" id="14_7gvvd"]
+[ext_resource type="Texture2D" uid="uid://b3h3bj36u76qu" path="res://Art/Buttons/Options/large access non capitalized/Group 141.png" id="15_6jh3h"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="16_wvttw"]
 
-[node name="Accessibility" type="Node2D" unique_id=1719991470]
+[node name="accesslargenocaps" type="Node2D" unique_id=1719991470]
 position = Vector2(387, 40)
-script = ExtResource("1_5q6yb")
+script = ExtResource("1_6jh3h")
 
 [node name="background" type="TextureRect" parent="." unique_id=144256320]
 anchors_preset = -1
@@ -31,10 +31,10 @@ offset_right = 114.0
 offset_bottom = 254.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_5q6yb")
+texture = ExtResource("2_pvads")
 expand_mode = 1
 
-[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("3_x4es0")]
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("3_mny5l")]
 visible = false
 offset_left = -387.0
 offset_top = -50.0
@@ -48,7 +48,7 @@ offset_left = -367.0
 offset_top = -24.0
 offset_right = 81.0
 offset_bottom = 218.5
-texture = ExtResource("4_dr352")
+texture = ExtResource("4_rocoo")
 expand_mode = 1
 
 [node name="Accessibility" type="TextureButton" parent="." unique_id=1186315259]
@@ -56,8 +56,8 @@ offset_left = -348.0
 offset_top = -8.0
 offset_right = -183.0
 offset_bottom = 28.0
-texture_normal = ExtResource("6_3n08u")
-texture_hover = ExtResource("7_dlu75")
+texture_normal = ExtResource("5_6jh3h")
+texture_hover = ExtResource("6_pvads")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -66,8 +66,8 @@ offset_left = -348.0
 offset_top = 35.0
 offset_right = -183.0
 offset_bottom = 71.0
-texture_normal = ExtResource("8_rgqam")
-texture_hover = ExtResource("9_43mei")
+texture_normal = ExtResource("7_mny5l")
+texture_hover = ExtResource("8_rocoo")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -76,8 +76,8 @@ offset_left = -348.0
 offset_top = 78.0
 offset_right = -183.0
 offset_bottom = 114.0
-texture_normal = ExtResource("10_6uqio")
-texture_hover = ExtResource("11_oldt0")
+texture_normal = ExtResource("9_e3clo")
+texture_hover = ExtResource("10_jussv")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -86,8 +86,8 @@ offset_left = -348.0
 offset_top = 123.0
 offset_right = -182.7
 offset_bottom = 159.0
-texture_normal = ExtResource("12_quh57")
-texture_hover = ExtResource("13_ecx2w")
+texture_normal = ExtResource("11_t1t1b")
+texture_hover = ExtResource("12_j1eal")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -96,8 +96,8 @@ offset_left = -348.0
 offset_top = 167.0
 offset_right = -278.0
 offset_bottom = 204.0
-texture_normal = ExtResource("14_msmic")
-texture_hover = ExtResource("15_8jbil")
+texture_normal = ExtResource("13_vlv1n")
+texture_hover = ExtResource("14_7gvvd")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -106,7 +106,7 @@ offset_left = -176.0
 offset_top = -8.0
 offset_right = 69.0
 offset_bottom = 204.0
-texture = ExtResource("15_ngjdn")
+texture = ExtResource("15_6jh3h")
 expand_mode = 1
 
 [node name="TextSettings" type="VBoxContainer" parent="." unique_id=1778434131]
@@ -138,19 +138,19 @@ theme_override_constants/separation = 5
 [node name="Capitilzation" type="CheckBox" parent="3 settings" unique_id=2012512901]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("16_ngjdn")
+theme_override_fonts/font = ExtResource("16_wvttw")
 theme_override_font_sizes/font_size = 9
 
 [node name="Speech" type="CheckBox" parent="3 settings" unique_id=331616386]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("16_ngjdn")
+theme_override_fonts/font = ExtResource("16_wvttw")
 theme_override_font_sizes/font_size = 9
 
 [node name="Narration" type="CheckBox" parent="3 settings" unique_id=999433107]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("16_ngjdn")
+theme_override_fonts/font = ExtResource("16_wvttw")
 theme_override_font_sizes/font_size = 9
 
 [node name="Sensory Settings" type="VBoxContainer" parent="." unique_id=678208929]

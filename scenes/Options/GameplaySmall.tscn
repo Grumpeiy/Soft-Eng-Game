@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://vdx3vxb48aw6" path="res://Art/Buttons/Options/small access/other small clicked.png" id="13_bxejg"]
 [ext_resource type="Texture2D" uid="uid://cgbm0bctan2u8" path="res://Art/Buttons/Options/small access/small back.png" id="14_lgna7"]
 [ext_resource type="Texture2D" uid="uid://yvw245hmxvdb" path="res://Art/Buttons/Options/small access/small  access clicked.png" id="15_kag7j"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="16_npkty"]
 
 [node name="GameplaySmall" type="Node2D" unique_id=1719991470]
 position = Vector2(387, 40)
@@ -107,6 +108,38 @@ texture_normal = ExtResource("14_lgna7")
 texture_hover = ExtResource("15_kag7j")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="gameplay" type="VBoxContainer" parent="." unique_id=1887636702]
+layout_direction = 3
+offset_left = -69.0
+offset_top = -6.0
+offset_right = -45.0
+offset_bottom = 105.0
+theme_override_constants/separation = 3
+
+[node name="difficulty" type="CheckBox" parent="gameplay" unique_id=1182336060]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_npkty")
+theme_override_font_sizes/font_size = 9
+
+[node name="guided" type="CheckBox" parent="gameplay" unique_id=1106685198]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_npkty")
+theme_override_font_sizes/font_size = 9
+
+[node name="tutorial" type="CheckBox" parent="gameplay" unique_id=457201898]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_npkty")
+theme_override_font_sizes/font_size = 9
+
+[node name="autoplay" type="CheckBox" parent="gameplay" unique_id=2097577779]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_npkty")
+theme_override_font_sizes/font_size = 9
 
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
