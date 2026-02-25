@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsjx3g0gy1wda"]
+
+[ext_resource type="Texture2D" uid="uid://bxf1ygrp61aks" path="res://Art/Pixel Letter Beads - Asset Pack/Pixel Letter Beads - Asset Pack/black_V.png" id="1_ktgwl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k3jkc"]
+friction = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73mrp"]
+size = Vector2(14, 14)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 7.0
+physics_material_override = SubResource("PhysicsMaterial_k3jkc")
+gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+linear_damp = 10.0
+angular_damp = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ktgwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_73mrp")

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c8lhw3uovtfaq"]
+[gd_scene load_steps=0 format=3 uid="uid://c8lhw3uovtfaq"]
 
 [ext_resource type="Script" uid="uid://bnshce1dkpyj0" path="res://other_small_non_capi.gd" id="1_86rsc"]
 [ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_6r3ia"]

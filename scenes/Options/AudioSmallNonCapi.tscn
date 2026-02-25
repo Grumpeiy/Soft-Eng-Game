@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bsh1cdqxr0h7a"]
+[gd_scene load_steps=0 format=3 uid="uid://bsh1cdqxr0h7a"]
 
 [ext_resource type="Script" uid="uid://i6ftkcww4u4" path="res://scripts/audio_small_non_capi.gd" id="1_q4fvl"]
 [ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_cdiyo"]
