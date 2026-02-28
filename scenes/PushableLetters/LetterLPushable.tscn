@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjpm667md4pjt"]
+[gd_scene load_steps=5 format=3 uid="uid://bjpm667md4pjt"]
 
+[ext_resource type="Script" uid="uid://b6lj5q82uyikf" path="res://scenes/PushableAssets/LetterBlock.gd" id="1_qoain"]
 [ext_resource type="Texture2D" uid="uid://42sn731xvm58" path="res://Art/Pixel Letter Beads - Asset Pack/Pixel Letter Beads - Asset Pack/black_L.png" id="1_s6i6r"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s6i6r"]
@@ -17,6 +18,7 @@ sleeping = true
 lock_rotation = true
 linear_damp = 10.0
 angular_damp = 10.0
+script = ExtResource("1_qoain")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_s6i6r")

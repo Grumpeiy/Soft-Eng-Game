@@ -22,9 +22,9 @@ config/icon="res://Art/icon.svg"
 [autoload]
 
 event_handler="*res://scripts/event_handler.gd"
-MenuMusic="*uid://bmxoe0kn4ymc6"
-Audio="*uid://41b1dala7a58"
-Settings="*uid://dv7m1u2rllojj"
+MenuMusic="*res://scenes/Global/Menu_Music.tscn"
+Audio="*res://scripts/audio.gd"
+Settings="*res://scripts/settings.gd"
 
 [display]
 
