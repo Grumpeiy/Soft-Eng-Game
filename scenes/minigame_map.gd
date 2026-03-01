@@ -23,6 +23,7 @@ var current_question_index: int = 0
 
 func _ready():
 	MenuMusic.stop_music()
+	$AnimationPlayer.play("FadeOut")
 	load_questions()
 	load_current_question()
 
@@ -139,8 +140,23 @@ func load_current_question():
 	generate_rows()
 	spawn_blocks()
 	
+	await typewriter_effect($ColorRect/QuestionLabel, entry["question"])
 func on_minigame_complete():
 	print("Minigame complete!")
+	$AnimationPlayer.play("WaterDiscovery")
+	
+	await get_tree().create_timer(2.0).timeout
+	for child in get_children():
+		if child.is_in_group("spawned"):
+			child.visible = false
+	#change $samplePlayer to whichever playernode to be used
+	$samplePlayer.position = Vector2(235.0, 23.0)
+	$samplePlayer.set_process(false)
+	$samplePlayer.set_physics_process(false)
+	
+	await get_tree().create_timer(2.0).timeout
+	var full_text: String = "You've rediscovered water! This will surely help your grandfather's farm and the forest from the terrible drought."
+	await typewriter_effect($ColorRect/QuestionLabel, full_text)
 	
 func check_win():
 	for placeholder in placeholders:
@@ -150,3 +166,9 @@ func check_win():
 	current_question_index += 1
 	await get_tree().create_timer(1.0).timeout  # brief pause before next question
 	load_current_question()
+
+func typewriter_effect(label: Label, full_text: String, speed: float = 0.05):
+	label.text = ""
+	for i in range(full_text.length()):
+		label.text += full_text[i]
+		await get_tree().create_timer(speed).timeout

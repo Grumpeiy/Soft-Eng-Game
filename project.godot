@@ -29,8 +29,8 @@ event_handler="*res://scripts/event_handler.gd"
 MenuMusic="*res://scenes/Global/Menu_Music.tscn"
 Audio="*res://scripts/audio.gd"
 Settings="*res://scripts/settings.gd"
-ButtonClick="*uid://bwm68pawgs7k5"
-CheckClick="*uid://chd4375cskoi3"
+ButtonClick="*res://scenes/Global/button_click.tscn"
+CheckClick="*res://scenes/Global/check_click.tscn"
 
 [display]
 
