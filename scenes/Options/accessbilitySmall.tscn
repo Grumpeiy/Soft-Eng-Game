@@ -123,9 +123,9 @@ theme_override_font_sizes/font_size = 5
 selected = 0
 fit_to_longest_item = false
 item_count = 2
-popup/item_0/text = "Small"
+popup/item_0/text = "SMALL"
 popup/item_0/id = 0
-popup/item_1/text = "Large"
+popup/item_1/text = "LARGE"
 popup/item_1/id = 1
 
 [node name="3 settings" type="VBoxContainer" parent="." unique_id=584916852]
@@ -142,13 +142,7 @@ theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
 theme_override_fonts/font = ExtResource("16_oamp3")
 theme_override_font_sizes/font_size = 9
 
-[node name="Speech" type="CheckBox" parent="3 settings" unique_id=331616386]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("16_oamp3")
-theme_override_font_sizes/font_size = 9
-
-[node name="Narration" type="CheckBox" parent="3 settings" unique_id=999433107]
+[node name="MenuNarration" type="CheckBox" parent="3 settings" unique_id=331616386]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
 theme_override_fonts/font = ExtResource("16_oamp3")
@@ -167,7 +161,7 @@ layout_mode = 2
 [node name="Motion Effects" type="CheckBox" parent="Sensory Settings" unique_id=1507872876]
 layout_mode = 2
 
-[node name="TextSize" type="OptionButton" parent="." unique_id=1988874675]
+[node name="ColorTheme" type="OptionButton" parent="." unique_id=1988874675]
 offset_left = 7.0
 offset_top = 159.0
 offset_right = 64.0
@@ -179,11 +173,46 @@ offset_top = 178.0
 offset_right = 69.0
 offset_bottom = 202.0
 
+[node name="VoiceNarration" type="OptionButton" parent="." unique_id=1165498809]
+offset_left = 13.0
+offset_top = 75.0
+offset_right = 64.0
+offset_bottom = 95.0
+size_flags_stretch_ratio = 0.37
+theme_override_font_sizes/font_size = 5
+selected = 0
+item_count = 2
+popup/item_0/text = "MALE"
+popup/item_0/id = 0
+popup/item_1/text = "FEMALE"
+popup/item_1/id = 1
+
+[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=366272843]
+bus = &"Narration"
+
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="mouse_entered" from="Accessibility" to="." method="_on_accessibility_mouse_entered"]
 [connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
+[connection signal="mouse_entered" from="Audio" to="." method="_on_audio_mouse_entered"]
 [connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
+[connection signal="mouse_entered" from="Gameplay" to="." method="_on_gameplay_mouse_entered"]
 [connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]
+[connection signal="mouse_entered" from="Other" to="." method="_on_other_mouse_entered"]
 [connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="item_selected" from="TextSettings/TextSize" to="." method="_on_text_size_item_selected"]
+[connection signal="mouse_entered" from="TextSettings/TextSize" to="." method="_on_text_size_mouse_entered"]
+[connection signal="mouse_entered" from="3 settings/Capitilzation" to="." method="_on_capitilzation_mouse_entered"]
 [connection signal="pressed" from="3 settings/Capitilzation" to="." method="_on_capitilzation_pressed"]
+[connection signal="mouse_entered" from="3 settings/MenuNarration" to="." method="_on_menu_narration_mouse_entered"]
+[connection signal="pressed" from="3 settings/MenuNarration" to="." method="_on_menu_narration_pressed"]
+[connection signal="mouse_entered" from="Sensory Settings/SoundCues" to="." method="_on_sound_cues_mouse_entered"]
+[connection signal="pressed" from="Sensory Settings/SoundCues" to="." method="_on_sound_cues_pressed"]
+[connection signal="mouse_entered" from="Sensory Settings/Motion Effects" to="." method="_on_motion_effects_mouse_entered"]
+[connection signal="pressed" from="Sensory Settings/Motion Effects" to="." method="_on_motion_effects_pressed"]
+[connection signal="mouse_entered" from="ColorTheme" to="." method="_on_color_theme_mouse_entered"]
+[connection signal="mouse_entered" from="CheckBox" to="." method="_on_check_box_mouse_entered"]
+[connection signal="pressed" from="CheckBox" to="." method="_on_check_box_pressed"]
+[connection signal="item_selected" from="VoiceNarration" to="." method="_on_voice_narration_item_selected"]
+[connection signal="mouse_entered" from="VoiceNarration" to="." method="_on_voice_narration_mouse_entered"]

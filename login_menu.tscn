@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://dduw02ugw74ae"]
+
+[ext_resource type="Script" path="res://login_menu.gd" id="1_w1ogu"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_4n733"]
+[ext_resource type="VideoStream" uid="uid://b74yonck82dlf" path="res://Art/VideoAssets/0224.ogv" id="3_78ya1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4n733"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.019038666, 0.17622626, 0.20982075, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78ya1"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="LoginMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(264, 512)
+script = ExtResource("1_w1ogu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 481.0
+offset_bottom = 270.0
+color = Color(0.07450981, 0.3764706, 0.4392157, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 455.0
+offset_bottom = 245.0
+color = Color(0.27450982, 0.6627451, 0.5803922, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+clip_contents = true
+layout_direction = 4
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1105.0
+offset_bottom = 1389.9998
+grow_vertical = 2
+scale = Vector2(0.2, 0.204)
+stream = ExtResource("3_78ya1")
+autoplay = true
+loop = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 242.0
+offset_bottom = 245.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 431.0
+offset_bottom = 220.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 134.0
+offset_right = 308.0
+offset_bottom = 174.0
+
+[node name="username" type="TextEdit" parent="TextureRect"]
+layout_mode = 0
+offset_top = -45.0
+offset_right = 169.0
+offset_bottom = -26.0
+theme_override_colors/background_color = Color(0.76862746, 0.99215686, 0.8235294, 1)
+theme_override_fonts/font = ExtResource("2_4n733")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_78ya1")
+placeholder_text = "enter username
+"
+
+[node name="usernamePanel" type="Panel" parent="TextureRect/username"]
+visible = false
+layout_mode = 0
+offset_right = 169.0
+offset_bottom = 19.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
+
+[node name="password" type="TextEdit" parent="TextureRect"]
+layout_mode = 0
+offset_right = 169.0
+offset_bottom = 19.0
+theme_override_colors/background_color = Color(0.76862746, 0.99215686, 0.8235294, 1)
+theme_override_fonts/font = ExtResource("2_4n733")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_78ya1")
+placeholder_text = "enter password"
+
+[node name="usernamePanel2" type="Panel" parent="TextureRect/password"]
+visible = false
+layout_mode = 0
+offset_right = 169.0
+offset_bottom = 19.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_top = -57.0
+offset_right = 82.0
+offset_bottom = -36.0
+theme_override_colors/font_color = Color(0.11489672, 0.11489683, 0.1148968, 1)
+theme_override_fonts/font = ExtResource("2_4n733")
+theme_override_font_sizes/font_size = 9
+text = "Username"
+
+[node name="Label2" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_top = -15.0
+offset_right = 82.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.11489672, 0.11489683, 0.1148968, 1)
+theme_override_fonts/font = ExtResource("2_4n733")
+theme_override_font_sizes/font_size = 9
+text = "Password"
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 36.0
+offset_right = 169.0
+offset_bottom = 58.0
+theme_override_colors/icon_normal_color = Color(0.76862746, 0.99215686, 0.8235294, 1)
+theme_override_fonts/font = ExtResource("2_4n733")
+theme_override_font_sizes/font_size = 8
+text = "LOG IN
+"
+
+[connection signal="button_down" from="TextureRect/Button" to="." method="_on_button_button_down"]

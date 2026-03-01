@@ -5,7 +5,13 @@ signal volume_changed(bus_name, value)
 var master_volume := 2.0
 var music_volume := 2.0
 var sfx_volume := 2.0
-var dialogue_volume := 2.0
+var narration_volume = 2.0
+
+func play_click():
+	ButtonClick.play_click()
+	
+func play_check():
+	CheckClick.play_check()
 
 func set_bus_volume(bus_name: String, value: float) -> void:
 	var bus_index = AudioServer.get_bus_index(bus_name)
@@ -24,7 +30,7 @@ func set_bus_volume(bus_name: String, value: float) -> void:
 			music_volume = value
 		"SFX":
 			sfx_volume = value
-		"Dialogue":
-			dialogue_volume = value
+		"Narration":
+			narration_volume = value
 
 	emit_signal("volume_changed", bus_name, value)

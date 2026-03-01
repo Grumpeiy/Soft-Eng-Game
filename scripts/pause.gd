@@ -20,15 +20,24 @@ func testEsc():
 		else:
 			pause()
 
-func _on_resume_pressed() -> void:
-	resume()
+#func _on_resume_pressed() -> void:
+	#resume()
+	
+func _on_resume_pressed():
+	Audio.play_click()
+	get_tree().paused = false
+	queue_free()  # Remove the pause menu
 
 func _process(delta: float) -> void:
 	testEsc()
 
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	Audio.play_click()
+	get_tree().paused = false  # Unpause before changing scene
+	
+	# Return to the player's preferred main menu
+	get_tree().change_scene_to_file(Settings.current_main_menu_scene)
 
 
 func _on_option_pressed() -> void:

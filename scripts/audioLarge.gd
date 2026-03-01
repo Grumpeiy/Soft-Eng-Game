@@ -8,13 +8,14 @@ const MAIN_MENU_SCENE = "res://scenes/options/main_menu.tscn"
 @onready var master_slider = $"Audio Settings 1/Audio Settings/Master"
 @onready var music_slider = $"Audio Settings 2/Audio balance/Music"
 @onready var sfx_slider = $"Audio Settings 2/Audio balance/SFX"
-@onready var dialogue_slider = $"Audio Settings 2/Audio balance/Dialogue"
+@onready var narration_slider = $"Audio Settings 2/Audio balance/Narration"
 
 func _ready():
+	Settings.narration_player = $NarrationPlayer
 	master_slider.value = Audio.master_volume
 	music_slider.value = Audio.music_volume
 	sfx_slider.value = Audio.sfx_volume
-	dialogue_slider.value = Audio.dialogue_volume
+	narration_slider.value = Audio.narration_volume
 	
 	Audio.volume_changed.connect(_on_volume_changed)
 	
@@ -26,22 +27,26 @@ func _on_volume_changed(bus_name, value):
 			music_slider.value = value
 		"SFX":
 			sfx_slider.value = value
-		"Dialogue":
-			dialogue_slider.value = value
+		"Narration":
+			narration_slider.value = value
 
 func change_scene(path: String) -> void:
 	get_tree().change_scene_to_file(path)
 
 func _on_accessibility_pressed() -> void:
+	Audio.play_click()
 	change_scene(ACCESSIBILITY_SCENE)
 
 func _on_gameplay_pressed() -> void:
+	Audio.play_click()
 	change_scene(GAMEPLAY_SCENE)
 
 func _on_other_pressed() -> void:
+	Audio.play_click()
 	change_scene(OTHER_SCENE)
 
 func _on_back_pressed() -> void:
+	Audio.play_click()
 	change_scene(MAIN_MENU_SCENE)
 
 func _on_master_value_changed(value: float) -> void:
@@ -53,5 +58,32 @@ func _on_music_value_changed(value: float) -> void:
 func _on_sfx_value_changed(value: float) -> void:
 	Audio.set_bus_volume("SFX", value)
 
-func _on_dialogue_value_changed(value: float) -> void:
-	Audio.set_bus_volume("Dialogue", value)
+func _on_narration_value_changed(value: float) -> void:
+	Audio.set_bus_volume("Narration", value)
+
+func _on_accessibility_mouse_entered() -> void:
+	Settings.play_narration("Accessibility")
+
+func _on_audio_mouse_entered() -> void:
+	Settings.play_narration("Audio")
+
+func _on_gameplay_mouse_entered() -> void:
+	Settings.play_narration("Gameplay")
+
+func _on_other_mouse_entered() -> void:
+	Settings.play_narration("Other")
+
+func _on_back_mouse_entered() -> void:
+	Settings.play_narration("Back")
+
+func _on_master_mouse_entered() -> void:
+	Settings.play_narration("Volume")
+
+func _on_music_mouse_entered() -> void:
+	Settings.play_narration("Music")
+
+func _on_narration_mouse_entered() -> void:
+	Settings.play_narration("Narration")
+
+func _on_sfx_mouse_entered() -> void:
+	Settings.play_narration("SFX")
