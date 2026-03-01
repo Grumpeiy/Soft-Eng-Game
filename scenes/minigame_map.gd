@@ -22,6 +22,7 @@ var questions: Array = []
 var current_question_index: int = 0
 
 func _ready():
+	MenuMusic.stop_music()
 	load_questions()
 	load_current_question()
 

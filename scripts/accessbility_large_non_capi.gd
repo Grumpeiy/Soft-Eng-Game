@@ -4,9 +4,6 @@ var button_type = null
 
 func _ready():
 	Settings.narration_player = $NarrationPlayer
-	Settings.sync_accessibility(self)
-	
-	Settings.narration_player = $NarrationPlayer
 	
 	var cap_checkbox = $"3 settings/Capitilzation"
 	cap_checkbox.button_pressed = Settings.capitalization_enabled
@@ -20,7 +17,14 @@ func _ready():
 		gender_option.select(0)
 	else:
 		gender_option.select(1)
-
+	
+		# NEW: Sync sound cues checkbox and apply state
+	var sound_cues_checkbox = $"Sensory Settings/SoundCues"
+	sound_cues_checkbox.button_pressed = Settings.sound_cues_enabled
+	
+	# Apply the sound cue state on load
+	Settings.apply_sound_cues()
+	
 func _on_accessibility_pressed() -> void:
 	pass
 	#wget_tree().change_scene_to_file("res://scenes/options/accessbility.tscn")
