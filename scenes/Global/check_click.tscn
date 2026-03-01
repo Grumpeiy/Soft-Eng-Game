@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c48sbne2t7ou1"]
+[gd_scene format=3 uid="uid://chd4375cskoi3"]
 
 [ext_resource type="AudioStream" uid="uid://e4gnl4pymax5" path="res://Sounds/SFX/checkbox.mp3" id="1_l3c6s"]
-[ext_resource type="Script" uid="uid://c1l1rxolvx7tj" path="res://scripts/check_click.gd" id="2_mjmbo"]
+[ext_resource type="Script" path="res://scripts/check_click.gd" id="2_mjmbo"]
 
 [node name="CheckClick" type="AudioStreamPlayer" unique_id=737681168]
 stream = ExtResource("1_l3c6s")

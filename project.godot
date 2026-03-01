@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="SoftEng"
 run/main_scene="uid://homuvwxrj621"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
 [audio]
@@ -27,10 +27,10 @@ buses/default_bus_layout="uid://bn2huvug1fn36"
 
 event_handler="*res://scripts/event_handler.gd"
 MenuMusic="*res://scenes/Global/Menu_Music.tscn"
-CheckClick="*res://scenes/Global/check_click.tscn"
-ButtonClick="*res://scenes/Global/button_click.tscn"
 Audio="*res://scripts/audio.gd"
 Settings="*res://scripts/settings.gd"
+ButtonClick="*uid://bwm68pawgs7k5"
+CheckClick="*uid://chd4375cskoi3"
 
 [display]
 
