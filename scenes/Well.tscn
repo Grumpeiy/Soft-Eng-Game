@@ -2742,9 +2742,9 @@ shape = SubResource("RectangleShape2D_6djb5")
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer2" instance=ExtResource("20_g4yyb")]
-offset_left = 0.0
+offset_left = -4.0
 offset_top = 2.0
-offset_right = 0.0
+offset_right = -4.0
 offset_bottom = 2.0
 
 [connection signal="pressed" from="CanvasLayer/battlescene/Panel/answer_button" to="CanvasLayer/battlescene" method="_on_answer_button_pressed"]

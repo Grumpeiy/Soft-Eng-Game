@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://crn5cyo5in4c0"]
+[gd_scene load_steps=0 format=3 uid="uid://crn5cyo5in4c0"]
 
 [ext_resource type="Script" uid="uid://c3trvjioat3ig" path="res://scripts/options_small_non_capi.gd" id="1_ridn2"]
 [ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_gcwug"]
@@ -108,17 +108,9 @@ texture_hover = ExtResource("15_xvy2y")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=350632867]
-bus = &"Narration"
-
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
-[connection signal="mouse_entered" from="Accessibility" to="." method="_on_accessibility_mouse_entered"]
 [connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
-[connection signal="mouse_entered" from="Audio" to="." method="_on_audio_mouse_entered"]
 [connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
-[connection signal="mouse_entered" from="Gameplay" to="." method="_on_gameplay_mouse_entered"]
 [connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]
-[connection signal="mouse_entered" from="Other" to="." method="_on_other_mouse_entered"]
 [connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
-[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -143,7 +143,7 @@ tick_count = 5
 ticks_on_borders = true
 ticks_position = 3
 
-[node name="Narration" type="HSlider" parent="AudioSmall2/BalanceSmall" unique_id=2039710369]
+[node name="Dialogue" type="HSlider" parent="AudioSmall2/BalanceSmall" unique_id=2039710369]
 layout_mode = 2
 max_value = 4.0
 value = 2.0
@@ -159,25 +159,13 @@ tick_count = 5
 ticks_on_borders = true
 ticks_position = 3
 
-[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=626576536]
-bus = &"Narration"
-
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
-[connection signal="mouse_entered" from="Accessibility" to="." method="_on_accessibility_mouse_entered"]
 [connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
-[connection signal="mouse_entered" from="Audio" to="." method="_on_audio_mouse_entered"]
 [connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
-[connection signal="mouse_entered" from="Gameplay" to="." method="_on_gameplay_mouse_entered"]
 [connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]
-[connection signal="mouse_entered" from="Other" to="." method="_on_other_mouse_entered"]
 [connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
-[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="mouse_entered" from="AudioSmall/SettingsSmall/Master" to="." method="_on_master_mouse_entered"]
 [connection signal="value_changed" from="AudioSmall/SettingsSmall/Master" to="." method="_on_master_small_value_changed"]
-[connection signal="mouse_entered" from="AudioSmall2/BalanceSmall/Music" to="." method="_on_music_mouse_entered"]
 [connection signal="value_changed" from="AudioSmall2/BalanceSmall/Music" to="." method="_on_music_small_value_changed"]
-[connection signal="mouse_entered" from="AudioSmall2/BalanceSmall/Narration" to="." method="_on_narration_mouse_entered"]
-[connection signal="value_changed" from="AudioSmall2/BalanceSmall/Narration" to="." method="_on_narration_value_changed"]
-[connection signal="mouse_entered" from="AudioSmall2/BalanceSmall/SFX" to="." method="_on_sfx_mouse_entered"]
+[connection signal="value_changed" from="AudioSmall2/BalanceSmall/Dialogue" to="." method="_on_dialogue_small_value_changed"]
 [connection signal="value_changed" from="AudioSmall2/BalanceSmall/SFX" to="." method="_on_sfx_value_changed"]

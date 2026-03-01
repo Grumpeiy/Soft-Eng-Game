@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cox3wesbfnpxm"]
 
-[ext_resource type="Script" uid="uid://dfbmoykal77r0" path="res://scripts/main_menu_non_capi_large.gd" id="1_lohir"]
 [ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_r3scf"]
 [ext_resource type="Texture2D" uid="uid://cs23st3oy3puh" path="res://Art/Buttons/Student Profile.png" id="3_6r3dk"]
 [ext_resource type="Texture2D" uid="uid://tjkmkfoe04w8" path="res://Art/Buttons/Badges.png" id="4_jreu0"]
@@ -18,9 +17,43 @@
 [ext_resource type="Texture2D" uid="uid://1hcv8i50f6al" path="res://Art/Buttons/non capitalized menu/Group 72.png" id="16_xyaoh"]
 [ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="17_2hk06"]
 
+[sub_resource type="GDScript" id="GDScript_4t14q"]
+script/source = "extends Node2D
+
+var button_type = null
+@onready var transition_fx = preload(\"res://Sounds/music/MenuMusic.mp3\")
+
+func _ready():
+	MenuMusic.play_music_level()
+
+
+func _on_start_pressed():
+	button_type = \"start\"
+	$fade_transition.show()
+	$fade_transition/fade_timer.start()
+	$fade_transition/AnimationPlayer.play(\"fade_in\")
+
+
+func _on_option_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/Options/optionsNonCapi.tscn\")
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+
+
+func transition():
+	MenuMusic.play_FX(transition_fx, -12)
+
+
+func _on_fade_timer_timeout():
+	if button_type == \"start\":
+		get_tree().change_scene_to_file(\"res://scenes/Well.tscn\")
+"
+
 [node name="Main Menu non capi large" type="Node2D" unique_id=1719991470]
 position = Vector2(387, 40)
-script = ExtResource("1_lohir")
+script = SubResource("GDScript_4t14q")
 
 [node name="background" type="TextureRect" parent="." unique_id=144256320]
 anchors_preset = -1
@@ -136,17 +169,9 @@ offset_bottom = 260.0
 
 [node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
 
-[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=641480614]
-bus = &"Narration"
-
-[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="mouse_entered" from="Option" to="." method="_on_option_mouse_entered"]
 [connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
-[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Progress" to="." method="_on_progress_mouse_entered"]
 [connection signal="pressed" from="Progress" to="." method="_on_progress_pressed"]
-[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

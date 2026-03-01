@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dhff4t76ycsru"]
+[gd_scene load_steps=0 format=3 uid="uid://dhff4t76ycsru"]
 
 [ext_resource type="Script" uid="uid://bhp2jxmn1k56p" path="res://scripts/main_menu_non_capi_small.gd" id="1_qogig"]
 [ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_jt0e2"]
@@ -136,17 +136,9 @@ offset_bottom = 260.0
 
 [node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
 
-[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=389623922]
-bus = &"Narration"
-
-[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="mouse_entered" from="Option" to="." method="_on_option_mouse_entered"]
 [connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
-[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="mouse_entered" from="Progress" to="." method="_on_progress_mouse_entered"]
 [connection signal="pressed" from="Progress" to="." method="_on_progress_pressed"]
-[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

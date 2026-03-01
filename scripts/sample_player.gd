@@ -2,25 +2,35 @@ extends CharacterBody2D
 
 signal dialogueStarted
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 50.0
 var inDialogue = false
 
 func _physics_process(delta: float) -> void:
-	#if InputInput.is_action_just_pressed("interact") :
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	if inDialogue:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
+	var direction = Vector2.ZERO
+	
+	direction.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	direction.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	
+	if direction != Vector2.ZERO:
+		direction = direction.normalized()
+	
+	velocity = direction * SPEED
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+
+		if collider is RigidBody2D:
+			var push_direction = -collision.get_normal()
+			var push_force = 30.0
+			# Only push if the object isn't already moving fast
+			if collider.linear_velocity.length() < 30.0:
+				collider.apply_central_impulse(push_direction * push_force)
+			# Only push if the object isn't already moving fast
+		

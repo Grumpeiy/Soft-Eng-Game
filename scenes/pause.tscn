@@ -64,8 +64,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_right = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jl8xs")
@@ -73,9 +71,9 @@ script = ExtResource("1_jl8xs")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=795134083]
 material = SubResource("ShaderMaterial_30wyh")
 layout_mode = 0
-offset_left = -22.0
+offset_left = -21.0
 offset_top = -27.0
-offset_right = 511.0
+offset_right = 512.0
 offset_bottom = 309.0
 
 [node name="Student Profile" type="TextureRect" parent="." unique_id=1876555943]

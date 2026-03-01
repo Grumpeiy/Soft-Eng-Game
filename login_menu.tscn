@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dduw02ugw74ae"]
+[gd_scene load_steps=6 format=3 uid="uid://dduw02ugw74ae"]
 
 [ext_resource type="Script" path="res://login_menu.gd" id="1_w1ogu"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_4n733"]
