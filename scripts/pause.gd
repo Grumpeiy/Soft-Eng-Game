@@ -20,13 +20,14 @@ func testEsc():
 		else:
 			pause()
 
-#func _on_resume_pressed() -> void:
-	#resume()
-	
-func _on_resume_pressed():
+func _on_resume_pressed() -> void:
 	Audio.play_click()
-	get_tree().paused = false
-	queue_free()  # Remove the pause menu
+	resume()
+	
+#func _on_resume_pressed():
+	#Audio.play_click()
+	#get_tree().paused = false
+	#queue_free()  # Remove the pause menu
 
 func _process(delta: float) -> void:
 	testEsc()
