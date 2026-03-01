@@ -1,0 +1,10 @@
+[gd_scene load_steps=0 format=3 uid="uid://do4ecj7qst1pp"]
+
+[ext_resource type="AudioStream" uid="uid://cfsk2q3fjkq27" path="res://Sounds/SFX/ButtonClick.mp3" id="1_vgr1p"]
+[ext_resource type="Script" uid="uid://css7s3bxbr66m" path="res://scripts/button_click.gd" id="2_i6lap"]
+
+[node name="ClickPlayer" type="AudioStreamPlayer" unique_id=126579352]
+stream = ExtResource("1_vgr1p")
+volume_db = -9.122
+bus = &"SFX"
+script = ExtResource("2_i6lap")
