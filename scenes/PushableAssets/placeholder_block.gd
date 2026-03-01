@@ -26,6 +26,9 @@ func _on_body_entered(body):
 		body.teleport_to(global_position)
 		var indicator = get_meta("indicator")
 		indicator.play("correct")
+	
+	# notify the main scene to check win condition
+		get_tree().get_root().get_node("minigameMap").check_win()
 	else:
 		var indicator = get_meta("indicator")
 		indicator.play("wrong")

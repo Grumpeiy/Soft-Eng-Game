@@ -8,6 +8,8 @@ extends Control
 @export var blank_row_area: Rect2 = Rect2(151, 89.0, 176, 80)
 @export var row_center_x: float = 239.0
 
+@export var start_index: int = 0
+
 var placeholder_scene = preload("res://scenes/PushableAssets/PlaceholderBlock.tscn")
 var indicator_scene = preload("res://scenes/PushableAssets/IndicatorBlock.tscn")
 
@@ -16,11 +18,12 @@ var words: Array = []
 var tile_size: int = 16
 var placeholders: Array = []  # stores all placeholder blocks for win detection later
 
+var questions: Array = []
+var current_question_index: int = 0
+
 func _ready():
-	words = answer.split(",")
-	#$QuestionLabel.text = question
-	generate_rows()
-	spawn_blocks()
+	load_questions()
+	load_current_question()
 
 func get_valid_position(area: Rect2) -> Vector2:
 	var attempts = 0
@@ -60,6 +63,8 @@ func spawn_blocks():
 		block.set_meta("letter", letter.to_upper())
 		add_child(block)
 		
+		block.add_to_group("spawned")
+		
 func generate_rows():
 	var row_layouts = []
 	# now treat the whole answer as one row, spaces become gaps
@@ -95,4 +100,52 @@ func generate_rows():
 		add_child(indicator)
 
 		placeholder.set_meta("indicator", indicator)
-			
+		
+		placeholder.add_to_group("spawned")
+		indicator.add_to_group("spawned")
+
+func load_questions():
+	var file = FileAccess.open("res://dialogue/PushableMinigame/QuestionDataset.json", FileAccess.READ)
+	if file == null:
+		print("ERROR: Could not open dataset!")
+		return
+	var json = JSON.new()
+	var text = file.get_as_text()
+	file.close()
+	var result = json.parse(text)
+	if result != OK:
+		print("ERROR: Could not parse JSON!")
+		return
+	var data = json.get_data()
+	# grab only the 2 questions starting from start_index
+	questions = data.slice(start_index, start_index + 2)
+
+func load_current_question():
+	if current_question_index >= questions.size():
+		on_minigame_complete()
+		return
+	var entry = questions[current_question_index]
+	answer = entry["answer"].to_upper()
+	$ColorRect/QuestionLabel.text = entry["question"]
+	words = answer.split(" ") if " " in answer else [answer]
+	# clear previous state
+	spawned_positions.clear()
+	placeholders.clear()
+	for child in get_children():
+		if child.is_in_group("spawned"):
+			child.queue_free()
+	await get_tree().process_frame
+	generate_rows()
+	spawn_blocks()
+	
+func on_minigame_complete():
+	print("Minigame complete!")
+	
+func check_win():
+	for placeholder in placeholders:
+		if not placeholder.is_filled:
+			return
+	# all filled correctly
+	current_question_index += 1
+	await get_tree().create_timer(1.0).timeout  # brief pause before next question
+	load_current_question()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=4 uid="uid://bav3xkle25bvb"]
+[gd_scene load_steps=41 format=4 uid="uid://bav3xkle25bvb"]
 
 [ext_resource type="Texture2D" uid="uid://drahiyl4mug8e" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_sn5h5"]
 [ext_resource type="Script" uid="uid://c5ugqbq1d64jc" path="res://scenes/minigame_map.gd" id="1_yfmv5"]
 [ext_resource type="PackedScene" uid="uid://d2x31gs6cgc3x" path="res://scenes/sample_player.tscn" id="2_jky1d"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="3_ntu0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jky1d"]
 texture = ExtResource("1_sn5h5")
@@ -1849,6 +1850,10 @@ size = Vector2(80, 2.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svyin"]
 size = Vector2(20, 1.8358002)
 
+[sub_resource type="LabelSettings" id="LabelSettings_5q8yr"]
+font = ExtResource("3_ntu0u")
+font_size = 10
+
 [node name="minigameMap" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -1857,7 +1862,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yfmv5")
-answer = "real niggas"
+answer = "wet season"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(103, -31)
@@ -2097,6 +2102,22 @@ offset_top = 203.0
 offset_right = 487.0
 offset_bottom = 243.0
 color = Color(0.20906562, 0.20906562, 0.20906562, 0.657)
+
+[node name="QuestionLabel" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -9.0
+offset_right = 248.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_5q8yr")
+horizontal_alignment = 1
 
 [node name="samplePlayer" parent="." instance=ExtResource("2_jky1d")]
 position = Vector2(172, 38)
