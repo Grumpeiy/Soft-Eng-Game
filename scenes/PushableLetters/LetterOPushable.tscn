@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxopwusqulok0"]
 
-[ext_resource type="Texture2D" uid="uid://b1sj1dnwbirn5" path="res://Art/Pixel Letter Beads - Asset Pack/Pixel Letter Beads - Asset Pack/black_O.png" id="1_2d163"]
 [ext_resource type="Script" uid="uid://b6lj5q82uyikf" path="res://scenes/PushableAssets/LetterBlock.gd" id="1_mxdoh"]
+[ext_resource type="Texture2D" uid="uid://cyuf6nssx2p6k" path="res://Art/Pixel Letter Beads - Asset Pack/black_O.png" id="2_mxdoh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mxdoh"]
 friction = 5.0
@@ -21,7 +21,7 @@ angular_damp = 10.0
 script = ExtResource("1_mxdoh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_2d163")
+texture = ExtResource("2_mxdoh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uae4c")
