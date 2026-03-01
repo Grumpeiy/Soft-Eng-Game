@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://27vq8s25sr3y"]
+
+[ext_resource type="Texture2D" uid="uid://dmviwome08o0" path="res://Art/MinigameAssets/RightWrongSpriteSheetNEWOFFICIAL1.png" id="1_f336q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfspa"]
+atlas = ExtResource("1_f336q")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ilhu"]
+atlas = ExtResource("1_f336q")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brrxb"]
+atlas = ExtResource("1_f336q")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwqug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfspa")
+}],
+"loop": true,
+"name": &"correct",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ilhu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brrxb")
+}],
+"loop": true,
+"name": &"wrong",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_pwqug")
+animation = &"idle"

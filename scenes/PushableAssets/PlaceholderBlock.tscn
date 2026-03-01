@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwkmbv2566y1d"]
+
+[ext_resource type="Texture2D" uid="uid://dmviwome08o0" path="res://Art/MinigameAssets/RightWrongSpriteSheetNEWOFFICIAL1.png" id="1_m2p3d"]
+[ext_resource type="Script" uid="uid://cc7ul1srpc4ab" path="res://scenes/PushableAssets/placeholder_block.gd" id="2_kjgpt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjgpt"]
+atlas = ExtResource("1_m2p3d")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kadr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjgpt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8p8eh"]
+size = Vector2(2.359375, 2.421875)
+
+[node name="AnimatedSprite2D" type="Area2D"]
+script = ExtResource("2_kjgpt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kadr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8p8eh")
