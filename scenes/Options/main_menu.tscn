@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d3daaffheq73w"]
+[gd_scene load_steps=18 format=3 uid="uid://d3daaffheq73w"]
 
 [ext_resource type="Script" uid="uid://hs4p6mk7k8xl" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_bqqt6"]
@@ -18,11 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://dko0jg7vbp27q" path="res://Art/Buttons/BADGES_CLICKED.png" id="13_7b55j"]
 [ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="17_j7ex8"]
 
-[node name="Main Menu" type="Node2D" unique_id=1719991470]
+[node name="Main Menu" type="Node2D"]
 position = Vector2(387, 40)
 script = ExtResource("1_ekxnf")
 
-[node name="background" type="TextureRect" parent="." unique_id=144256320]
+[node name="background" type="TextureRect" parent="."]
 anchors_preset = -1
 anchor_right = 1.057
 anchor_bottom = 0.869
@@ -36,7 +36,7 @@ texture = ExtResource("2_bqqt6")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Student Profile" type="TextureRect" parent="." unique_id=1463688815]
+[node name="Student Profile" type="TextureRect" parent="."]
 offset_left = -122.0
 offset_top = -24.0
 offset_right = 81.0
@@ -45,7 +45,7 @@ texture = ExtResource("3_5pajh")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Badges" type="TextureRect" parent="." unique_id=933165845]
+[node name="Badges" type="TextureRect" parent="."]
 offset_left = -122.0
 offset_top = 171.0
 offset_right = 81.0
@@ -54,7 +54,7 @@ texture = ExtResource("4_j7ex8")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Quest" type="TextureRect" parent="." unique_id=784879559]
+[node name="Quest" type="TextureRect" parent="."]
 offset_left = -122.0
 offset_top = 71.0
 offset_right = 81.0
@@ -63,7 +63,7 @@ texture = ExtResource("5_a8gd2")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="GreenBG" type="TextureRect" parent="." unique_id=2137098979]
+[node name="GreenBG" type="TextureRect" parent="."]
 offset_left = -367.0
 offset_top = -24.0
 offset_right = -162.0
@@ -72,7 +72,7 @@ texture = ExtResource("3_jk1qb")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Start" type="TextureButton" parent="." unique_id=2092931484]
+[node name="Start" type="TextureButton" parent="."]
 offset_left = -348.0
 offset_top = -8.0
 offset_right = -183.0
@@ -83,7 +83,7 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Option" type="TextureButton" parent="." unique_id=1699791284]
+[node name="Option" type="TextureButton" parent="."]
 offset_left = -348.0
 offset_top = 35.0
 offset_right = -183.0
@@ -94,7 +94,7 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="TextureButton" parent="." unique_id=581517196]
+[node name="Quit" type="TextureButton" parent="."]
 offset_left = -348.0
 offset_top = 167.0
 offset_right = -183.0
@@ -105,7 +105,7 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Progress" type="TextureButton" parent="." unique_id=2030933053]
+[node name="Progress" type="TextureButton" parent="."]
 offset_left = -348.0
 offset_top = 78.0
 offset_right = -183.0
@@ -116,7 +116,11 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
+<<<<<<< Updated upstream
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1089471628]
+=======
+[node name="BadgesButton" type="TextureButton" parent="."]
+>>>>>>> Stashed changes
 offset_left = -348.0
 offset_top = 123.0
 offset_right = -183.0
@@ -127,15 +131,22 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("17_j7ex8")]
+[node name="fade_transition" parent="." instance=ExtResource("17_j7ex8")]
 visible = false
 offset_left = -387.0
 offset_top = -50.0
 offset_right = 109.0
 offset_bottom = 260.0
 
-[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
+[node name="fade_timer" type="Timer" parent="fade_transition"]
 
+<<<<<<< Updated upstream
+=======
+[node name="NarrationPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Narration"
+
+[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
+>>>>>>> Stashed changes
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
