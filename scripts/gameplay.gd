@@ -4,6 +4,22 @@ var button_type = null
 
 func _ready():
 	Settings.narration_player = $NarrationPlayer
+	
+	# Safely sync difficulty from Settings (check if node exists first)
+	if has_node("DifficultyOptions"):
+		var difficulty_dropdown = $DifficultyOptions
+		if Settings.difficulty_level == "easy":
+			difficulty_dropdown.select(0)
+		elif Settings.difficulty_level == "normal":
+			difficulty_dropdown.select(1)
+		else:
+			difficulty_dropdown.select(2)
+	else:
+		print("⚠️ DifficultyOptions node not found in scene")
+	
+	# Sync adaptive assistance checkbox if it exists
+	if has_node("AdaptiveCheckbox"):
+		$AdaptiveCheckbox.button_pressed = Settings.adaptive_assistance_enabled
 
 func _on_accessibility_pressed() -> void:
 	Audio.play_click()
@@ -41,7 +57,7 @@ func _on_back_mouse_entered() -> void:
 
 func _on_difficulty_mouse_entered() -> void:
 	Settings.play_narration("DifficultyLevel")
-	
+
 func _on_guided_mouse_entered() -> void:
 	Settings.play_narration("Guided")
 
@@ -51,22 +67,41 @@ func _on_tutorial_mouse_entered() -> void:
 func _on_autoplay_mouse_entered() -> void:
 	Settings.play_narration("Autoplay")
 
-
 func _on_difficulty_pressed() -> void:
 	Audio.play_check()
-	pass # Replace with function body.
-
 
 func _on_guided_pressed() -> void:
 	Audio.play_check()
-	pass # Replace with function body.
-
 
 func _on_tutorial_pressed() -> void:
 	Audio.play_check()
-	pass # Replace with function body.
-
 
 func _on_autoplay_pressed() -> void:
 	Audio.play_check()
-	pass # Replace with function body.
+
+func _on_difficulty_item_selected(index: int) -> void:
+	match index:
+		0:
+			Settings.difficulty_level = "easy"
+		1:
+			Settings.difficulty_level = "normal"
+		2:
+			Settings.difficulty_level = "hard"
+	
+	print("Difficulty set to: ", Settings.difficulty_level)
+	
+	# When manually setting difficulty, disable adaptive assistance
+	Settings.adaptive_assistance_enabled = false
+	if has_node("AdaptiveCheckbox"):
+		$AdaptiveCheckbox.button_pressed = false
+	
+	print("Adaptive assistance disabled (manual difficulty selected)")
+
+# NEW: Toggle adaptive assistance
+func _on_adaptive_checkbox_toggled(button_pressed: bool) -> void:
+	Settings.adaptive_assistance_enabled = button_pressed
+	
+	if button_pressed:
+		print("✨ Adaptive Assistance ENABLED - system will auto-adjust based on performance")
+	else:
+		print("🔒 Adaptive Assistance DISABLED - using manual difficulty:", Settings.difficulty_level)

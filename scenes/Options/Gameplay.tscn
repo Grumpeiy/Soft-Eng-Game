@@ -117,11 +117,18 @@ offset_right = -45.0
 offset_bottom = 105.0
 theme_override_constants/separation = 3
 
-[node name="difficulty" type="CheckBox" parent="gameplay" unique_id=1758657126]
+[node name="DifficultyOptions" type="OptionButton" parent="gameplay" unique_id=712859151]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_fonts/font = ExtResource("16_owgqo")
-theme_override_font_sizes/font_size = 9
+size_flags_stretch_ratio = 0.37
+theme_override_font_sizes/font_size = 5
+selected = 0
+item_count = 3
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
 
 [node name="guided" type="CheckBox" parent="gameplay" unique_id=290771372]
 layout_mode = 2
@@ -155,8 +162,9 @@ bus = &"Narration"
 [connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
 [connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
-[connection signal="mouse_entered" from="gameplay/difficulty" to="." method="_on_difficulty_mouse_entered"]
-[connection signal="pressed" from="gameplay/difficulty" to="." method="_on_difficulty_pressed"]
+[connection signal="item_selected" from="gameplay/DifficultyOptions" to="." method="_on_difficulty_item_selected"]
+[connection signal="mouse_entered" from="gameplay/DifficultyOptions" to="." method="_on_difficulty_mouse_entered"]
+[connection signal="pressed" from="gameplay/DifficultyOptions" to="." method="_on_difficulty_pressed"]
 [connection signal="mouse_entered" from="gameplay/guided" to="." method="_on_guided_mouse_entered"]
 [connection signal="pressed" from="gameplay/guided" to="." method="_on_guided_pressed"]
 [connection signal="mouse_entered" from="gameplay/tutorial" to="." method="_on_tutorial_mouse_entered"]
