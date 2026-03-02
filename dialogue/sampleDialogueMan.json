@@ -1,9 +1,10 @@
 [
-	{"Name": "Bunny", "Text": "Please, help me!"},
-	{"Name": "You", "Text": "What happened?!"},
-	{"Name": "Bunny", "Text": "My easter eggs have gone missing!"},
-	{"Name": "You", "Text": "That's terrible!"},
-	{"Name": "Bunny", "Text": "Oh Boy.. what should I do.."},
-	{"Name": "You", "Text": "Don't worry. We're going to find it. Where did you last put them?"},
-	{"Name": "Bunny", "Text": "Mi Bomboklaat!"}
+	{"Name": "Grandpa", "Text": "Biringan is in deep trouble..", "Portrait": "Grandpa"},
+	{"Name": "Grandpa", "Text": "The drought is getting worse every day!", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "I know, the trees are starting to die out..", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "We need to get that water before everything dries out!", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "Do you have any leads?", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "Look around the forest, I saw someone suspicious there.", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "Don't worry. We're going to find it and put an end to this!", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "Stay safe, my son!", "Portrait": "Grandpa"}
 ]

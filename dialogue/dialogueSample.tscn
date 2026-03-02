@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://btm4vm18s77s8"]
+[gd_scene load_steps=10 format=3 uid="uid://btm4vm18s77s8"]
 
 [ext_resource type="Script" uid="uid://gesym4vv2x7h" path="res://dialogue/dialogueBunny.gd" id="1_ajdv3"]
 [ext_resource type="Texture2D" uid="uid://djx5iaumnk3r1" path="res://Art/SampleNpcDialogueBox2.png" id="1_hwebn"]
+[ext_resource type="PackedScene" uid="uid://bvcwhnqdejt1n" path="res://scenes/NPC1x1.tscn" id="2_qv5is"]
 [ext_resource type="Script" uid="uid://bc03umi7t818a" path="res://dialogue/typewriterfx.gd" id="3_0py07"]
+[ext_resource type="PackedScene" uid="uid://d0dpl2dd6rt5f" path="res://scenes/player_1x_1.tscn" id="3_xtcad"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="5_ix8sh"]
 
 [sub_resource type="Animation" id="Animation_xtcad"]
 length = 0.001
@@ -41,37 +44,60 @@ _data = {
 }
 
 [node name="Dialogue" type="Control"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_ajdv3")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 43.0
+offset_right = 121.0
+offset_bottom = 87.0
+color = Color(0.9791867, 0.8375471, 0.62389064, 1)
+
+[node name="SpriteFrontNPC" parent="ColorRect" instance=ExtResource("2_qv5is")]
+position = Vector2(23.000008, 33.000008)
+scale = Vector2(2.2968748, 2.2286787)
+autoplay = "idle"
+
+[node name="PLAYER1x1" parent="ColorRect" instance=ExtResource("3_xtcad")]
+position = Vector2(23, 37)
+scale = Vector2(1.8741862, 1.9146272)
+frame_progress = 0.6898715
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 40.0
-offset_right = 283.0
-offset_bottom = 105.0
+offset_left = -53.0
+offset_top = 28.0
+offset_right = 331.0
+offset_bottom = 111.0
 texture = ExtResource("1_hwebn")
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 45.0
-offset_right = 203.0
-offset_bottom = 85.0
+offset_left = 128.0
+offset_top = 57.0
+offset_right = 278.0
+offset_bottom = 89.5
 scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("5_ix8sh")
 bbcode_enabled = true
 text = "[font=res://Art/Minecraftia-Regular.ttf]NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 130.0
-offset_top = 16.0
-offset_right = 302.5
-offset_bottom = 96.0
+offset_left = 178.0
+offset_top = 20.0
+offset_right = 417.99997
+offset_bottom = 125.0
 scale = Vector2(0.4, 0.4)
+theme_override_fonts/normal_font = ExtResource("5_ix8sh")
 bbcode_enabled = true
 text = "[font=res://Art/Minecraftia-Regular.ttf]yadayadayada"
 
