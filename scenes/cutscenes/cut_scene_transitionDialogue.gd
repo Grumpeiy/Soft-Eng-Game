@@ -26,24 +26,26 @@ var is_animating = false
 
 func _ready():
 	narration.visible = false
+	$AnimatedSprite2D2.visible = false
 	if anim_player.has_animation("RESET"):
 		anim_player.play("RESET")
 	
-	# REMOVED the 1.0 timer here. It now starts instantly.
+	await get_tree().create_timer(1.0).timeout
 	start_intro()
-	
+
 func start_intro():
 	if dActive: return
 	dActive = true
 	
 	# 1. Play IntroP1 (Cinematic Borders/Camera Setup)
 	# We MUST wait for this to finish, otherwise IntroP2 will be skipped.
-	await run_animation_safely("IntroP1")
+	run_animation_safely("IntroP1")
 	
 	# 2. Start Camera movement logic
 	camera.enabled = true
 	start_camera_movement()
 	
+	anim_player.animation_finished
 	# 3. Show UI and start the first dialogue (Line 0)
 	narration.visible = true
 	currentDialogueID = -1
@@ -82,7 +84,7 @@ func next_script():
 	match currentDialogueID:
 		0: 
 			# Line 0: "Thriving farm" -> Start IntroP2
-			run_animation_safely("IntroP2")
+			await run_animation_safely("IntroP2")
 		1:
 			# Line 1: "Grandfather's hardwork" -> DO NOTHING (Pass)
 			# This ensures IntroP2 keeps playing and isn't replaced by IntroP3 yet.
@@ -97,6 +99,7 @@ func next_script():
 		# Add more cases (5, 6, 7) as needed to match your animations
 		7:
 			run_animation_safely("IntroP6")
+		
 	
 	# --- TEXT LOGIC ---
 	var current_text = dialogLines[currentDialogueID]['Text']
@@ -119,4 +122,21 @@ func run_animation_safely(anim_name: String):
 func end_intro():
 	dActive = false
 	narration.visible = false
+	await iris_wipe_close(Vector2(211, 33), 1.5)
 	dialogueFinished.emit()
+	
+func iris_wipe_close(subject_position: Vector2, duration: float = 1.5):
+	var iris = $IrisColorRect  # your ColorRect with the shader
+	var viewport_size = get_viewport().get_visible_rect().size
+
+	# set center to subject position in UV space
+	var center = subject_position / viewport_size
+	iris.material.set_shader_parameter("center", center)
+	iris.material.set_shader_parameter("radius", 1.5)
+	
+	var tween = create_tween()
+	tween.tween_method(
+		func(val): iris.material.set_shader_parameter("radius", val),
+		1.5, 0.0, duration
+	)
+	await tween.finished
