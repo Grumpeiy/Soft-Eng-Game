@@ -222,5 +222,5 @@ bus = &"Narration"
 [connection signal="pressed" from="CheckBox" to="." method="_on_check_box_pressed"]
 [connection signal="item_selected" from="VoiceNarration" to="." method="_on_voice_narration_item_selected"]
 [connection signal="mouse_entered" from="VoiceNarration" to="." method="_on_voice_narration_mouse_entered"]
-[connection signal="pressed" from="VoiceNarration" to="." method="_on_voice_narration_pressed"]
 [connection signal="pressed" from="VoiceNarration" to="." method="_on_text_size_2_pressed"]
+[connection signal="pressed" from="VoiceNarration" to="." method="_on_voice_narration_pressed"]

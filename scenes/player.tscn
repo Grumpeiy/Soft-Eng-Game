@@ -486,3 +486,4 @@ shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="walk" type="AudioStreamPlayer2D" parent="." unique_id=1649418769]
 stream = ExtResource("5_qlg0r")
+bus = &"SFX"

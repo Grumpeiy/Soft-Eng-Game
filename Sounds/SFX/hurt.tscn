@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dbygs1si8o2yx"]
+
+[ext_resource type="AudioStream" uid="uid://sgsu0ss0c654" path="res://Sounds/SFX/hurt.mp3" id="1_48jah"]
+
+[node name="Hurt" type="AudioStreamPlayer" unique_id=1154738076]
+stream = ExtResource("1_48jah")
+volume_db = -8.211
+bus = &"SFX"
