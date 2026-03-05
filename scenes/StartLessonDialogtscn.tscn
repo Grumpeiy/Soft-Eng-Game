@@ -1,0 +1,102 @@
+[gd_scene load_steps=21 format=3 uid="uid://b0pg4fhwtse3a"]
+
+[ext_resource type="Texture2D" uid="uid://bygndgb0mvcp7" path="res://Art/LessonMaterials/Box.png" id="1_oovqb"]
+[ext_resource type="Texture2D" uid="uid://cwfu5thuycdi" path="res://Art/LessonMaterials/Yes.png" id="2_ijfia"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_vxq2t"]
+[ext_resource type="Texture2D" uid="uid://ve0u61geqik" path="res://Art/LessonMaterials/YesHovered.png" id="3_ae6dk"]
+[ext_resource type="Texture2D" uid="uid://d3vhqsedt1ur0" path="res://Art/LessonMaterials/YesPressed.png" id="3_ijfia"]
+[ext_resource type="Texture2D" uid="uid://co1kbng6386ka" path="res://Art/LessonMaterials/NoHovered.png" id="3_w6tck"]
+[ext_resource type="Texture2D" uid="uid://dvpgbby53d3st" path="res://Art/LessonMaterials/No.png" id="4_fq2dd"]
+[ext_resource type="Texture2D" uid="uid://l3nuw7j554t6" path="res://Art/LessonMaterials/NoPressed.png" id="6_6c470"]
+[ext_resource type="Texture2D" uid="uid://fck6vuvqqg2y" path="res://Art/LessonMaterials/Exit.png" id="8_oyhhb"]
+[ext_resource type="Texture2D" uid="uid://c1osuwa60gxdr" path="res://Art/LessonMaterials/ExitPressed.png" id="9_hwl4e"]
+[ext_resource type="Texture2D" uid="uid://bj8ask1e31ppq" path="res://Art/LessonMaterials/ExitHovered.png" id="10_lmjrn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ijfia"]
+texture = ExtResource("2_ijfia")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w6tck"]
+texture = ExtResource("3_ijfia")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fq2dd"]
+texture = ExtResource("3_ae6dk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bi2fl"]
+texture = ExtResource("4_fq2dd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3l06m"]
+texture = ExtResource("6_6c470")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oyhhb"]
+texture = ExtResource("3_w6tck")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8212n"]
+texture = ExtResource("8_oyhhb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ho50q"]
+texture = ExtResource("9_hwl4e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4kby"]
+texture = ExtResource("10_lmjrn")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 153.0
+offset_bottom = 140.0
+texture = ExtResource("1_oovqb")
+
+[node name="Yes" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 79.0
+offset_right = 71.0
+offset_bottom = 100.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_ijfia")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w6tck")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fq2dd")
+
+[node name="No" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 79.0
+offset_right = 124.0
+offset_bottom = 100.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_bi2fl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3l06m")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oyhhb")
+
+[node name="Exit" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 16.0
+offset_right = 145.0
+offset_bottom = 30.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8212n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ho50q")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t4kby")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 44.999992
+offset_right = 175.25
+offset_bottom = 66.51983
+scale = Vector2(0.8, 1.487)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_vxq2t")
+theme_override_font_sizes/font_size = 7
+text = "Would you like to start the Lesson? "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1

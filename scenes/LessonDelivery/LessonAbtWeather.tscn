@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://548iikcu0v1f"]
+
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="1_r2x5a"]
+[ext_resource type="PackedScene" uid="uid://cuicdmx8v68hw" path="res://scenes/LessonDelivery/wizardTeacher.tscn" id="2_etgdu"]
+
+[sub_resource type="Animation" id="Animation_h0d5q"]
+resource_name = "PART 1.0"
+
+[sub_resource type="Animation" id="Animation_mqofk"]
+resource_name = "fade out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gt47k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q56yv"]
+resource_name = "welcome"
+length = 3.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21yhi"]
+_data = {
+&"PART 1.0": SubResource("Animation_h0d5q"),
+&"RESET": SubResource("Animation_gt47k"),
+&"fade out": SubResource("Animation_mqofk"),
+&"welcome": SubResource("Animation_q56yv")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 482.0
+offset_bottom = 267.0
+color = Color(0.39151636, 0.805388, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_r2x5a")
+text = "How the sky looks and feels today!"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_right = 483.0
+offset_bottom = 267.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_etgdu")]
+position = Vector2(-48, 224)
+scale = Vector2(1.6861472, 1.731579)
+autoplay = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_21yhi")
+}

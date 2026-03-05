@@ -91,3 +91,14 @@ func next_script():
 		$NinePatchRect/AnimationPlayer.speed_scale = 1.0
 
 	$NinePatchRect/AnimationPlayer.play("typewriterfx")
+
+func force_stop():
+	if not dActive:
+		return
+	dActive = false
+	$NinePatchRect.visible = false
+	$ColorRect/SpriteFrontNPC.visible = false
+	$ColorRect/PLAYER1x1.visible = false
+	$ColorRect.visible = false
+	$NinePatchRect/AnimationPlayer.stop()
+	emit_signal("dialogueFinished")

@@ -1,0 +1,70 @@
+[
+    {"Name": "Gandalf", "Text": "Sorry for being late!", "action": "sorry"},
+    {"Name": "Gandalf", "Text": "Oh... looks like im just in time..", "action": "appreciate"},
+    {"Name": "Gandalf", "Text": "Welcome to the Workshop!", "action": "approve1"},
+    {"Name": "Gandalf", "Text": "This is where I shall teach you the important things you will face throughout your journey.", "action": "talk"},
+    {"Name": "Gandalf", "Text": "My name's Gandalf", "action": "happy"},
+    {"Name": "Gandalf", "Text": "And for you to save Biringan, I will guide you through the Weather Patterns in the Philippines", "action": "appreciate"},
+    {"Name": "Gandalf", "Text": "Are you ready?", "action": "wait"},
+
+    {"Name": "Gandalf", "Text": "But first, let us warm up! I will show you some images.", "action": "excited"},
+    {"Name": "Gandalf", "Text": "Look at these images carefully...", "action": "wait"},
+
+    {"Name": "Gandalf", "Text": "Which of these images shows a Sunny Day?", "action": "afk", "gameplay": "image_choice", "correct": "sunny"},
+    {"Name": "Gandalf", "Text": "Wonderful! That is indeed a Sunny Day! The sky is clear and bright.", "action": "approve1", "trigger": "correct"},
+    {"Name": "Gandalf", "Text": "Hmm, not quite! Look for the one with a clear bright sky and no clouds.", "action": "afk", "trigger": "wrong"},
+
+    {"Name": "Gandalf", "Text": "Now, which of these images shows a Rainy Day?", "action": "afk", "gameplay": "image_choice", "correct": "rainy"},
+    {"Name": "Gandalf", "Text": "Excellent! Dark clouds and falling rain — that is a Rainy Day!", "action": "approve1", "trigger": "correct"},
+    {"Name": "Gandalf", "Text": "Not this one! Look for dark clouds and falling raindrops.", "action": "afk", "trigger": "wrong"},
+
+    {"Name": "Gandalf", "Text": "Which of these images shows a Cloudy Day?", "action": "afk", "gameplay": "image_choice", "correct": "cloudy"},
+    {"Name": "Gandalf", "Text": "Yes! Grey skies with no rain yet — that is a Cloudy Day!", "action": "approve1", "trigger": "correct"},
+    {"Name": "Gandalf", "Text": "Almost! Look for grey skies covered with clouds but no rain.", "action": "afk", "trigger": "wrong"},
+
+    {"Name": "Gandalf", "Text": "Great job! You are ready for today's lesson.", "action": "approve1"},
+
+    {"Name": "Gandalf", "Text": "We will learn six important words today. Are you ready?", "action": "idea"},
+
+    {"Name": "Gandalf", "Text": "Our first word... WEATHER!", "action": "idea"},
+    {"Name": "Gandalf", "Text": "Weather is how the sky looks and feels TODAY.", "action": "book"},
+    {"Name": "Gandalf", "Text": "Is it sunny? Is it rainy? Is it windy? That is the weather!", "action": "afk"},
+    {"Name": "Gandalf", "Text": "Weather can change every single day!", "action": "afk"},
+
+    {"Name": "Gandalf", "Text": "Our second word... CLIMATE!", "action": "idea"},
+    {"Name": "Gandalf", "Text": "Climate is the usual weather of a place for MANY YEARS.", "action": "book"},
+    {"Name": "Gandalf", "Text": "For example, the Philippines usually has a hot and rainy climate.", "action": "afk"},
+    {"Name": "Gandalf", "Text": "Here is a fun way to remember it — Weather is your mood today. Climate is your personality!", "action": "book"},
+
+    {"Name": "Gandalf", "Text": "Our third word... SEASON!", "action": "idea"},
+    {"Name": "Gandalf", "Text": "A Season is a time of year with the same kind of weather.", "action": "book"},
+    {"Name": "Gandalf", "Text": "The Philippines has two seasons — the Wet Season and the Dry Season!", "action": "afk"},
+    {"Name": "Gandalf", "Text": "During the Wet Season, it rains a lot. During the Dry Season, it is hot and sunny.", "action": "afk"},
+
+    {"Name": "Gandalf", "Text": "Our fourth word... MONSOON!", "action": "idea"},
+    {"Name": "Gandalf", "Text": "A Monsoon is a strong wind that brings rain or dry weather.", "action": "book"},
+    {"Name": "Gandalf", "Text": "The Philippines has two monsoons — the Amihan and the Habagat.", "action": "afk"},
+    {"Name": "Gandalf", "Text": "The Amihan is a cool northeast wind that brings dry and cold weather.", "action": "book"},
+    {"Name": "Gandalf", "Text": "The Habagat is a warm southwest wind that brings heavy rain!", "action": "book"},
+
+    {"Name": "Gandalf", "Text": "Our fifth word... AIR MASS!", "action": "idea"},
+    {"Name": "Gandalf", "Text": "An Air Mass is a big bunch of air that is hot, cold, wet, or dry.", "action": "book"},
+    {"Name": "Gandalf", "Text": "Imagine a giant invisible bubble of air floating over the land or ocean.", "action": "afk"},
+    {"Name": "Gandalf", "Text": "That bubble carries its temperature and moisture wherever it goes!", "action": "afk"},
+
+    {"Name": "Gandalf", "Text": "And our sixth word... FRONT!", "action": "idea"},
+    {"Name": "Gandalf", "Text": "A Front is where two different air masses meet.", "action": "book"},
+    {"Name": "Gandalf", "Text": "When a warm air mass meets a cold air mass, interesting things happen!", "action": "afk"},
+    {"Name": "Gandalf", "Text": "It can bring rain, strong winds, or even storms!", "action": "afk"},
+
+    {"Name": "Gandalf", "Text": "Now let us do a quick recap of all six words!", "action": "idea"},
+    {"Name": "Gandalf", "Text": "WEATHER — how the sky looks and feels TODAY.", "action": "book"},
+    {"Name": "Gandalf", "Text": "CLIMATE — the usual weather of a place for MANY YEARS.", "action": "book"},
+    {"Name": "Gandalf", "Text": "SEASON — a time of year with the same kind of weather.", "action": "book"},
+    {"Name": "Gandalf", "Text": "MONSOON — a strong wind that brings rain or dry weather.", "action": "book"},
+    {"Name": "Gandalf", "Text": "AIR MASS — a big bunch of air that is hot, cold, wet, or dry.", "action": "book"},
+    {"Name": "Gandalf", "Text": "FRONT — where two different air masses meet.", "action": "book"},
+
+    {"Name": "Gandalf", "Text": "Amazing work today! You have learned six important words.", "action": "approve1"},
+    {"Name": "Gandalf", "Text": "Now go and use this knowledge on your journey through Biringan!", "action": "approve1"}
+]

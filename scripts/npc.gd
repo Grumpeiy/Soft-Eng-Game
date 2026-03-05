@@ -93,6 +93,10 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 	if body is Player:
 		playerInChatZone = false 
+		if isChatting:
+			isChatting = false
+			isRoaming = true
+			$Dialogue.force_stop()
 
 func _on_timer_timeout() -> void:
 	$Timer.wait_time = choose([0.5,1,1.5])

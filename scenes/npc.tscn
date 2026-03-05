@@ -137,13 +137,15 @@ shape = SubResource("CircleShape2D_rv78h")
 autostart = true
 
 [node name="Dialogue" parent="." instance=ExtResource("3_rv78h")]
+visible = false
 offset_left = -165.54341
 offset_top = -18.158714
 offset_right = -125.54341
 offset_bottom = 21.841286
 
 [node name="InteractionSpace" parent="." instance=ExtResource("4_7n8xq")]
-position = Vector2(-12.039516, -1.0088167)
+position = Vector2(-12.039519, -1.0088176)
+scale = Vector2(1.2333833, 1.2075295)
 
 [connection signal="body_entered" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_exited"]
