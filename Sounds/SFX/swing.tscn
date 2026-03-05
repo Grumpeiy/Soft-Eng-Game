@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://btlc05vfjvjbv"]
+
+[ext_resource type="AudioStream" uid="uid://bvqcni0wmcwtr" path="res://Sounds/SFX/swing.mp3" id="1_6jxl3"]
+
+[node name="Swing" type="AudioStreamPlayer" unique_id=328591669]
+stream = ExtResource("1_6jxl3")
+volume_db = -5.499
+pitch_scale = 0.85
+bus = &"SFX"

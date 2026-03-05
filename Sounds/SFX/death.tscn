@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cec1f4sub5wv4"]
+
+[ext_resource type="AudioStream" uid="uid://bqh7tfbb1cvy" path="res://Sounds/SFX/death.mp3" id="1_g3xvu"]
+
+[node name="Death" type="AudioStreamPlayer" unique_id=650122375]
+stream = ExtResource("1_g3xvu")
+volume_db = -14.626
+bus = &"SFX"

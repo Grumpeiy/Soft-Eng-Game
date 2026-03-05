@@ -14,53 +14,76 @@ var capitalization_enabled := true:
 		capitalization_enabled = value
 		emit_signal("capitalization_changed")
 
-# NEW: Difficulty and Adaptive Assistance
 var difficulty_level = "normal"  # Options: "easy", "normal", "hard"
-var adaptive_assistance_enabled = true  # Auto-adjust based on performance
 
-# Assistance tier tracking
+var guided_mode_enabled = true
+
+var tutorial_mode_enabled = false
+var has_seen_tutorial = false
+
 enum AssistanceTier { LOW, MID, HIGH }
 var current_assistance_tier = AssistanceTier.LOW
 
-# Performance tracking
 var consecutive_incorrect_answers = 0
 var correct_answers_count = 0
 var incorrect_answers_count = 0
 
-# Functions to reset/update performance
 func reset_assistance_tier():
 	current_assistance_tier = AssistanceTier.LOW
 	consecutive_incorrect_answers = 0
 
 func record_correct_answer():
 	correct_answers_count += 1
-	reset_assistance_tier()  # Reset to LOW on correct answer
+	reset_assistance_tier()
 
 func record_incorrect_answer():
 	incorrect_answers_count += 1
 	consecutive_incorrect_answers += 1
 	
-	# Update assistance tier based on consecutive wrong answers
-	if consecutive_incorrect_answers >= 3:
-		current_assistance_tier = AssistanceTier.HIGH
-	elif consecutive_incorrect_answers >= 2:
-		current_assistance_tier = AssistanceTier.MID
+	if guided_mode_enabled:
+		if consecutive_incorrect_answers >= 3:
+			current_assistance_tier = AssistanceTier.HIGH
+		elif consecutive_incorrect_answers >= 2:
+			current_assistance_tier = AssistanceTier.MID
 
 func get_assistance_tier() -> AssistanceTier:
 	return current_assistance_tier
 
 func sync_accessibility(scene):
-	scene.get_node("3 settings/Capitilzation").button_pressed = capitalization_enabled
-	scene.get_node("3 settings/MenuNarration").button_pressed = menu_narration_enabled
-	scene.get_node("Sensory Settings/SoundCues").button_pressed = sound_cues_enabled
+	if scene.has_node("3 settings/Capitilzation"):
+		scene.get_node("3 settings/Capitilzation").button_pressed = capitalization_enabled
 	
-	var gender_option = scene.get_node("VoiceNarration")
-	if narration_gender == "male":
-		gender_option.select(0)
-	else:
-		gender_option.select(1)
-
+	if scene.has_node("3 settings/MenuNarration"):
+		scene.get_node("3 settings/MenuNarration").button_pressed = menu_narration_enabled
+	
+	if scene.has_node("Sensory Settings/SoundCues"):
+		scene.get_node("Sensory Settings/SoundCues").button_pressed = sound_cues_enabled
+	
+	if scene.has_node("VoiceNarration"):
+		var gender_option = scene.get_node("VoiceNarration")
+		if narration_gender == "male":
+			gender_option.select(0)
+		else:
+			gender_option.select(1)
+	
 	apply_sound_cues()
+
+func sync_gameplay(scene):
+	if scene.has_node("DifficultyOptions"):
+		var difficulty_dropdown = scene.get_node("DifficultyOptions")
+		match difficulty_level:
+			"easy":
+				difficulty_dropdown.select(0)
+			"normal":
+				difficulty_dropdown.select(1)
+			"hard":
+				difficulty_dropdown.select(2)
+	
+	if scene.has_node("gameplay/guided"):
+		scene.get_node("gameplay/guided").button_pressed = guided_mode_enabled
+	
+	if scene.has_node("gameplay/tutorial"):
+		scene.get_node("gameplay/tutorial").button_pressed = tutorial_mode_enabled
 
 func play_narration(button_name: String):
 	if not menu_narration_enabled:
@@ -77,10 +100,8 @@ func play_narration(button_name: String):
 
 func apply_sound_cues():
 	if sound_cues_enabled:
-		# Restore user's volume setting
 		Audio.set_bus_volume("SFX", user_sfx_volume)
 		print("Sound cues: ON (volume: ", user_sfx_volume, ")")
 	else:
-		# Set to 0 but remember what the user had
 		Audio.set_bus_volume("SFX", 0.0)
 		print("Sound cues: OFF (stored volume: ", user_sfx_volume, ")")

@@ -35,19 +35,15 @@ func _process(delta: float) -> void:
 
 func _on_quit_pressed() -> void:
 	Audio.play_click()
-	get_tree().paused = false  # Unpause before changing scene
+	get_tree().paused = false
 	
-	# Return to the player's preferred main menu
 	get_tree().change_scene_to_file(Settings.current_main_menu_scene)
-
 
 func _on_option_pressed() -> void:
 	pass
 
-
 func _on_progress_pressed() -> void:
 	pass # Replace with function body.
-
 
 func _on_badges_2_pressed() -> void:
 	pass # Replace with function body.

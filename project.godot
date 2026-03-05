@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="SoftEng"
-run/main_scene="uid://homuvwxrj621"
+run/main_scene="uid://d3daaffheq73w"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
@@ -31,6 +31,7 @@ Audio="*res://scripts/audio.gd"
 Settings="*res://scripts/settings.gd"
 ButtonClick="*res://scenes/Global/button_click.tscn"
 CheckClick="*res://scenes/Global/check_click.tscn"
+Questions="*uid://ds23w0pgu2hvf"
 
 [display]
 
