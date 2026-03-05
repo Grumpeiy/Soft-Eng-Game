@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://3c4r1d2isnib"]
+
+[ext_resource type="AudioStream" uid="uid://bimctrqftp1dw" path="res://Sounds/music/battle.mp3" id="1_3j6kc"]
+
+[node name="Battle" type="AudioStreamPlayer" unique_id=1859260200]
+process_mode = 3
+stream = ExtResource("1_3j6kc")
+volume_db = -10.947
+bus = &"MUSIC"

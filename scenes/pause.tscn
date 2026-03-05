@@ -1,19 +1,11 @@
 [gd_scene format=3 uid="uid://brt1pwqtvxjkd"]
 
 [ext_resource type="Script" uid="uid://dym6kskq4iyce" path="res://scripts/pause.gd" id="1_jl8xs"]
-[ext_resource type="Texture2D" uid="uid://cs23st3oy3puh" path="res://Art/Buttons/Student Profile.png" id="2_qn06s"]
 [ext_resource type="Shader" uid="uid://wf00c8yanrhk" path="res://scenes/pause.gdshader" id="2_vrtv1"]
-[ext_resource type="Texture2D" uid="uid://tjkmkfoe04w8" path="res://Art/Buttons/Badges.png" id="3_vrtv1"]
-[ext_resource type="Texture2D" uid="uid://cvibkmp3ee6d2" path="res://Art/Buttons/Quest.png" id="4_30wyh"]
-[ext_resource type="Texture2D" uid="uid://dr8oitkb3631o" path="res://Art/Buttons/MENU_BG.png" id="5_gcd8f"]
-[ext_resource type="Texture2D" uid="uid://cnsdtglwlp437" path="res://Art/Buttons/OPTIONS_NORMAL.png" id="6_t3fa8"]
-[ext_resource type="Texture2D" uid="uid://dob6dyuh5igs7" path="res://Art/Buttons/OPTIONS_CLICKED.png" id="7_nbku2"]
-[ext_resource type="Texture2D" uid="uid://bj452sd32tifl" path="res://Art/Buttons/EXIT_NORMAL.png" id="8_hwa2k"]
-[ext_resource type="Texture2D" uid="uid://dpniiahov5pl2" path="res://Art/Buttons/EXIT_CLICKED.png" id="9_4i0p2"]
-[ext_resource type="Texture2D" uid="uid://cod2wcnra32if" path="res://Art/Buttons/PROGRESS_NORMAL.png" id="10_404jg"]
-[ext_resource type="Texture2D" uid="uid://d30b445h5laks" path="res://Art/Buttons/PROGRESS_CLICKED.png" id="11_7q5rd"]
-[ext_resource type="Texture2D" uid="uid://d04h0siuutoye" path="res://Art/Buttons/BADGES_NORMAL.png" id="12_0qjis"]
-[ext_resource type="Texture2D" uid="uid://dko0jg7vbp27q" path="res://Art/Buttons/BADGES_CLICKED.png" id="13_i31wi"]
+[ext_resource type="Texture2D" uid="uid://dgmxb4xd3aogt" path="res://Art/Buttons/Pause/Large Capped MainMenu.png" id="7_0akjr"]
+[ext_resource type="Texture2D" uid="uid://dput4w2v8y5n8" path="res://Art/Buttons/Pause/Large Capped MainMenu Clicked.png" id="8_capb0"]
+[ext_resource type="Texture2D" uid="uid://g6nshtex411q" path="res://Art/Buttons/Pause/Large Capped Save.png" id="11_gcmcy"]
+[ext_resource type="Texture2D" uid="uid://c6ulvdelcqe1u" path="res://Art/Buttons/Pause/Large Capped Save Clicked.png" id="12_jl8xs"]
 [ext_resource type="Texture2D" uid="uid://cpotqq7vt1oqt" path="res://Art/Buttons/resume.png" id="14_qg5vp"]
 [ext_resource type="Texture2D" uid="uid://2g6hofq0bqkm" path="res://Art/Buttons/resume clicked.png" id="15_nru7y"]
 
@@ -73,107 +65,66 @@ script = ExtResource("1_jl8xs")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=795134083]
 material = SubResource("ShaderMaterial_30wyh")
 layout_mode = 0
-offset_left = -22.0
-offset_top = -27.0
-offset_right = 511.0
-offset_bottom = 309.0
-
-[node name="Student Profile" type="TextureRect" parent="." unique_id=1876555943]
-layout_mode = 0
-offset_left = 265.0
-offset_top = 14.0
-offset_right = 468.0
-offset_bottom = 99.0
-texture = ExtResource("2_qn06s")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Badges" type="TextureRect" parent="." unique_id=789146613]
-layout_mode = 0
-offset_left = 265.0
-offset_top = 209.0
-offset_right = 468.0
-offset_bottom = 256.5
-texture = ExtResource("3_vrtv1")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Quest" type="TextureRect" parent="." unique_id=123359710]
-layout_mode = 0
-offset_left = 265.0
-offset_top = 109.0
-offset_right = 468.0
-offset_bottom = 194.0
-texture = ExtResource("4_30wyh")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
+offset_left = -1235.0
+offset_top = -587.0
+offset_right = 1657.0
+offset_bottom = 1150.0
 
 [node name="GreenBG" type="TextureRect" parent="." unique_id=1543833704]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057291668
+anchor_top = 0.062037036
+anchor_right = 0.055208333
+anchor_bottom = 0.07084481
 offset_left = 20.0
 offset_top = 14.0
 offset_right = 225.0
 offset_bottom = 256.4876
-texture = ExtResource("5_gcd8f")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Option" type="TextureButton" parent="." unique_id=1235078699]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 73.0
-offset_right = 204.0
-offset_bottom = 109.0
-texture_normal = ExtResource("6_t3fa8")
-texture_hover = ExtResource("7_nbku2")
+[node name="Quit" type="TextureButton" parent="GreenBG" unique_id=260213111]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.10145178
+anchor_bottom = 0.10145178
+offset_left = 19.0
+offset_top = 120.431816
+offset_right = 184.0
+offset_bottom = 157.43184
+texture_normal = ExtResource("7_0akjr")
+texture_hover = ExtResource("8_capb0")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Quit" type="TextureButton" parent="." unique_id=260213111]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 205.0
-offset_right = 204.0
-offset_bottom = 242.0
-texture_normal = ExtResource("8_hwa2k")
-texture_hover = ExtResource("9_4i0p2")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Progress" type="TextureButton" parent="." unique_id=1880925301]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 116.0
-offset_right = 204.0
-offset_bottom = 152.0
-texture_normal = ExtResource("10_404jg")
-texture_hover = ExtResource("11_7q5rd")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Badges2" type="TextureButton" parent="." unique_id=1598787828]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 161.0
-offset_right = 204.0
-offset_bottom = 197.0
-texture_normal = ExtResource("12_0qjis")
-texture_hover = ExtResource("13_i31wi")
-ignore_texture_size = true
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Resume" type="TextureButton" parent="." unique_id=908154278]
-layout_mode = 0
-offset_left = 39.000763
-offset_top = 29.96737
-offset_right = 204.00076
-offset_bottom = 65.96737
+[node name="Resume" type="TextureButton" parent="GreenBG" unique_id=908154278]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.10727234
+anchor_bottom = 0.10727234
+offset_left = 19.000763
+offset_top = 15.967369
+offset_right = 184.00076
+offset_bottom = 51.96737
 texture_normal = ExtResource("14_qg5vp")
 texture_hover = ExtResource("15_nru7y")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Save" type="TextureButton" parent="GreenBG" unique_id=527874770]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.18427539
+anchor_bottom = 0.18427537
+offset_left = 19.000082
+offset_top = 48.562603
+offset_right = 184.00006
+offset_bottom = 84.56261
+texture_normal = ExtResource("11_gcmcy")
+texture_hover = ExtResource("12_jl8xs")
 ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -181,6 +132,5 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1806620212]
 libraries/ = SubResource("AnimationLibrary_30wyh")
 
-[connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="GreenBG/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="GreenBG/Resume" to="." method="_on_resume_pressed"]

@@ -5,22 +5,7 @@ var button_type = null
 func _ready():
 	Settings.narration_player = $NarrationPlayer
 	
-	var narration_checkbox = $"3 settings/MenuNarration"
-	narration_checkbox.button_pressed = Settings.menu_narration_enabled
-	
-	var gender_option = $"VoiceNarration"
-	
-	if Settings.narration_gender == "male":
-		gender_option.select(0)
-	else:
-		gender_option.select(1)
-	
-	# NEW: Sync sound cues checkbox and apply state
-	var sound_cues_checkbox = $"Sensory Settings/SoundCues"
-	sound_cues_checkbox.button_pressed = Settings.sound_cues_enabled
-	
-	# Apply the sound cue state on load
-	Settings.apply_sound_cues()
+	Settings.sync_accessibility(self)
 
 func _on_accessibility_pressed() -> void:
 	pass
@@ -49,6 +34,7 @@ func _on_text_size_item_selected(index: int) -> void:
 			get_tree().change_scene_to_file("res://scenes/Options/accessbility.tscn")
 
 func _on_capitilzation_pressed() -> void:
+	Audio.play_check()
 	var checkbox = $"3 settings/Capitilzation"
 	Settings.capitalization_enabled = checkbox.button_pressed
 	get_tree().change_scene_to_file("res://scenes/Options/accessbilityLargeNonCapi.tscn")
@@ -105,10 +91,18 @@ func _on_text_size_mouse_entered() -> void:
 	Settings.play_narration("TextSize")
 
 func _on_sound_cues_pressed() -> void:
+	Audio.play_check()
 	var checkbox = $"Sensory Settings/SoundCues"
 	
-	# Toggle the setting
 	Settings.sound_cues_enabled = checkbox.button_pressed
-	
-	# Apply the change immediately
 	Settings.apply_sound_cues()
+
+
+func _on_motion_effects_pressed() -> void:
+	Audio.play_check()
+	pass # Replace with function body.
+
+
+func _on_check_box_pressed() -> void:
+	Audio.play_check()
+	pass # Replace with function body.

@@ -20,8 +20,13 @@
 [ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="18_dudei"]
 [ext_resource type="PackedScene" uid="uid://bsui6v0wystr3" path="res://scenes/background_music_#1.tscn" id="19_dudei"]
 [ext_resource type="PackedScene" uid="uid://brt1pwqtvxjkd" path="res://scenes/pause.tscn" id="20_g4yyb"]
+[ext_resource type="PackedScene" uid="uid://3c4r1d2isnib" path="res://scenes/Global/battle_music.tscn" id="21_6djb5"]
+[ext_resource type="PackedScene" uid="uid://bk4pmwu3e6x2i" path="res://Sounds/SFX/victory.tscn" id="22_4ljxf"]
+[ext_resource type="PackedScene" uid="uid://btlc05vfjvjbv" path="res://Sounds/SFX/swing.tscn" id="22_14fdv"]
+[ext_resource type="PackedScene" uid="uid://cec1f4sub5wv4" path="res://Sounds/SFX/death.tscn" id="22_oax15"]
+[ext_resource type="PackedScene" uid="uid://dbygs1si8o2yx" path="res://Sounds/SFX/hurt.tscn" id="22_rawlc"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_81p7c"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4yyb"]
 texture = ExtResource("1_gswej")
 2:0/0 = 0
 3:0/0 = 0
@@ -219,7 +224,7 @@ texture = ExtResource("1_gswej")
 4:12/0 = 0
 4:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.59916, -5.4823794, -6.193058, -5.2793283, -2.1320362, -8, -1.4213572)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dudei"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6djb5"]
 texture = ExtResource("2_hflhd")
 12:0/0 = 0
 13:0/0 = 0
@@ -1989,8 +1994,8 @@ texture = ExtResource("2_hflhd")
 
 [sub_resource type="TileSet" id="TileSet_nrc38"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_81p7c")
-sources/2 = SubResource("TileSetAtlasSource_dudei")
+sources/1 = SubResource("TileSetAtlasSource_g4yyb")
+sources/2 = SubResource("TileSetAtlasSource_6djb5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4yyb"]
 texture = ExtResource("2_hflhd")
@@ -4347,8 +4352,8 @@ position = Vector2(1067, 151)
 [node name="Enemy" parent="." instance=ExtResource("3_kamyo")]
 position = Vector2(-189, -525)
 
-[node name="Enemy3" parent="." instance=ExtResource("3_kamyo")]
-position = Vector2(745, -159)
+[node name="Enemy3" parent="." unique_id=846485426 instance=ExtResource("3_kamyo")]
+position = Vector2(971, 175)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_kamyo")]
 position = Vector2(-303, -476)
@@ -4360,9 +4365,8 @@ offset_right = 1247.0
 offset_bottom = 99.0
 color = Color(1, 1, 1, 0)
 
-[node name="NPC" parent="." node_paths=PackedStringArray("roam_rect") instance=ExtResource("3_3ukku")]
-position = Vector2(1202, 37)
-roam_rect = NodePath("../NPCroamArea")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=56453935]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -4406,15 +4410,16 @@ offset_bottom = 231.0
 
 [node name="answer_button" type="Button" parent="CanvasLayer/battlescene/Panel"]
 layout_mode = 0
-offset_left = 215.0
+offset_left = 358.0
 offset_top = 10.0
-offset_right = 274.0
+offset_right = 417.0
 offset_bottom = 34.0
 theme_override_fonts/font = ExtResource("8_elhde")
 theme_override_font_sizes/font_size = 9
 text = "Answer"
 
-[node name="hint_button" type="Button" parent="CanvasLayer/battlescene/Panel"]
+[node name="hint_button" type="Button" parent="CanvasLayer/battlescene/Panel" unique_id=1730730439]
+visible = false
 layout_mode = 0
 offset_left = 288.0
 offset_top = 10.0
@@ -4424,7 +4429,8 @@ theme_override_fonts/font = ExtResource("8_elhde")
 theme_override_font_sizes/font_size = 9
 text = "Hint"
 
-[node name="run_button" type="Button" parent="CanvasLayer/battlescene/Panel"]
+[node name="run_button" type="Button" parent="CanvasLayer/battlescene/Panel" unique_id=902746528]
+visible = false
 layout_mode = 0
 offset_left = 361.0
 offset_top = 10.0
@@ -4462,7 +4468,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_elhde")
 theme_override_font_sizes/font_size = 12
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/battlescene"]
+[node name="ChoiceC" type="Button" parent="CanvasLayer/battlescene/Panel/VBoxContainer" unique_id=2060812114]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_elhde")
+theme_override_font_sizes/font_size = 12
+
+[node name="ChoiceD" type="Button" parent="CanvasLayer/battlescene/Panel/VBoxContainer" unique_id=737923122]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_elhde")
+theme_override_font_sizes/font_size = 12
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/battlescene" unique_id=1697511853]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -4504,12 +4520,27 @@ shape = SubResource("RectangleShape2D_6djb5")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
-[node name="Pause" parent="CanvasLayer2" instance=ExtResource("20_g4yyb")]
-offset_left = 23.0
-offset_top = -26.0
-offset_right = 23.0
-offset_bottom = -26.0
+[node name="Pause" parent="CanvasLayer2" unique_id=132574240 instance=ExtResource("20_g4yyb")]
+offset_left = 700.0
+offset_top = 351.0
+offset_right = -942.0
+offset_bottom = -593.0
+
+[node name="Battle" parent="." unique_id=1859260200 instance=ExtResource("21_6djb5")]
+
+[node name="Victory" parent="." unique_id=619673553 instance=ExtResource("22_4ljxf")]
+
+[node name="Death" parent="." unique_id=650122375 instance=ExtResource("22_oax15")]
+
+[node name="Hurt" parent="." unique_id=1154738076 instance=ExtResource("22_rawlc")]
+
+[node name="Swing" parent="." unique_id=328591669 instance=ExtResource("22_14fdv")]
+volume_db = -3.774
 
 [connection signal="pressed" from="CanvasLayer/battlescene/Panel/answer_button" to="CanvasLayer/battlescene" method="_on_answer_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/battlescene/Panel/run_button" to="CanvasLayer/battlescene" method="_on_run_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/battlescene/Panel/VBoxContainer/ChoiceA" to="." method="_on_choice_a_pressed"]
+[connection signal="pressed" from="CanvasLayer/battlescene/Panel/VBoxContainer/ChoiceB" to="." method="_on_choice_b_pressed"]
+[connection signal="pressed" from="CanvasLayer/battlescene/Panel/VBoxContainer/ChoiceC" to="." method="_on_choice_c_pressed"]
+[connection signal="pressed" from="CanvasLayer/battlescene/Panel/VBoxContainer/ChoiceD" to="." method="_on_choice_d_pressed"]
 [connection signal="animation_finished" from="CanvasLayer/battlescene/AnimationPlayer" to="CanvasLayer/battlescene" method="_on_animation_player_animation_finished"]
