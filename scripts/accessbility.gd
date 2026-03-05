@@ -96,3 +96,13 @@ func _on_sound_cues_pressed() -> void:
 	
 	Settings.sound_cues_enabled = checkbox.button_pressed
 	Settings.apply_sound_cues()
+
+
+func _on_motion_effects_pressed() -> void:
+	Audio.play_check()
+	pass # Replace with function body.
+
+
+func _on_check_box_pressed() -> void:
+	Audio.play_check()
+	pass # Replace with function body.

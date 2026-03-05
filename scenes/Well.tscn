@@ -2665,6 +2665,7 @@ position = Vector2(-303, -476)
 position = Vector2(1144.0001, -5.9999847)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=56453935]
+visible = false
 
 [node name="battlescene" type="Control" parent="CanvasLayer" unique_id=972224121]
 process_mode = 2
@@ -2816,11 +2817,11 @@ shape = SubResource("RectangleShape2D_6djb5")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2018084183]
 
-[node name="Pause" parent="CanvasLayer2" unique_id=2018567523 instance=ExtResource("20_g4yyb")]
-offset_left = 0.0
-offset_top = 2.0
-offset_right = 0.0
-offset_bottom = 2.0
+[node name="Pause" parent="CanvasLayer2" unique_id=132574240 instance=ExtResource("20_g4yyb")]
+offset_left = 700.0
+offset_top = 351.0
+offset_right = -942.0
+offset_bottom = -593.0
 
 [node name="Battle" parent="." unique_id=1859260200 instance=ExtResource("21_6djb5")]
 
