@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dduw02ugw74ae"]
 
+[ext_resource type="Script" uid="uid://bnwb7trjpjta1" path="res://scripts/login_menu.gd" id="1_hhelq"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_4n733"]
 [ext_resource type="VideoStream" uid="uid://cwtytug7l4a0y" path="res://Art/VideoAssets/0224.ogv" id="3_78ya1"]
 
@@ -27,6 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(264, 512)
+script = ExtResource("1_hhelq")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=589451342]
 layout_mode = 0
@@ -110,7 +112,7 @@ theme_override_font_sizes/font_size = 9
 theme_override_styles/normal = SubResource("StyleBoxFlat_78ya1")
 placeholder_text = "enter password"
 
-[node name="usernamePanel2" type="Panel" parent="TextureRect/password" unique_id=1650716470]
+[node name="passwordPanel" type="Panel" parent="TextureRect/password" unique_id=1650716470]
 visible = false
 layout_mode = 0
 offset_right = 169.0
@@ -137,7 +139,7 @@ theme_override_fonts/font = ExtResource("2_4n733")
 theme_override_font_sizes/font_size = 9
 text = "Password"
 
-[node name="Button" type="Button" parent="TextureRect" unique_id=584904265]
+[node name="Login" type="Button" parent="TextureRect" unique_id=584904265]
 layout_mode = 0
 offset_left = 124.0
 offset_top = 36.0
@@ -149,4 +151,11 @@ theme_override_font_sizes/font_size = 8
 text = "LOG IN
 "
 
-[connection signal="button_down" from="TextureRect/Button" to="." method="_on_button_button_down"]
+[node name="ErrorPopup" type="AcceptDialog" parent="." unique_id=2007665398]
+oversampling_override = 1.0
+title = "Error"
+position = Vector2i(0, 36)
+size = Vector2i(55, 80)
+
+[connection signal="button_down" from="TextureRect/Login" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="TextureRect/Login" to="." method="_on_login_pressed"]

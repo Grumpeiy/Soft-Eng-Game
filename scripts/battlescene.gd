@@ -398,3 +398,14 @@ func highlight_correct_answer(button):
 	active_tween = create_tween().set_loops()
 	active_tween.tween_property(button, "modulate", Color(1.5, 1.5, 0.5, 1), 0.5)
 	active_tween.tween_property(button, "modulate", Color(1.2, 1.2, 0.8, 1), 0.5)
+
+# In your gameplay script (e.g., Well.gd or wherever you handle quest completion)
+
+func save_progress():
+	var save_data = PlayerData.save_file_data
+	
+	# Update progress
+	save_data["last_played"] = Time.get_datetime_string_from_system()
+	# Update other progress data as needed
+	
+	PlayerData.save_game_data(save_data)

@@ -1,3 +1,3 @@
 extends RichTextLabel
 
-@onready var narration = %Narration
+ #@onready var narration = %Narration

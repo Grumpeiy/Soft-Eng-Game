@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dru3sh60ii61n" path="res://Art/Buttons/Start/Large Capped Load.png" id="12_0pyo2"]
 [ext_resource type="Texture2D" uid="uid://dava0lr0py1k7" path="res://Art/Buttons/Start/Large Capped Load Clicked.png" id="13_ckuxx"]
 
-[node name="Main Menu" type="Node2D" unique_id=1719991470]
+[node name="Start" type="Node2D" unique_id=1719991470]
 position = Vector2(387, 40)
 script = ExtResource("1_2rtru")
 
@@ -52,7 +52,7 @@ texture = ExtResource("5_j1yfc")
 expand_mode = 1
 
 [node name="Back" type="TextureButton" parent="." unique_id=316798600]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -355.0
@@ -67,7 +67,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Create" type="TextureButton" parent="." unique_id=771917309]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -167.0
@@ -82,7 +82,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Erase" type="TextureButton" parent="." unique_id=811518120]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -83.0
@@ -97,7 +97,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Load" type="TextureButton" parent="." unique_id=939262817]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
@@ -110,6 +110,14 @@ texture_normal = ExtResource("12_0pyo2")
 texture_hover = ExtResource("13_ckuxx")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="SaveInfoLabel" type="Label" parent="." unique_id=1807451446]
+offset_left = -242.0
+offset_top = 40.0
+offset_right = -42.0
+offset_bottom = 119.0
+
+[node name="ConfirmDialog" type="ConfirmationDialog" parent="." unique_id=1331575128]
 
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]

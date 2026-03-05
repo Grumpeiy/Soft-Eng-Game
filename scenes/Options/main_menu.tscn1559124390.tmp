@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://d30b445h5laks" path="res://Art/Buttons/PROGRESS_CLICKED.png" id="11_1ajci"]
 [ext_resource type="Texture2D" uid="uid://dko0jg7vbp27q" path="res://Art/Buttons/BADGES_CLICKED.png" id="13_7b55j"]
 [ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="17_j7ex8"]
-[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="18_8lv1p"]
 
 [node name="Main Menu" type="Node2D" unique_id=1719991470]
 position = Vector2(387, 40)
@@ -139,27 +138,6 @@ offset_bottom = 260.0
 
 [node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=939711971]
 bus = &"Narration"
-
-[node name="1" type="TextEdit" parent="." unique_id=1490431950]
-visible = false
-offset_left = -99.0
-offset_top = -11.0
-offset_right = 66.0
-offset_bottom = 4.0
-
-[node name="Student" type="Label" parent="." unique_id=1591078877]
-offset_left = -99.0
-offset_top = -11.0
-offset_right = 66.0
-offset_bottom = 39.0
-theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
-theme_override_colors/font_outline_color = Color(0.76862746, 0.99215686, 0.8235294, 1)
-theme_override_constants/outline_size = 5
-theme_override_constants/shadow_outline_size = 0
-theme_override_fonts/font = ExtResource("18_8lv1p")
-theme_override_font_sizes/font_size = 14
-text = "TEST"
-horizontal_alignment = 1
 
 [connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

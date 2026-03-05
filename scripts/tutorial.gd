@@ -1,5 +1,7 @@
 extends Control
 
+const CUTSCENE_SCENE = "res://scenes/cutscenes/cut_scene_transition.tscn"
+
 var current_step = 0
 var tutorial_steps = [
 	"Welcome! Press NEXT to learn the controls.",
@@ -9,7 +11,6 @@ var tutorial_steps = [
 	"Press [ESC] to pause.",
 	"You're ready! Press START GAME!"
 ]
-
 @onready var label = $Label
 @onready var next_btn = $HBoxContainer/NextButton 
 @onready var back_btn = $HBoxContainer/BackButton
@@ -22,7 +23,6 @@ func _ready():
 	
 	modulate.a = 0
 	
-	#Fade in
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 0.5)
 	
@@ -68,5 +68,6 @@ func fade_out_and_start_game():
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0.0, 0.5)
 	tween.tween_callback(func():
-		get_tree().change_scene_to_file("res://scenes/Well.tscn")
+		# Always play the cutscene after tutorial finishes
+		get_tree().change_scene_to_file(CUTSCENE_SCENE)
 	)
