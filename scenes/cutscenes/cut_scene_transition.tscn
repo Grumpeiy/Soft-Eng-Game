@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://ddsr1tnvhbnhg"]
+[gd_scene load_steps=50 format=4 uid="uid://ddsr1tnvhbnhg"]
 
 [ext_resource type="Script" uid="uid://by3sernj3u6rk" path="res://scenes/cutscenes/cut_scene_transitionDialogue.gd" id="1_djilo"]
 [ext_resource type="Texture2D" uid="uid://dc3lenhg4yrgj" path="res://Art/cloudTransition1.png" id="3_6542o"]
@@ -13,6 +13,43 @@
 [ext_resource type="PackedScene" uid="uid://cdosdr8qjidwb" path="res://scenes/emoticon.tscn" id="9_wkrj7"]
 [ext_resource type="PackedScene" uid="uid://beafnl7ej3iy0" path="res://scenes/cutscenePlayer.tscn" id="12_pldut"]
 [ext_resource type="Shader" uid="uid://bldj2ifeph7o" path="res://scenes/cutscenes/cut_scene_transition.gdshader" id="13_og2l3"]
+
+[sub_resource type="Animation" id="Animation_fdp4c"]
+resource_name = "fadeOut"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fadeout:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_61g28"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fadeout:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hjfn"]
+_data = {
+&"RESET": SubResource("Animation_61g28"),
+&"fadeOut": SubResource("Animation_fdp4c")
+}
 
 [sub_resource type="Animation" id="Animation_442pk"]
 resource_name = "IntroP1"
@@ -132,7 +169,7 @@ tracks/9/path = NodePath("AnimatedSprite2D2:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.96666664),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
@@ -494,6 +531,10 @@ tracks/3/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_7rgi6"]
+resource_name = "Outro"
+length = 5.0
+
 [sub_resource type="Animation" id="Animation_bwog3"]
 length = 0.001
 tracks/0/type = "value"
@@ -667,67 +708,67 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("AnimatedSprite2D2:visible")
+tracks/14/path = NodePath("CanvasLayer/BotBorderr:size")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Vector2(1074.6666, 87.679016)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("CanvasLayer/BotBorderr:size")
+tracks/15/path = NodePath("CanvasLayer/BotBorderr:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1074.6666, 87.679016)]
+"values": [Vector2(-64, 312)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("CanvasLayer/BotBorderr:position")
+tracks/16/path = NodePath("CanvasLayer/TopBorderr:size")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-64, 312)]
+"values": [Vector2(644, 42)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("CanvasLayer/TopBorderr:size")
+tracks/17/path = NodePath("CanvasLayer/TopBorderr:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(644, 42)]
+"values": [Vector2(-1, -21)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("CanvasLayer/TopBorderr:position")
+tracks/18/path = NodePath("ColorRect:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, -21)]
+"update": 1,
+"values": [false]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("ColorRect:visible")
+tracks/19/path = NodePath("AnimatedSprite2D2:visible")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
@@ -739,34 +780,34 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("ColorRect3:material:shader_parameter/circle_size")
+tracks/20/path = NodePath("fadeout:color")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.05]
+"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ls5ud"]
 resource_name = "borderTransition"
 length = 3.0
 
-[sub_resource type="Animation" id="Animation_7rgi6"]
-resource_name = "Outro"
-length = 5.0
+[sub_resource type="Animation" id="Animation_853ji"]
+resource_name = "fadeOut"
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect3:material:shader_parameter/circle_size")
+tracks/0/path = NodePath("fadeout:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.58),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.05, 1.05]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_djilo"]
@@ -779,7 +820,8 @@ _data = {
 &"IntroP6": SubResource("Animation_og2l3"),
 &"Outro": SubResource("Animation_7rgi6"),
 &"RESET": SubResource("Animation_bwog3"),
-&"borderTransition": SubResource("Animation_ls5ud")
+&"borderTransition": SubResource("Animation_ls5ud"),
+&"fadeOut": SubResource("Animation_853ji")
 }
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0rlc"]
@@ -16929,10 +16971,10 @@ texture = ExtResource("4_nexnk")
 [sub_resource type="TileSet" id="TileSet_pldut"]
 sources/0 = SubResource("TileSetAtlasSource_grp3o")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_853ji"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_og2l3"]
 shader = ExtResource("13_og2l3")
-shader_parameter/circle_size = 1.05
-shader_parameter/circle_center = Vector2(0.5, 0.5)
+shader_parameter/radius = 1.5
+shader_parameter/center = Vector2(0.5, 0.5)
 
 [node name="cutSceneTransition" type="Node2D"]
 position = Vector2(-161, -17)
@@ -16946,6 +16988,11 @@ offset_right = 464.0
 offset_bottom = 198.0
 color = Color(0.11764706, 0.11372549, 0.12156863, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1hjfn")
+}
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -17089,39 +17136,6 @@ tile_set = SubResource("TileSet_bwog3")
 position = Vector2(108, -75)
 animation = &"walkEast"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="BotBorderScreen" type="ColorRect" parent="CanvasLayer"]
-visible = false
-offset_left = -1.0
-offset_right = 642.0
-offset_bottom = 277.0
-
-[node name="TopBorderr" type="ColorRect" parent="CanvasLayer"]
-visible = false
-offset_left = -1.0
-offset_top = -21.0
-offset_right = 643.0
-offset_bottom = 21.0
-size_flags_vertical = 0
-color = Color(0, 0, 0, 1)
-
-[node name="BotBorderr" type="ColorRect" parent="CanvasLayer"]
-visible = false
-anchors_preset = -1
-anchor_left = -0.058159724
-anchor_top = -0.14351852
-anchor_right = 0.16666667
-anchor_bottom = -0.065557785
-offset_left = 47.66667
-offset_top = 467.0
-offset_right = 690.6666
-offset_bottom = 470.4814
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
-color = Color(0, 0, 0, 1)
-
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(179.73653, 25.859375)
 scale = Vector2(1.0239521, 0.9921875)
@@ -17137,7 +17151,6 @@ rotation = -0.65449846
 transform = Transform2D(0.7933533, -0.6087614, 0.6087614, 0.7933533, 0, 0)
 
 [node name="ColorRect" type="ColorRect" parent="Path2D/PathFollow2D/CanvasLayer2"]
-visible = false
 offset_left = -50.315144
 offset_top = 192.0583
 offset_right = 284.68484
@@ -17185,10 +17198,9 @@ animation = &"default"
 frame = 1
 
 [node name="IntroP4Filter" type="ColorRect" parent="."]
-visible = false
 offset_left = 539.0
 offset_top = -280.0
-offset_right = 1422.0133
+offset_right = 1422.0146
 offset_bottom = 314.0
 color = Color(0.80784315, 0.39607844, 0.26666668, 0.09411765)
 
@@ -17202,6 +17214,7 @@ zoom = Vector2(1.5, 1.5)
 tile_set = SubResource("TileSet_pldut")
 
 [node name="AnimatedSprite2D2" parent="." instance=ExtResource("12_pldut")]
+visible = false
 position = Vector2(211, 158)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -17212,9 +17225,43 @@ offset_right = 548.0
 offset_bottom = 161.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_853ji")
-offset_left = 618.0
-offset_top = 100.0
-offset_right = 683.0
-offset_bottom = 152.0
+[node name="IrisColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_og2l3")
+offset_left = -78.0
+offset_top = -113.0
+offset_right = 453.0
+offset_bottom = 138.0
+color = Color(0, 0, 0, 1)
+
+[node name="fadeout" type="ColorRect" parent="."]
+visible = false
+offset_left = -444.0
+offset_top = -272.0
+offset_right = 665.0
+offset_bottom = 385.0
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TopBorderr" type="ColorRect" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = -21.0
+offset_right = 643.0
+offset_bottom = 21.0
+size_flags_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="BotBorderr" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = -0.058159724
+anchor_top = -0.14351852
+anchor_right = 0.16666667
+anchor_bottom = -0.065557785
+offset_left = 47.66667
+offset_top = 467.0
+offset_right = 690.6666
+offset_bottom = 470.4814
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+color = Color(0, 0, 0, 1)

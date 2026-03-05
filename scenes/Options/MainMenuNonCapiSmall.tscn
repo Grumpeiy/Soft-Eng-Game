@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://dhff4t76ycsru"]
+
+[ext_resource type="Script" uid="uid://bhp2jxmn1k56p" path="res://scripts/main_menu_non_capi_small.gd" id="1_qogig"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_jt0e2"]
+[ext_resource type="Texture2D" uid="uid://cs23st3oy3puh" path="res://Art/Buttons/Student Profile.png" id="3_wjxs5"]
+[ext_resource type="Texture2D" uid="uid://tjkmkfoe04w8" path="res://Art/Buttons/Badges.png" id="4_m5kic"]
+[ext_resource type="Texture2D" uid="uid://dtlfjssr0cf7k" path="res://Art/Buttons/small menu non cap/current quest.png" id="4_svxyv"]
+[ext_resource type="Texture2D" uid="uid://8rohp6dfdfqw" path="res://Art/Buttons/small menu non cap/small start non cap.png" id="6_4n1f1"]
+[ext_resource type="Texture2D" uid="uid://dr8oitkb3631o" path="res://Art/Buttons/MENU_BG.png" id="6_k2a14"]
+[ext_resource type="Texture2D" uid="uid://da751npioup52" path="res://Art/Buttons/small menu non cap/small start non cap clicked.png" id="7_svxyv"]
+[ext_resource type="Texture2D" uid="uid://cb48eqvasidbg" path="res://Art/Buttons/small menu non cap/small  options non cap.png" id="8_qogig"]
+[ext_resource type="Texture2D" uid="uid://cw7v21yn3oge" path="res://Art/Buttons/small menu non cap/small  exit non cap.png" id="9_jt0e2"]
+[ext_resource type="Texture2D" uid="uid://c87jkkpbovuvv" path="res://Art/Buttons/small menu non cap/small  options non cap clicked.png" id="9_svxyv"]
+[ext_resource type="Texture2D" uid="uid://dj56sw8egvybk" path="res://Art/Buttons/small menu non cap/small  exit non cap clicked.png" id="10_wjxs5"]
+[ext_resource type="Texture2D" uid="uid://ctnt6s1j41ih1" path="res://Art/Buttons/small menu non cap/small  prog non cap.png" id="11_m5kic"]
+[ext_resource type="Texture2D" uid="uid://ftgkvh557coe" path="res://Art/Buttons/small menu non cap/small  prog non cap clicked.png" id="12_siowm"]
+[ext_resource type="Texture2D" uid="uid://du8p7a6xau7mo" path="res://Art/Buttons/small menu non cap/small  badges non cap.png" id="13_k2a14"]
+[ext_resource type="Texture2D" uid="uid://1krudsgkshhf" path="res://Art/Buttons/small menu non cap/small  badges non cap clicked.png" id="14_xsqna"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="17_o6yjx"]
+
+[node name="Main Menu non capi small" type="Node2D" unique_id=1719991470]
+position = Vector2(387, 40)
+script = ExtResource("1_qogig")
+
+[node name="background" type="TextureRect" parent="." unique_id=144256320]
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.869
+offset_left = -389.0
+offset_top = -41.0
+offset_right = 114.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jt0e2")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Student Profile" type="TextureRect" parent="." unique_id=1463688815]
+offset_left = -122.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 61.0
+texture = ExtResource("3_wjxs5")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Badges" type="TextureRect" parent="." unique_id=933165845]
+offset_left = -122.0
+offset_top = 171.0
+offset_right = 81.0
+offset_bottom = 218.5
+texture = ExtResource("4_m5kic")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest" type="TextureRect" parent="." unique_id=784879559]
+offset_left = -122.0
+offset_top = 71.0
+offset_right = 81.0
+offset_bottom = 156.0
+texture = ExtResource("4_svxyv")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GreenBG" type="TextureRect" parent="." unique_id=2137098979]
+offset_left = -367.0
+offset_top = -24.0
+offset_right = -162.0
+offset_bottom = 218.48761
+texture = ExtResource("6_k2a14")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="TextureButton" parent="." unique_id=2092931484]
+offset_left = -348.0
+offset_top = -8.0
+offset_right = -183.0
+offset_bottom = 28.0
+texture_normal = ExtResource("6_4n1f1")
+texture_hover = ExtResource("7_svxyv")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Option" type="TextureButton" parent="." unique_id=1699791284]
+offset_left = -348.0
+offset_top = 35.0
+offset_right = -183.0
+offset_bottom = 71.0
+texture_normal = ExtResource("8_qogig")
+texture_hover = ExtResource("9_svxyv")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="TextureButton" parent="." unique_id=581517196]
+offset_left = -348.0
+offset_top = 167.0
+offset_right = -183.0
+offset_bottom = 204.0
+texture_normal = ExtResource("9_jt0e2")
+texture_hover = ExtResource("10_wjxs5")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Progress" type="TextureButton" parent="." unique_id=2030933053]
+offset_left = -348.0
+offset_top = 78.0
+offset_right = -183.0
+offset_bottom = 114.0
+texture_normal = ExtResource("11_m5kic")
+texture_hover = ExtResource("12_siowm")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1089471628]
+offset_left = -348.0
+offset_top = 123.0
+offset_right = -183.0
+offset_bottom = 159.0
+texture_normal = ExtResource("13_k2a14")
+texture_hover = ExtResource("14_xsqna")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("17_o6yjx")]
+visible = false
+offset_left = -387.0
+offset_top = -50.0
+offset_right = 109.0
+offset_bottom = 260.0
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
+
+[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=389623922]
+bus = &"Narration"
+
+[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Option" to="." method="_on_option_mouse_entered"]
+[connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Progress" to="." method="_on_progress_mouse_entered"]
+[connection signal="pressed" from="Progress" to="." method="_on_progress_pressed"]
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

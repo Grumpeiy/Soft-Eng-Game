@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cy7pk7p5pjox3"]
+
+[ext_resource type="Script" uid="uid://b6lj5q82uyikf" path="res://scenes/PushableAssets/LetterBlock.gd" id="1_4efcp"]
+[ext_resource type="Texture2D" uid="uid://be7csw6ky05ie" path="res://Art/Pixel Letter Beads - Asset Pack/black_W.png" id="2_4efcp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4efcp"]
+friction = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouhvo"]
+size = Vector2(14, 14)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 3
+mass = 7.0
+physics_material_override = SubResource("PhysicsMaterial_4efcp")
+gravity_scale = 0.0
+sleeping = true
+lock_rotation = true
+linear_damp = 10.0
+angular_damp = 10.0
+script = ExtResource("1_4efcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4efcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ouhvo")

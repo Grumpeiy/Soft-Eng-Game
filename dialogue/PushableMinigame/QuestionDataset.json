@@ -1,0 +1,32 @@
+[
+  {
+    "question": "The condition of the air in a place over a short period of time.",
+    "answer": "WEATHER",
+    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+  },
+  {
+    "question": "The average weather condition of a place over a long period of time.",
+    "answer": "CLIMATE",
+    "hint": "It describes what the weather is usually like in that place."
+  },
+  {
+    "question": "The time of the year when there is a lot of rain, often with thunderstorms.",
+    "answer": "RAINY SEASON",
+    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+  },
+  {
+    "question": "The time of the year when there is little or no rain. The days are usually hot and sunny.",
+    "answer": "DRY SEASON",
+    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+  },
+  {
+    "question": "The cool northeast wind that brings cold and dry air, usually from November to February.",
+    "answer": "AMIHAN",
+    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+  },
+  {
+    "question": "The warm southwest wind that brings heavy rain, usually from June to October.",
+    "answer": "HABAGAT",
+    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+  }
+]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp8bmyvndw5d3"]
+[gd_scene format=3 uid="uid://dduw02ugw74ae"]
 
-[ext_resource type="Script" uid="uid://bvx08a5t6dn5m" path="res://login_menu.gd" id="1_w1ogu"]
+[ext_resource type="Script" path="res://login_menu.gd" id="1_w1ogu"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_4n733"]
 [ext_resource type="VideoStream" uid="uid://b74yonck82dlf" path="res://Art/VideoAssets/0224.ogv" id="3_78ya1"]
 
@@ -59,6 +59,7 @@ grow_vertical = 2
 scale = Vector2(0.2, 0.204)
 stream = ExtResource("3_78ya1")
 autoplay = true
+loop = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

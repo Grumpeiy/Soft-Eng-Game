@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@export var roam_rect: ColorRect
 
 signal dialogueStarted
 const speed = 30
@@ -13,10 +14,13 @@ var isChatting = false
 var sampPlayer
 var playerInChatZone = false
 
+var prev_position = Vector2.ZERO
+
 var canInteract = false:
 	set(value):
 		canInteract = value
 		
+var interaction_count = 0
 
 enum {
 	IDLE,
@@ -54,17 +58,32 @@ func _process(delta): #code for NPC animations walking directions
 		isRoaming = false
 		isChatting = true
 		$AnimatedSprite2D.play("IDLE")
-		$Dialogue.start()	
+		interaction_count += 1
+		
+		if interaction_count == 1:
+			$Dialogue.start("res://dialogue/sampleDialogueMan.json")
+		elif interaction_count == 2:
+			$Dialogue.start("res://dialogue/sampleDialogueManSecond.json")
+		else:
+			$Dialogue.start_random("res://dialogue/sampleDialogueManRandom.json")
 		dialogueStarted.emit()
 
 func choose(array):
 	array.shuffle() #shuffle godot command
 	return array.front()
 	
-func move(delta): #actual movement of charac
+func move(delta):
 	if !isChatting:
-		position += dir * speed * delta
-
+		velocity = dir * speed
+		move_and_slide()
+		
+		if roam_rect:
+				position.x = clamp(position.x, roam_rect.global_position.x, roam_rect.global_position.x + roam_rect.size.x)
+				position.y = clamp(position.y, roam_rect.global_position.y, roam_rect.global_position.y + roam_rect.size.y)
+				
+		if position.distance_to(prev_position) < 0.1:
+			currentState = IDLE
+			dir = choose([Vector2.RIGHT, Vector2.LEFT, Vector2.UP, Vector2.DOWN])
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		print("body enter")
@@ -74,6 +93,10 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 	if body is Player:
 		playerInChatZone = false 
+		if isChatting:
+			isChatting = false
+			isRoaming = true
+			$Dialogue.force_stop()
 
 func _on_timer_timeout() -> void:
 	$Timer.wait_time = choose([0.5,1,1.5])

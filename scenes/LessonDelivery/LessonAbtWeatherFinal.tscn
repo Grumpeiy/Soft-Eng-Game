@@ -1,0 +1,660 @@
+[gd_scene load_steps=40 format=3 uid="uid://ctvpol1niium1"]
+
+[ext_resource type="Script" uid="uid://dg2k7qc2lemep" path="res://scenes/LessonDelivery/lesson_abt_weather_final.gd" id="1_deuw4"]
+[ext_resource type="Texture2D" uid="uid://dawd3pi2uehaw" path="res://Art/LessonMaterials/Wizard Pack/Idle.png" id="1_twya0"]
+[ext_resource type="PackedScene" uid="uid://cuicdmx8v68hw" path="res://scenes/LessonDelivery/wizardTeacher.tscn" id="1_wlm4x"]
+[ext_resource type="Texture2D" uid="uid://mercqp2t8xrm" path="res://Art/LessonMaterials/Wizard Pack/Death.png" id="2_tfeyy"]
+[ext_resource type="Texture2D" uid="uid://beph6fx8g6tcl" path="res://Art/LessonMaterials/Wizard Pack/Jump.png" id="3_deuw4"]
+[ext_resource type="Texture2D" uid="uid://by6vmaubxboxp" path="res://Art/LessonMaterials/Wizard Pack/Run.png" id="4_n8kyo"]
+[ext_resource type="PackedScene" uid="uid://dfaf74aqwehhk" path="res://scenes/LessonDelivery/thoughtBubble.tscn" id="6_tfeyy"]
+[ext_resource type="Texture2D" uid="uid://ckl5umnm2jjkf" path="res://Art/LessonMaterials/gandalfNameCard.png" id="8_n8kyo"]
+[ext_resource type="FontFile" uid="uid://ca20cmv4asfr" path="res://Art/boldspixels.ttf" id="9_eogry"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfwi7"]
+atlas = ExtResource("1_twya0")
+region = Rect2(0, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scnxc"]
+atlas = ExtResource("1_twya0")
+region = Rect2(231, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt8qh"]
+atlas = ExtResource("1_twya0")
+region = Rect2(462, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqkgt"]
+atlas = ExtResource("1_twya0")
+region = Rect2(693, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3tbr"]
+atlas = ExtResource("1_twya0")
+region = Rect2(924, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fka5"]
+atlas = ExtResource("1_twya0")
+region = Rect2(1155, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i46lu"]
+atlas = ExtResource("2_tfeyy")
+region = Rect2(0, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56ipj"]
+atlas = ExtResource("2_tfeyy")
+region = Rect2(231, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc1t7"]
+atlas = ExtResource("2_tfeyy")
+region = Rect2(462, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gfy8"]
+atlas = ExtResource("2_tfeyy")
+region = Rect2(693, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af1rl"]
+atlas = ExtResource("2_tfeyy")
+region = Rect2(924, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5eoa"]
+atlas = ExtResource("2_tfeyy")
+region = Rect2(1155, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq5e6"]
+atlas = ExtResource("2_tfeyy")
+region = Rect2(1386, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaomq"]
+atlas = ExtResource("3_deuw4")
+region = Rect2(0, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygccj"]
+atlas = ExtResource("3_deuw4")
+region = Rect2(231, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh3sm"]
+atlas = ExtResource("4_n8kyo")
+region = Rect2(0, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se6jk"]
+atlas = ExtResource("4_n8kyo")
+region = Rect2(231, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcv5b"]
+atlas = ExtResource("4_n8kyo")
+region = Rect2(462, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc5n8"]
+atlas = ExtResource("4_n8kyo")
+region = Rect2(693, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxdch"]
+atlas = ExtResource("4_n8kyo")
+region = Rect2(924, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w8qo"]
+atlas = ExtResource("4_n8kyo")
+region = Rect2(1155, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7ldv"]
+atlas = ExtResource("4_n8kyo")
+region = Rect2(1386, 0, 231, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6qgi"]
+atlas = ExtResource("4_n8kyo")
+region = Rect2(1617, 0, 231, 190)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_se6jk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfwi7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scnxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt8qh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqkgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3tbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fka5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i46lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56ipj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc1t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gfy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af1rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5eoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq5e6")
+}],
+"loop": true,
+"name": &"lose",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaomq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygccj")
+}],
+"loop": true,
+"name": &"nice",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh3sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se6jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcv5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc5n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxdch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w8qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7ldv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6qgi")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_dr1oe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wizardTeacher:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, 218)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wizardTeacher:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"run"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wizardTeacher:sprite_frames")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_se6jk")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GandalfNameCard:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-11.000001, 173.00002)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-310, 85)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [68]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label:theme_override_constants/shadow_outline_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Label/Label2:theme_override_constants/shadow_outline_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label/Label2:theme_override_font_sizes/font_size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [28]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("inviWall:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.4977886, 0.66668326, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("inviWall:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Label:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_1olyj"]
+resource_name = "introduction"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wizardTeacher:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.97),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-13, 218), Vector2(55, 219)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wizardTeacher:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03, 0.96),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"run", &"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wizardTeacher:sprite_frames")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_se6jk")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GandalfNameCard:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-11.000001, 173.00002), Vector2(49, 173.00002)]
+}
+
+[sub_resource type="Animation" id="Animation_eogry"]
+resource_name = "lesson workshop enter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-310, 85), Vector2(118, 85)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [68]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:theme_override_constants/shadow_outline_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [19]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label/Label2:theme_override_constants/shadow_outline_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label/Label2:theme_override_font_sizes/font_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [28]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("inviWall:color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.4977886, 0.66668326, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("inviWall:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Label:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1dma4"]
+resource_name = "lesson workshop exit"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(118, 85), Vector2(492, 85)]
+}
+
+[sub_resource type="Animation" id="Animation_lfp6q"]
+resource_name = "lesson workshop min"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("inviWall:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.4977886, 0.66668326, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("inviWall:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-52.999992, 15), Vector2(24.999992, 15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vwmsi"]
+_data = {
+&"RESET": SubResource("Animation_dr1oe"),
+&"introduction": SubResource("Animation_1olyj"),
+&"lesson workshop enter": SubResource("Animation_eogry"),
+&"lesson workshop exit": SubResource("Animation_1dma4"),
+&"lesson workshop min": SubResource("Animation_lfp6q")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_deuw4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 482.0
+offset_bottom = 264.0
+color = Color(1.732707e-06, 0.49653202, 0.66809887, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 12.5
+offset_right = 506.0
+offset_bottom = 262.5
+scale = Vector2(0.9, 0.9)
+color = Color(0.39215687, 0.8039216, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vwmsi")
+}
+autoplay = "introduction"
+
+[node name="GandalfNameCard" type="Sprite2D" parent="."]
+position = Vector2(-11.000001, 173.00002)
+scale = Vector2(0.16406249, 0.1557693)
+texture = ExtResource("8_n8kyo")
+
+[node name="wizardTeacher" parent="." instance=ExtResource("1_wlm4x")]
+position = Vector2(-13, 218)
+sprite_frames = SubResource("SpriteFrames_se6jk")
+animation = &"run"
+frame_progress = 0.0
+
+[node name="MarginContainer" parent="." instance=ExtResource("6_tfeyy")]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 182.0
+offset_right = 484.0
+offset_bottom = 245.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -310.0
+offset_top = 85.0
+offset_right = -46.0
+offset_bottom = 147.0
+scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(1, 0.39215687, 0.8039216, 1)
+theme_override_colors/font_shadow_color = Color(0.23695293, 3.8624926e-06, 0.17315197, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "workshop."
+
+[node name="Label2" type="Label" parent="Label"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -8.0
+offset_right = 80.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0.82950914, 0.9290826, 1)
+theme_override_colors/font_shadow_color = Color(0.52865565, 2.0888747e-05, 0.40250337, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 28
+text = "lesson"
+
+[node name="inviWall" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 13.0
+offset_right = 24.0
+offset_bottom = 67.0
+color = Color(0, 0.4977886, 0.66668326, 0)

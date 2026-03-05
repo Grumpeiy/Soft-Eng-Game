@@ -116,7 +116,7 @@ ignore_texture_size = true
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1089471628]
+[node name="BadgesButton" type="TextureButton" parent="." unique_id=1089471628]
 offset_left = -348.0
 offset_top = 123.0
 offset_right = -183.0
@@ -136,7 +136,17 @@ offset_bottom = 260.0
 
 [node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
 
+[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=939711971]
+bus = &"Narration"
+
+[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Option" to="." method="_on_option_mouse_entered"]
 [connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Progress" to="." method="_on_progress_mouse_entered"]
+[connection signal="pressed" from="Progress" to="." method="_on_progress_pressed"]
+[connection signal="mouse_entered" from="BadgesButton" to="." method="_on_badges_button_mouse_entered"]
+[connection signal="pressed" from="BadgesButton" to="." method="_on_badges_button_pressed"]
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
