@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ctvpol1niium1"]
+[gd_scene load_steps=76 format=3 uid="uid://ctvpol1niium1"]
 
 [ext_resource type="Script" uid="uid://dg2k7qc2lemep" path="res://scenes/LessonDelivery/lesson_abt_weather_final.gd" id="1_deuw4"]
 [ext_resource type="Texture2D" uid="uid://dawd3pi2uehaw" path="res://Art/LessonMaterials/Wizard Pack/Idle.png" id="1_twya0"]
@@ -9,6 +9,23 @@
 [ext_resource type="PackedScene" uid="uid://dfaf74aqwehhk" path="res://scenes/LessonDelivery/thoughtBubble.tscn" id="6_tfeyy"]
 [ext_resource type="Texture2D" uid="uid://ckl5umnm2jjkf" path="res://Art/LessonMaterials/gandalfNameCard.png" id="8_n8kyo"]
 [ext_resource type="FontFile" uid="uid://ca20cmv4asfr" path="res://Art/boldspixels.ttf" id="9_eogry"]
+[ext_resource type="Texture2D" uid="uid://cwaxhy3nkecmh" path="res://Art/LessonMaterials/NoLesson.png" id="10_tgugp"]
+[ext_resource type="Texture2D" uid="uid://uwm8x01xnosj" path="res://Art/LessonMaterials/NoLessonPressed.png" id="11_4gw6i"]
+[ext_resource type="Texture2D" uid="uid://dtqencvfxpq2s" path="res://Art/LessonMaterials/NoLessonHover.png" id="12_7yr2h"]
+[ext_resource type="Texture2D" uid="uid://creoytwixhmb8" path="res://Art/LessonMaterials/YesLesson.png" id="13_bmjqq"]
+[ext_resource type="Texture2D" uid="uid://frn7o6erwc4u" path="res://Art/LessonMaterials/YesLessonPressed.png" id="14_s2k1v"]
+[ext_resource type="Texture2D" uid="uid://f82ljula4phm" path="res://Art/LessonMaterials/YesLessonHovered.png" id="15_kogg6"]
+[ext_resource type="PackedScene" uid="uid://clqecd78pxym6" path="res://scenes/LessonDelivery/visual_cues.tscn" id="16_4gw6i"]
+[ext_resource type="Texture2D" uid="uid://d0l0qq1ex134a" path="res://Art/LessonMaterials/rainyClimate.jpg" id="16_6ojia"]
+[ext_resource type="PackedScene" uid="uid://n62jqwbymcwp" path="res://Art/LessonMaterials/CloudAnimated.tscn" id="17_s2k1v"]
+[ext_resource type="Texture2D" uid="uid://pdwxi71dqyiy" path="res://Art/LessonMaterials/hotClimate.jpg" id="17_tkj4x"]
+[ext_resource type="Texture2D" uid="uid://pofiftrfyo3x" path="res://Art/LessonMaterials/coldCanada.jpg" id="18_kfptp"]
+[ext_resource type="PackedScene" uid="uid://bbxis1r774fgc" path="res://Art/LessonMaterials/SunnyAnimated.tscn" id="18_kogg6"]
+[ext_resource type="Texture2D" uid="uid://vlcrpccxk0ml" path="res://Art/LessonMaterials/hawaii.jpg" id="18_svm1j"]
+[ext_resource type="PackedScene" uid="uid://bdsqiiksamyts" path="res://Art/LessonMaterials/RainyAnimated.tscn" id="19_6ojia"]
+[ext_resource type="Texture2D" uid="uid://ctldi1a1wvygv" path="res://Art/LessonMaterials/coldCana.jpg" id="19_svm1j"]
+[ext_resource type="Texture2D" uid="uid://csc0ccrucgvl" path="res://Art/LessonMaterials/drySeason.jpg" id="21_b07bo"]
+[ext_resource type="Texture2D" uid="uid://bdag7iyq1aj73" path="res://Art/LessonMaterials/wetseason.jpg" id="22_yqhxp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfwi7"]
 atlas = ExtResource("1_twya0")
@@ -307,7 +324,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("inviWall:color")
+tracks/9/path = NodePath("inviWall1:color")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -319,7 +336,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("inviWall:visible")
+tracks/10/path = NodePath("inviWall1:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -339,6 +356,201 @@ tracks/11/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.2, 0.2)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("climate:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-236, 75)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Panel:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-403, 44)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("inviWall2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("climate/climate2:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-284, -53)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("inviWall2:color")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.4977886, 0.66668326, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("climate2:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-224, 76)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("fadein:color")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tgugp"]
+resource_name = "YNVisible"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_t3sim"]
+resource_name = "airmass1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2352, 44), Vector2(2738, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_kfptp"]
+resource_name = "climate1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("climate:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(134, 75), Vector2(486, 75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-403, 44), Vector2(45, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_1soye"]
+resource_name = "climate2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(45, 44), Vector2(495, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_b07bo"]
+resource_name = "climateQuestion"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(495, 44), Vector2(936, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_uvv0p"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fadein:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4qe5y"]
+resource_name = "front1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2738, 44), Vector2(3135, 44)]
 }
 
 [sub_resource type="Animation" id="Animation_1olyj"]
@@ -459,7 +671,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("inviWall:color")
+tracks/5/path = NodePath("inviWall1:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -471,7 +683,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("inviWall:visible")
+tracks/6/path = NodePath("inviWall1:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -492,6 +704,30 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Panel:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-404, 44)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("inviWall2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
 
 [sub_resource type="Animation" id="Animation_1dma4"]
 resource_name = "lesson workshop exit"
@@ -508,6 +744,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(118, 85), Vector2(492, 85)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("inviWall1:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.4977886, 0.66668326, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_lfp6q"]
 resource_name = "lesson workshop min"
@@ -515,7 +763,7 @@ length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("inviWall:color")
+tracks/0/path = NodePath("inviWall1:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -527,7 +775,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("inviWall:visible")
+tracks/1/path = NodePath("inviWall1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -558,17 +806,180 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-52.999992, 15), Vector2(24.999992, 15)]
+"values": [Vector2(-52.999992, 15), Vector2(28, 15)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("inviWall2:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.4977886, 0.66668326, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yqhxp"]
+resource_name = "monsoon1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1902, 44), Vector2(2352, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_q1u1s"]
+resource_name = "recap"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3135, 44), Vector2(3514, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_svm1j"]
+resource_name = "season1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(936, 44), Vector2(1395, 44)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("climate/climate2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-284, -53), Vector2(187, -53)]
+}
+
+[sub_resource type="Animation" id="Animation_wur8s"]
+resource_name = "season2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.06666666, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1395, 44), Vector2(1902, 44)]
+}
+
+[sub_resource type="Animation" id="Animation_s2k1v"]
+resource_name = "weather1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("climate2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-224, 76), Vector2(135, 76)]
+}
+
+[sub_resource type="Animation" id="Animation_kogg6"]
+resource_name = "weather2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("climate:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-236, 75), Vector2(134, 75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("climate2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(135, 76), Vector2(528, 76)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vwmsi"]
 _data = {
 &"RESET": SubResource("Animation_dr1oe"),
+&"YNVisible": SubResource("Animation_tgugp"),
+&"airmass1": SubResource("Animation_t3sim"),
+&"climate1": SubResource("Animation_kfptp"),
+&"climate2": SubResource("Animation_1soye"),
+&"climateQuestion": SubResource("Animation_b07bo"),
+&"fadein": SubResource("Animation_uvv0p"),
+&"front1": SubResource("Animation_4qe5y"),
 &"introduction": SubResource("Animation_1olyj"),
 &"lesson workshop enter": SubResource("Animation_eogry"),
 &"lesson workshop exit": SubResource("Animation_1dma4"),
-&"lesson workshop min": SubResource("Animation_lfp6q")
+&"lesson workshop min": SubResource("Animation_lfp6q"),
+&"monsoon1": SubResource("Animation_yqhxp"),
+&"recap": SubResource("Animation_q1u1s"),
+&"season1": SubResource("Animation_svm1j"),
+&"season2": SubResource("Animation_wur8s"),
+&"weather1": SubResource("Animation_s2k1v"),
+&"weather2": SubResource("Animation_kogg6")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ojia"]
+texture = ExtResource("10_tgugp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tkj4x"]
+texture = ExtResource("11_4gw6i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kfptp"]
+texture = ExtResource("12_7yr2h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svm1j"]
+texture = ExtResource("13_bmjqq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1soye"]
+texture = ExtResource("14_s2k1v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b07bo"]
+texture = ExtResource("15_kogg6")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -587,12 +998,21 @@ color = Color(1.732707e-06, 0.49653202, 0.66809887, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 12.5
-offset_right = 506.0
-offset_bottom = 262.5
+offset_left = 26.0
+offset_top = 14.0
+offset_right = 508.0
+offset_bottom = 264.0
 scale = Vector2(0.9, 0.9)
 color = Color(0.39215687, 0.8039216, 1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 105.55556
+offset_top = 281.1111
+offset_right = 265.55554
+offset_bottom = 531.1111
+scale = Vector2(0.9, 0.9)
+color = Color(0.85269225, 0.70449734, 0.75113904, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -617,6 +1037,39 @@ offset_left = 62.0
 offset_top = 182.0
 offset_right = 484.0
 offset_bottom = 245.0
+
+[node name="climate" type="Label" parent="."]
+layout_mode = 0
+offset_left = -236.0
+offset_top = 75.0
+offset_right = -12.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0.98679596, 0.7010414, 0.5387358, 1)
+theme_override_colors/font_shadow_color = Color(0.3076804, 0.13625574, 0.013857083, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "climate"
+
+[node name="climate2" type="Label" parent="climate"]
+layout_mode = 0
+offset_left = -284.0
+offset_top = -53.0
+offset_right = -60.0
+offset_bottom = 9.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_color = Color(0.98679596, 0.7010414, 0.5387358, 1)
+theme_override_colors/font_shadow_color = Color(0.3076804, 0.13625574, 0.013857083, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "climate"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -651,10 +1104,392 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 28
 text = "lesson"
 
-[node name="inviWall" type="ColorRect" parent="."]
+[node name="NoBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 189.0
+offset_right = 397.0
+offset_bottom = 201.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6ojia")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tkj4x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfptp")
+
+[node name="YesBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 189.0
+offset_right = 368.0
+offset_bottom = 201.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_svm1j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1soye")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b07bo")
+
+[node name="climate2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -224.0
+offset_top = 76.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0.52930415, 0.5173854, 0.700969, 1)
+theme_override_colors/font_shadow_color = Color(0.17401892, 0.14334753, 0.39141956, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "weather"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -403.0
+offset_top = 44.0
+offset_right = -10.0
+offset_bottom = 192.0
+
+[node name="RainyClimate" type="Sprite2D" parent="Panel"]
+position = Vector2(290, 65.06249)
+scale = Vector2(0.20226121, 0.22196968)
+texture = ExtResource("16_6ojia")
+
+[node name="HotClimate" type="Sprite2D" parent="Panel"]
+position = Vector2(100.49999, 65.25)
+scale = Vector2(0.2190476, 0.19836956)
+texture = ExtResource("17_tkj4x")
+
+[node name="hot2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 125.0
+offset_right = 455.0
+offset_bottom = 187.0
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.2374612, 0.70350784, 0.9639762, 1)
+theme_override_colors/font_shadow_color = Color(0.0005481739, 0.024935493, 0.053509213, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "RAINY"
+
+[node name="hot" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 125.0
+offset_right = 196.0
+offset_bottom = 187.0
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.9098039, 0.2509804, 0.23529412, 1)
+theme_override_colors/font_shadow_color = Color(0.24576056, 0.0276885, 0.026884947, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "HOT"
+
+[node name="Hawaii" type="Sprite2D" parent="Panel"]
+position = Vector2(-684, 66)
+scale = Vector2(0.3670068, 0.29183677)
+texture = ExtResource("18_svm1j")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = -450.0
+offset_right = -57.0
+offset_bottom = 148.0
+
+[node name="cold" type="Label" parent="Panel/Panel"]
+layout_mode = 0
+offset_left = 166.00003
+offset_top = 123.0
+offset_right = 319.00003
+offset_bottom = 185.0
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.700248, 0.87455314, 0.99559885, 1)
+theme_override_colors/font_shadow_color = Color(0.0012591155, 0.058896706, 0.10373325, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "COLD"
+
+[node name="ColdCanada" type="Sprite2D" parent="Panel/Panel"]
+position = Vector2(287, 65.49999)
+scale = Vector2(0.13499996, 0.07266667)
+texture = ExtResource("18_kfptp")
+
+[node name="ColdCana" type="Sprite2D" parent="Panel/Panel"]
+position = Vector2(104, 65.37501)
+scale = Vector2(0.35130718, 0.23801742)
+texture = ExtResource("19_svm1j")
+
+[node name="season" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -1249.0
+offset_top = 44.0
+offset_right = -1025.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.92004544, 0.54551756, 0.5550548, 1)
+theme_override_colors/font_shadow_color = Color(0.43144113, 0.14348075, 0.16997027, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "season"
+
+[node name="season" type="Label" parent="Panel/season"]
+layout_mode = 0
+offset_left = -2854.0
+offset_top = 89.0
+offset_right = -2630.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0.92004544, 0.54551756, 0.5550548, 1)
+theme_override_colors/font_shadow_color = Color(0.43144113, 0.14348075, 0.16997027, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "season"
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = -1857.0
+offset_top = -4.0
+offset_right = -1464.0
+offset_bottom = 144.0
+
+[node name="DrySeason" type="Sprite2D" parent="Panel/Panel2"]
+position = Vector2(104.00012, 71)
+scale = Vector2(0.20687501, 0.17682928)
+texture = ExtResource("21_b07bo")
+
+[node name="cold2" type="Label" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 235.99998
+offset_top = 120.0
+offset_right = 606.0
+offset_bottom = 182.0
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.7272083, 0.8280692, 0.9930888, 1)
+theme_override_colors/font_shadow_color = Color(0.023507636, 0.15195072, 0.36030224, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "WET SEASON"
+
+[node name="drySeason" type="Label" parent="Panel/Panel2"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 120.0
+offset_right = 412.0
+offset_bottom = 182.0
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0.6451251, 0.36455482, 0.17790553, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "DRY SEASON"
+
+[node name="Wetseason" type="Sprite2D" parent="Panel/Panel2"]
+position = Vector2(295, 70.625)
+scale = Vector2(0.18333332, 0.07895834)
+texture = ExtResource("22_yqhxp")
+
+[node name="monsoon" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -2219.0
+offset_top = 33.0
+offset_right = -1995.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.044128686, 0.46372575, 0.9999878, 1)
+theme_override_colors/font_shadow_color = Color(0.004496345, 0.11526541, 0.1739293, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "monsoon"
+
+[node name="monsoon" type="Label" parent="Panel/monsoon"]
+layout_mode = 0
+offset_left = -2250.0
+offset_top = 308.0
+offset_right = -2026.0
+offset_bottom = 370.0
+theme_override_colors/font_color = Color(0.044128686, 0.46372575, 0.9999878, 1)
+theme_override_colors/font_shadow_color = Color(0.004496345, 0.11526541, 0.1739293, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "monsoon"
+
+[node name="airmass" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -2597.0
+offset_top = 35.0
+offset_right = -2373.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.48483962, 0.70825255, 0.77893454, 1)
+theme_override_colors/font_shadow_color = Color(0.13906676, 0.25754708, 0.29378307, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "airmass"
+
+[node name="airmass" type="Label" parent="Panel/airmass"]
+layout_mode = 0
+offset_left = -2597.0
+offset_top = 35.0
+offset_right = -2373.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.48483962, 0.70825255, 0.77893454, 1)
+theme_override_colors/font_shadow_color = Color(0.13906676, 0.25754708, 0.29378307, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "airmass"
+
+[node name="season2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -4462.0
+offset_top = 222.0
+offset_right = -4238.0
+offset_bottom = 284.0
+theme_override_colors/font_color = Color(0.48483962, 0.70825255, 0.77893454, 1)
+theme_override_colors/font_shadow_color = Color(0.13906676, 0.25754708, 0.29378307, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "airmass"
+
+[node name="front2" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.1810001
+anchor_bottom = -1.1810001
+offset_left = -2945.0
+offset_top = 208.78801
+offset_right = -2721.0
+offset_bottom = 270.78802
+theme_override_colors/font_color = Color(0.8960867, 0.48649842, 0.90324485, 1)
+theme_override_colors/font_shadow_color = Color(0.2108089, 0.00931558, 0.1904119, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "front"
+
+[node name="recap" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -3351.0
+offset_top = 33.0
+offset_right = -3127.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0.5664892, 0.6419973, 0.99788815, 1)
+theme_override_colors/font_shadow_color = Color(0.26349643, 0.15268126, 0.48359787, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "recap"
+
+[node name="front3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.1810001
+anchor_bottom = -1.1810001
+offset_left = -960.0
+offset_top = 1454.4801
+offset_right = -800.0
+offset_bottom = 1581.4801
+theme_override_colors/font_color = Color(0.8960867, 0.48649842, 0.90324485, 1)
+theme_override_colors/font_shadow_color = Color(0.2108089, 0.00931558, 0.1904119, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 19
+theme_override_fonts/font = ExtResource("9_eogry")
+theme_override_font_sizes/font_size = 68
+text = "front
+"
+
+[node name="visualCues" parent="." instance=ExtResource("16_4gw6i")]
+position = Vector2(355.00003, 179)
+scale = Vector2(0.6875, 0.6875)
+
+[node name="CloudyAnimated" parent="." instance=ExtResource("17_s2k1v")]
+visible = false
+position = Vector2(241, 95)
+scale = Vector2(0.40677088, 0.44999996)
+
+[node name="SunnyAnimated" parent="." instance=ExtResource("18_kogg6")]
+visible = false
+position = Vector2(384, 93.83)
+scale = Vector2(0.40677083, 0.33916664)
+
+[node name="RainyAnimated" parent="." instance=ExtResource("19_6ojia")]
+visible = false
+position = Vector2(98, 95.00001)
+scale = Vector2(0.56041664, 0.46388894)
+
+[node name="inviWall2" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
+offset_top = 4.0
+offset_right = 26.0
+offset_bottom = 255.0
+color = Color(0, 0.4977886, 0.66668326, 1)
+
+[node name="inviWall1" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 460.0
 offset_top = 13.0
-offset_right = 24.0
-offset_bottom = 67.0
+offset_right = 486.0
+offset_bottom = 264.0
 color = Color(0, 0.4977886, 0.66668326, 0)
+
+[node name="fadein" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 487.0
+offset_bottom = 267.0
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="NoBtn" to="." method="_on_no_btn_pressed"]
+[connection signal="pressed" from="YesBtn" to="." method="_on_yes_btn_pressed"]

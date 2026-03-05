@@ -1,5 +1,6 @@
-[gd_scene format=3 uid="uid://b0pg4fhwtse3a"]
+[gd_scene load_steps=22 format=3 uid="uid://b0pg4fhwtse3a"]
 
+[ext_resource type="Script" uid="uid://dnw1sprf3gope" path="res://scenes/start_lesson_dialogtscn.gd" id="1_hwl4e"]
 [ext_resource type="Texture2D" uid="uid://bygndgb0mvcp7" path="res://Art/LessonMaterials/Box.png" id="1_oovqb"]
 [ext_resource type="Texture2D" uid="uid://cwfu5thuycdi" path="res://Art/LessonMaterials/Yes.png" id="2_ijfia"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_vxq2t"]
@@ -46,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hwl4e")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -100,3 +102,5 @@ text = "Would you like to start the Lesson? "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
+
+[connection signal="pressed" from="NinePatchRect/Yes" to="." method="_on_yes_pressed"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://clqecd78pxym6"]
+
+[ext_resource type="Texture2D" uid="uid://blq2fwkxiqql3" path="res://Art/Pipoya Popup  Emotes Pack/Pipoya Popup  Emotes Pack/pipo-popupemotes.png" id="1_ngwfu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqi0o"]
+atlas = ExtResource("1_ngwfu")
+region = Rect2(96, 480, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efoap"]
+atlas = ExtResource("1_ngwfu")
+region = Rect2(128, 480, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnovy"]
+atlas = ExtResource("1_ngwfu")
+region = Rect2(160, 480, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vm0xj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqi0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efoap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnovy")
+}],
+"loop": true,
+"name": &"YorN",
+"speed": 5.0
+}]
+
+[node name="visual_cues" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_vm0xj")
+animation = &"YorN"
