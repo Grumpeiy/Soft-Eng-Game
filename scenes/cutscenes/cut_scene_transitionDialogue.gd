@@ -40,12 +40,13 @@ func start_intro():
 	# 1. Play IntroP1 (Cinematic Borders/Camera Setup)
 	# We MUST wait for this to finish, otherwise IntroP2 will be skipped.
 	run_animation_safely("IntroP1")
+	$AnimationPlayer.play("fadeOut")
 	
 	# 2. Start Camera movement logic
 	camera.enabled = true
 	start_camera_movement()
 	
-	anim_player.animation_finished
+	await anim_player.animation_finished
 	# 3. Show UI and start the first dialogue (Line 0)
 	narration.visible = true
 	currentDialogueID = -1
@@ -84,11 +85,11 @@ func next_script():
 	match currentDialogueID:
 		0: 
 			# Line 0: "Thriving farm" -> Start IntroP2
-			await run_animation_safely("IntroP2")
+			pass
 		1:
 			# Line 1: "Grandfather's hardwork" -> DO NOTHING (Pass)
 			# This ensures IntroP2 keeps playing and isn't replaced by IntroP3 yet.
-			pass
+			run_animation_safely("IntroP2")
 		2:
 			# Line 2: "Place of harmony" -> Start IntroP3
 			run_animation_safely("IntroP3")
@@ -122,18 +123,21 @@ func run_animation_safely(anim_name: String):
 func end_intro():
 	dActive = false
 	narration.visible = false
-	await iris_wipe_close(Vector2(211, 33), 1.5)
+	$AnimatedSprite2D2.visible = true
+	await iris_wipe_close($AnimatedSprite2D2, 3.0)
 	dialogueFinished.emit()
 	
-func iris_wipe_close(subject_position: Vector2, duration: float = 1.5):
-	var iris = $IrisColorRect  # your ColorRect with the shader
+func iris_wipe_close(subject: Node2D, duration: float = 1.5):
+	var iris = $IrisColorRect
 	var viewport_size = get_viewport().get_visible_rect().size
 
-	# set center to subject position in UV space
-	var center = subject_position / viewport_size
+	# correct way to convert world to screen position in 2D
+	var screen_pos = get_viewport().get_canvas_transform() * subject.global_position
+	var center = screen_pos / viewport_size
+
 	iris.material.set_shader_parameter("center", center)
 	iris.material.set_shader_parameter("radius", 1.5)
-	
+
 	var tween = create_tween()
 	tween.tween_method(
 		func(val): iris.material.set_shader_parameter("radius", val),

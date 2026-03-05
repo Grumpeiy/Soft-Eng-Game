@@ -1,64 +1,104 @@
 extends Control
-
 signal dialogueFinished
 @export_file("*.json") var d_file
-
 var dialogue = [] 
-var currentDialogueID = 0 #identifier for current dialogue
+var currentDialogueID = 0
 var dActive = false
-
 var type_speed = 0.05
 
 func _ready():
 	$NinePatchRect.visible = false
+	$ColorRect/SpriteFrontNPC.visible = false
+	$ColorRect.visible = false
+	$ColorRect/SpriteFrontNPC.visible = false
+	$ColorRect/PLAYER1x1.visible = false
 	
-func start():
+func start(file_path: String = "res://dialogue/sampleDialogueMan.json"):
 	if dActive:
 		return
 	dActive = true
 	$NinePatchRect.visible = true
-	dialogue = load_dialogue()
+	$ColorRect/SpriteFrontNPC.visible = true
+	$ColorRect.visible = true
+	dialogue = load_dialogue(file_path)
 	currentDialogueID = -1
 	next_script()
-	
-func load_dialogue():
-	var file = FileAccess.open("res://dialogue/sampleDialogueMan.json", FileAccess.READ)
+
+func start_random(file_path: String):
+	if dActive:
+		return
+	dActive = true
+	$NinePatchRect.visible = true
+	$ColorRect/SpriteFrontNPC.visible = true
+	$ColorRect.visible = true
+	var all_dialogues = load_dialogue(file_path)
+	dialogue = all_dialogues[randi() % all_dialogues.size()]
+	currentDialogueID = -1
+	next_script()
+
+func load_dialogue(file_path: String):
+	if not FileAccess.file_exists(file_path):
+		print("ERROR: File not found: ", file_path)
+		return []
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file == null:
+		print("ERROR: Could not open file: ", file_path)
+		return []
 	var content = JSON.parse_string(file.get_as_text())
+	if content == null:
+		print("ERROR: Could not parse JSON: ", file_path)
+		return []
 	return content
 
 func _input(event):
 	if !dActive:
 		return
 	if event.is_action_pressed("ui_accept"):
+		if $NinePatchRect/AnimationPlayer.is_playing():
+			$NinePatchRect/AnimationPlayer.stop()
+			$NinePatchRect/Text.visible_ratio = 1.0
+			return
 		next_script()
-		
+
 func next_script():
 	currentDialogueID += 1
 	if currentDialogueID >= len(dialogue):
 		dActive = false
 		$NinePatchRect.visible = false
+		$ColorRect/SpriteFrontNPC.visible = false
+		$ColorRect.visible = false
 		emit_signal("dialogueFinished")
 		return
+	var portrait = dialogue[currentDialogueID].get("Portrait", "")
+	if portrait == "Grandpa":
+		$ColorRect/SpriteFrontNPC.visible = true
+		$ColorRect/PLAYER1x1.visible = false
+	elif portrait == "You":
+		$ColorRect/SpriteFrontNPC.visible = false
+		$ColorRect/PLAYER1x1.visible = true
 		
-		# 1. Update content
 	$NinePatchRect/Name.text = dialogue[currentDialogueID]['Name']
 	var current_text = dialogue[currentDialogueID]['Text']
 	$NinePatchRect/Text.text = current_text
-	
-	# 2. Reset visibility so it starts invisible
+
 	$NinePatchRect/Text.visible_ratio = 0.0
-	
-	# 3. Calculate Duration based on text length
+
 	var duration = current_text.length() * type_speed
-	
-	# 4. Set Animation Speed
-	# Assuming your animation in the editor is exactly 1.0 second long
+
 	if duration > 0:
 		$NinePatchRect/AnimationPlayer.speed_scale = 1.0 / duration
 	else:
-		$AnimationPlayer.speed_scale = 1.0
-	
-	# 5. Play!
+		$NinePatchRect/AnimationPlayer.speed_scale = 1.0
+
 	$NinePatchRect/AnimationPlayer.play("typewriterfx")
-		
-	
+
+func force_stop():
+	if not dActive:
+		return
+	dActive = false
+	$NinePatchRect.visible = false
+	$ColorRect/SpriteFrontNPC.visible = false
+	$ColorRect/PLAYER1x1.visible = false
+	$ColorRect.visible = false
+	$NinePatchRect/AnimationPlayer.stop()
+	emit_signal("dialogueFinished")

@@ -1,0 +1,6 @@
+[
+    {"Name": "Epstein", "Text": "Welcome to the Workshop!"},
+    {"Name": "Epstein", "Text": "You can call me Epstein.."},
+    {"Name": "Epstein", "Text": "This is where I shall teach you the important things you will encounter throughout your journey here in Biringan."},
+    {"Name": "Epstein", "Text": "This lesson will cover Weather Patterns in the Philippines."}
+]

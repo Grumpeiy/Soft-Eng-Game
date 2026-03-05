@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfaf74aqwehhk"]
+
+[ext_resource type="Texture2D" uid="uid://b6lpvps6ld3kc" path="res://Art/LessonMaterials/thoughtBubble.png" id="1_dr1xf"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_08nhu"]
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_left = 29.0
+offset_top = 2.0
+offset_right = 333.0
+offset_bottom = 42.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+texture = ExtResource("1_dr1xf")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="content" type="Label" parent="NinePatchRect"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 35.0
+offset_top = 17.0
+offset_right = 350.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_08nhu")
+theme_override_font_sizes/font_size = 7
+text = "wadaawdadwaddddd"
+autowrap_mode = 2

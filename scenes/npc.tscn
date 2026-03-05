@@ -109,40 +109,44 @@ radius = 8.026347
 [sub_resource type="CircleShape2D" id="CircleShape2D_rv78h"]
 radius = 30.115704
 
-[node name="NPC" type="CharacterBody2D" unique_id=1281781248]
+[node name="NPC" type="CharacterBody2D" unique_id=55520110]
+z_index = 1
 position = Vector2(12, 1)
 scale = Vector2(0.99671745, 0.9912596)
 script = ExtResource("1_abqhh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1336124319]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1265388138]
 position = Vector2(-12.03952, -1.0088176)
 sprite_frames = SubResource("SpriteFrames_abqhh")
 animation = &"IDLE"
 autoplay = "IDLE"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=193396241]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1275402862]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-12.03952, -1.0088177)
 shape = SubResource("CircleShape2D_abqhh")
 
-[node name="ChatDetectionArea" type="Area2D" parent="." unique_id=616985506]
+[node name="ChatDetectionArea" type="Area2D" parent="." unique_id=619273709]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetectionArea" unique_id=45688278]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetectionArea" unique_id=1213221436]
 position = Vector2(-12.03952, -1.0088167)
 shape = SubResource("CircleShape2D_rv78h")
 
-[node name="Timer" type="Timer" parent="." unique_id=1629121143]
+[node name="Timer" type="Timer" parent="." unique_id=1985402064]
 autostart = true
 
-[node name="Dialogue" parent="." unique_id=975308229 instance=ExtResource("3_rv78h")]
+[node name="Dialogue" parent="." unique_id=1410541198 instance=ExtResource("3_rv78h")]
+visible = false
+z_index = 0
 offset_left = -165.54341
 offset_top = -18.158714
 offset_right = -125.54341
 offset_bottom = 21.841286
 
-[node name="InteractionSpace" parent="." unique_id=1118029511 instance=ExtResource("4_7n8xq")]
-position = Vector2(-12.039516, -1.0088167)
+[node name="InteractionSpace" parent="." unique_id=1293240517 instance=ExtResource("4_7n8xq")]
+position = Vector2(-12.039519, -1.0088176)
+scale = Vector2(1.2333833, 1.2075295)
 
 [connection signal="body_entered" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="ChatDetectionArea" to="." method="_on_chat_detection_area_body_exited"]

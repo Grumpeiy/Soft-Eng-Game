@@ -10,9 +10,9 @@ func _ready():
 
 func _on_start_pressed():
 	Audio.play_click()
-	get_tree().change_scene_to_file("res://scenes/Options/Start.tscn")
+	#get_tree().change_scene_to_file("res://scenes/Options/Start.tscn")
 	
-	"""if Settings.tutorial_mode_enabled and not Settings.has_seen_tutorial:
+	if Settings.tutorial_mode_enabled and not Settings.has_seen_tutorial:
 		$fade_transition.show()
 		$fade_transition/fade_timer.start()
 		$fade_transition/AnimationPlayer.play("fade_in")
@@ -21,7 +21,7 @@ func _on_start_pressed():
 		button_type = "start"
 		$fade_transition.show()
 		$fade_transition/fade_timer.start()
-		$fade_transition/AnimationPlayer.play("fade_in")"""
+		$fade_transition/AnimationPlayer.play("fade_in")
 
 func _on_option_pressed():
 	Audio.play_click()

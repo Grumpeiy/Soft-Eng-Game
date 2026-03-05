@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bvsxrlixr85f8"]
+
+[ext_resource type="Texture2D" uid="uid://y4cjj3142mh8" path="res://Art/Sprites/Basic Charakter Spritesheet.png" id="1_t34f4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4htfd"]
+atlas = ExtResource("1_t34f4")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0r5s"]
+atlas = ExtResource("1_t34f4")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0nk0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4htfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0r5s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1748750319]
+sprite_frames = SubResource("SpriteFrames_0nk0i")
+animation = &"idle"
+frame_progress = 0.77711874

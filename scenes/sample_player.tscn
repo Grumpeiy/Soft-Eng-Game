@@ -147,15 +147,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ck8kj"]
 radius = 4.0
 
-[node name="samplePlayer" type="CharacterBody2D"]
+[node name="samplePlayer" type="CharacterBody2D" unique_id=1725144803]
 script = ExtResource("1_gdh1n")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=87585180]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_va3tc")
 animation = &"MoveDown"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=970302442]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_ck8kj")

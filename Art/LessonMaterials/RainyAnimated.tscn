@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=3 uid="uid://bdsqiiksamyts"]
+
+[ext_resource type="Texture2D" uid="uid://7kk0ggo61nxf" path="res://Art/LessonMaterials/RAINY IMAGE SET/1.jpg" id="1_6486f"]
+[ext_resource type="Texture2D" uid="uid://8hygflrtmhfd" path="res://Art/LessonMaterials/RAINY IMAGE SET/2.jpg" id="2_r3pqn"]
+[ext_resource type="Texture2D" uid="uid://clqolb340a6wv" path="res://Art/LessonMaterials/RAINY IMAGE SET/3.jpg" id="3_ldmvi"]
+[ext_resource type="Texture2D" uid="uid://dq4rna5gpfy4x" path="res://Art/LessonMaterials/RAINY IMAGE SET/5.jpg" id="4_8suel"]
+[ext_resource type="Texture2D" uid="uid://bfwxe3fcbeg84" path="res://Art/LessonMaterials/RAINY IMAGE SET/6.jpg" id="5_ctg2t"]
+[ext_resource type="Texture2D" uid="uid://dyljk7t1yll66" path="res://Art/LessonMaterials/RAINY IMAGE SET/7.jpg" id="6_n3hkw"]
+[ext_resource type="Texture2D" uid="uid://c5ddhtvaxdlx5" path="res://Art/LessonMaterials/RAINY IMAGE SET/8.jpg" id="7_idoxw"]
+[ext_resource type="Texture2D" uid="uid://dxism7a8hukhb" path="res://Art/LessonMaterials/RAINY IMAGE SET/9.jpg" id="8_8c34j"]
+[ext_resource type="Texture2D" uid="uid://7pwhrmmgsrm0" path="res://Art/LessonMaterials/RAINY IMAGE SET/10.jpg" id="9_oqnyd"]
+[ext_resource type="Texture2D" uid="uid://dguamouwc01d5" path="res://Art/LessonMaterials/RAINY IMAGE SET/11.jpg" id="10_l2w8i"]
+[ext_resource type="Texture2D" uid="uid://cvyubnknbbbri" path="res://Art/LessonMaterials/RAINY IMAGE SET/12.jpg" id="11_7c8ch"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tghkd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6486f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r3pqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ldmvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8suel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ctg2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n3hkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_idoxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8c34j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oqnyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l2w8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7c8ch")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_tghkd")
+autoplay = "default"
+frame_progress = 0.09125408

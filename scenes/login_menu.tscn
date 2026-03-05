@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://dduw02ugw74ae"]
 
-[ext_resource type="Script" path="res://login_menu.gd" id="1_w1ogu"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_4n733"]
-[ext_resource type="VideoStream" uid="uid://b74yonck82dlf" path="res://Art/VideoAssets/0224.ogv" id="3_78ya1"]
+[ext_resource type="VideoStream" uid="uid://cwtytug7l4a0y" path="res://Art/VideoAssets/0224.ogv" id="3_78ya1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4n733"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -20,7 +19,7 @@ border_width_right = 1
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
-[node name="LoginMenu" type="Control"]
+[node name="LoginMenu" type="Control" unique_id=128312119]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,16 +27,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(264, 512)
-script = ExtResource("1_w1ogu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=589451342]
 layout_mode = 0
 offset_left = 1.0
 offset_right = 481.0
 offset_bottom = 270.0
 color = Color(0.07450981, 0.3764706, 0.4392157, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect2" type="ColorRect" parent="ColorRect" unique_id=992982596]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
@@ -45,7 +43,7 @@ offset_right = 455.0
 offset_bottom = 245.0
 color = Color(0.27450982, 0.6627451, 0.5803922, 1)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=71327231]
 clip_contents = true
 layout_direction = 4
 layout_mode = 1
@@ -61,7 +59,7 @@ stream = ExtResource("3_78ya1")
 autoplay = true
 loop = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=639046612]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 26.0
@@ -69,21 +67,21 @@ offset_right = 242.0
 offset_bottom = 245.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
 
-[node name="Panel2" type="Panel" parent="Panel"]
+[node name="Panel2" type="Panel" parent="Panel" unique_id=1310497489]
 layout_mode = 0
 offset_top = -1.0
 offset_right = 431.0
 offset_bottom = 220.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1556761754]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 134.0
 offset_right = 308.0
 offset_bottom = 174.0
 
-[node name="username" type="TextEdit" parent="TextureRect"]
+[node name="username" type="TextEdit" parent="TextureRect" unique_id=2028950500]
 layout_mode = 0
 offset_top = -45.0
 offset_right = 169.0
@@ -95,14 +93,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_78ya1")
 placeholder_text = "enter username
 "
 
-[node name="usernamePanel" type="Panel" parent="TextureRect/username"]
+[node name="usernamePanel" type="Panel" parent="TextureRect/username" unique_id=1130474519]
 visible = false
 layout_mode = 0
 offset_right = 169.0
 offset_bottom = 19.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
 
-[node name="password" type="TextEdit" parent="TextureRect"]
+[node name="password" type="TextEdit" parent="TextureRect" unique_id=1541254029]
 layout_mode = 0
 offset_right = 169.0
 offset_bottom = 19.0
@@ -112,14 +110,14 @@ theme_override_font_sizes/font_size = 9
 theme_override_styles/normal = SubResource("StyleBoxFlat_78ya1")
 placeholder_text = "enter password"
 
-[node name="usernamePanel2" type="Panel" parent="TextureRect/password"]
+[node name="usernamePanel2" type="Panel" parent="TextureRect/password" unique_id=1650716470]
 visible = false
 layout_mode = 0
 offset_right = 169.0
 offset_bottom = 19.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
 
-[node name="Label" type="Label" parent="TextureRect"]
+[node name="Label" type="Label" parent="TextureRect" unique_id=1337061974]
 layout_mode = 0
 offset_top = -57.0
 offset_right = 82.0
@@ -129,7 +127,7 @@ theme_override_fonts/font = ExtResource("2_4n733")
 theme_override_font_sizes/font_size = 9
 text = "Username"
 
-[node name="Label2" type="Label" parent="TextureRect"]
+[node name="Label2" type="Label" parent="TextureRect" unique_id=929102887]
 layout_mode = 0
 offset_top = -15.0
 offset_right = 82.0
@@ -139,7 +137,7 @@ theme_override_fonts/font = ExtResource("2_4n733")
 theme_override_font_sizes/font_size = 9
 text = "Password"
 
-[node name="Button" type="Button" parent="TextureRect"]
+[node name="Button" type="Button" parent="TextureRect" unique_id=584904265]
 layout_mode = 0
 offset_left = 124.0
 offset_top = 36.0
