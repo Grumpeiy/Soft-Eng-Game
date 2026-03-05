@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://gesym4vv2x7h" path="res://dialogue/dialogueBunny.gd" id="1_ajdv3"]
 [ext_resource type="Texture2D" uid="uid://djx5iaumnk3r1" path="res://Art/SampleNpcDialogueBox2.png" id="1_hwebn"]
-[ext_resource type="PackedScene" uid="uid://bvcwhnqdejt1n" path="res://scenes/NPC1x1.tscn" id="2_qv5is"]
+[ext_resource type="PackedScene" path="res://scenes/NPC1x1.tscn" id="2_qv5is"]
 [ext_resource type="Script" uid="uid://bc03umi7t818a" path="res://dialogue/typewriterfx.gd" id="3_0py07"]
-[ext_resource type="PackedScene" uid="uid://d0dpl2dd6rt5f" path="res://scenes/player_1x_1.tscn" id="3_xtcad"]
+[ext_resource type="PackedScene" path="res://scenes/player_1x_1.tscn" id="3_xtcad"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="5_ix8sh"]
 
 [sub_resource type="Animation" id="Animation_xtcad"]
