@@ -35,6 +35,11 @@ const IMAGE_POSITIONS = [
 ]
 
 func _ready():
+	yes_button.visible = false
+	no_button.visible = false
+	yes_button.disabled = true
+	no_button.disabled = true
+	
 	$wizardTeacher/emoticons.visible = false
 	visual_cues.visible = false
 	$wizardTeacher.play("idle")
@@ -44,10 +49,6 @@ func _ready():
 			node.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 	# Hide and disable Y/N buttons at start
-	yes_button.visible = false
-	no_button.visible = false
-	yes_button.disabled = true
-	no_button.disabled = true
 
 	hide_image_choices()
 
@@ -376,6 +377,7 @@ func on_dialogue_finished():
 	anim_player.play("fadein")
 
 func _on_yes_btn_pressed() -> void:
+	print("YES BUTTON PRESSED")
 	if not waiting_for_yor_n:
 		return
 	_hide_yor_n_buttons()
@@ -393,6 +395,7 @@ func _on_yes_btn_pressed() -> void:
 			next_line()
 
 func _on_no_btn_pressed() -> void:
+	print("NO BUTTON PRESSED")
 	if not waiting_for_yor_n:
 		return
 	_hide_yor_n_buttons()
