@@ -51,9 +51,10 @@ script = ExtResource("1_hwl4e")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_left = -1.0
-offset_right = 153.0
-offset_bottom = 140.0
+offset_left = 300.0
+offset_top = 100.0
+offset_right = 454.0
+offset_bottom = 240.0
 texture = ExtResource("1_oovqb")
 
 [node name="Yes" type="Button" parent="NinePatchRect"]
@@ -88,10 +89,10 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_t4kby")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 44.999992
-offset_right = 175.25
-offset_bottom = 66.51983
+offset_left = 321.0
+offset_top = 148.0
+offset_right = 477.25
+offset_bottom = 169.51984
 scale = Vector2(0.8, 1.487)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 9

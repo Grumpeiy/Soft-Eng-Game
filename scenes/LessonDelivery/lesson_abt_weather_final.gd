@@ -375,6 +375,8 @@ func on_dialogue_finished():
 	
 	# ✅ Play fade in animation
 	anim_player.play("fadein")
+	await anim_player.animation_finished
+	get_tree().change_scene_to_file("res://scenes/Well.tscn")
 
 func _on_yes_btn_pressed() -> void:
 	print("YES BUTTON PRESSED")
