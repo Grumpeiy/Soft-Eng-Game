@@ -1,6 +1,7 @@
 extends Area2D
 
 var is_filled: bool = false
+var sfx: AudioStreamPlayer
 
 func _ready():
 	var err1 = body_entered.connect(_on_body_entered)
@@ -8,6 +9,11 @@ func _ready():
 	print("body_entered connected: ", err1)
 	print("body_exited connected: ", err2)
 
+	sfx = AudioStreamPlayer.new()
+	sfx.volume_db = 20.0
+	sfx.stream = load("res://Sounds/music/softpop.mp3")  # update to your sfx path
+	add_child(sfx)
+	
 func _on_body_entered(body):
 	if is_filled:
 		return
@@ -24,6 +30,7 @@ func _on_body_entered(body):
 	if entered_letter == expected_letter:
 		is_filled = true
 		body.teleport_to(global_position)
+		sfx.play()
 		var indicator = get_meta("indicator")
 		indicator.play("correct")
 	
