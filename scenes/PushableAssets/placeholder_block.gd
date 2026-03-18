@@ -2,6 +2,7 @@ extends Area2D
 
 var is_filled: bool = false
 var sfx: AudioStreamPlayer
+var sfx_wrong: AudioStreamPlayer
 
 func _ready():
 	var err1 = body_entered.connect(_on_body_entered)
@@ -13,6 +14,11 @@ func _ready():
 	sfx.volume_db = 20.0
 	sfx.stream = load("res://Sounds/music/softpop.mp3")  # update to your sfx path
 	add_child(sfx)
+	
+	sfx_wrong = AudioStreamPlayer.new()
+	sfx_wrong.stream = load("res://Sounds/music/chime.mp3")  # update to your sfx path
+	sfx_wrong.volume_db = -5.0
+	add_child(sfx_wrong)
 	
 func _on_body_entered(body):
 	if is_filled:
@@ -37,6 +43,7 @@ func _on_body_entered(body):
 	# notify the main scene to check win condition
 		get_tree().get_root().get_node("minigameMap").check_win()
 	else:
+		sfx_wrong.play()
 		var indicator = get_meta("indicator")
 		indicator.play("wrong")
 		

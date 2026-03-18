@@ -37,5 +37,4 @@ func _physics_process(delta):
 		sfx.play()
 	elif linear_velocity.length() <= 1.0:
 		was_moving = false
-		print("block stopped, playing SFX")
 		sfx.stop()

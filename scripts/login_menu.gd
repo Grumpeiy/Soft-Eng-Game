@@ -4,16 +4,25 @@ extends Control
 @onready var password_input = $TextureRect/password
 @onready var login_button = $TextureRect/Login
 @onready var error_popup = $ErrorPopup
+@onready var eye_button = $TextureRect/password/eye_button
 
 var http_request: HTTPRequest
+var eye_open = preload("res://Art/LogInMenu/eyeopen.png")   # UPDATE path
+var eye_closed = preload("res://Art/LogInMenu/eyeclose.png") # UPDATE path
+
+var password_visible: bool = false
 
 func _ready() -> void:
+	
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(_on_login_response)
 	
+	password_input.secret = true
 	login_button.pressed.connect(_on_login_pressed)
-
+	eye_button.texture_normal = eye_closed
+	eye_button.pressed.connect(_on_eye_button_pressed)
+	
 func _on_login_pressed() -> void:
 	
 	var username = username_input.text.strip_edges()
@@ -106,3 +115,16 @@ func handle_successful_login(response: Dictionary):
 func show_error(message: String):
 	error_popup.dialog_text = message
 	error_popup.popup_centered()
+
+
+func _on_eye_button_pressed():
+	password_visible = !password_visible
+	password_input.secret = !password_visible
+	
+	if password_visible:
+		eye_button.texture_normal = eye_open
+	else:
+		eye_button.texture_normal = eye_closed
+		
+	eye_button.ignore_texture_size = true
+	eye_button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED

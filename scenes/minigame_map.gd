@@ -10,6 +10,9 @@ extends Control
 
 @export var start_index: int = 0
 
+@onready var water_pool = $WaterPool
+var sfx_congrats: AudioStreamPlayer
+
 var placeholder_scene = preload("res://scenes/PushableAssets/PlaceholderBlock.tscn")
 var indicator_scene = preload("res://scenes/PushableAssets/IndicatorBlock.tscn")
 
@@ -22,6 +25,13 @@ var questions: Array = []
 var current_question_index: int = 0
 
 func _ready():
+	$WaterPool.visible = false
+	
+	sfx_congrats = AudioStreamPlayer.new()
+	sfx_congrats.stream = load("res://Sounds/music/gloryTrumpet.mp3")  # update to your sfx path
+	sfx_congrats.volume_db = 0.0
+	add_child(sfx_congrats)
+	
 	MenuMusic.stop_music()
 	$PushableMusic.play()
 	$AnimationPlayer.play("FadeOut")
@@ -144,20 +154,51 @@ func load_current_question():
 	await typewriter_effect($ColorRect/QuestionLabel, entry["question"])
 func on_minigame_complete():
 	print("Minigame complete!")
-	$AnimationPlayer.play("WaterDiscovery")
 	
-	await get_tree().create_timer(2.0).timeout
+	# start confetti and congrats SFX
+	$Confetti.emitting = true
+	$Confetti.z_index = 10
+	sfx_congrats.play()
+	
+	# stop confetti after 3 seconds
+	await get_tree().create_timer(3.0).timeout
+	$Confetti.emitting = false
+	
+	# hide spawned nodes
 	for child in get_children():
 		if child.is_in_group("spawned"):
 			child.visible = false
-	#change $samplePlayer to whichever playernode to be used
+	
+	# UPDATE: change $samplePlayer to your actual player node name
 	$samplePlayer.position = Vector2(235.0, 23.0)
 	$samplePlayer.set_process(false)
 	$samplePlayer.set_physics_process(false)
 	
-	await get_tree().create_timer(2.0).timeout
+	# play FadeInAndOut and wait for it to finish
+	$AnimationPlayer.play("FadeInAndOut")
+	await $AnimationPlayer.animation_finished
+	
+	# simultaneously show water pool + play spawning + start typewriter
+	water_pool.visible = true
+	water_pool.play("spawning")
+	
 	var full_text: String = "You've rediscovered water! This will surely help your grandfather's farm and the forest from the terrible drought."
 	await typewriter_effect($ColorRect/QuestionLabel, full_text)
+	
+	# stop spawning animation after 5 seconds but keep pool visible
+	await get_tree().create_timer(5.0).timeout
+	water_pool.stop()
+	
+	# wait for enter press OR 20 seconds whichever comes first
+	var timer = get_tree().create_timer(20.0)
+	while timer.time_left > 0:
+		if Input.is_action_just_pressed("ui_accept"):
+			break
+		await get_tree().process_frame
+	
+	# play FadeOut and wait for it to finish
+	$AnimationPlayer.play("FadeOut")
+	await $AnimationPlayer.animation_finished
 	
 func check_win():
 	for placeholder in placeholders:

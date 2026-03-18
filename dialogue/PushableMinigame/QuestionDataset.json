@@ -1,32 +1,52 @@
 [
   {
-    "question": "The condition of the air in a place over a short period of time.",
-    "answer": "WEATHER",
-    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+	"question": "What do we call the condition of the air in a place today?",
+	"answer": "WEATHER",
+	"hint": "It can be sunny, rainy, cloudy, or windy!"
   },
   {
-    "question": "The average weather condition of a place over a long period of time.",
-    "answer": "CLIMATE",
-    "hint": "It describes what the weather is usually like in that place."
+	"question": "What do we call the usual weather of a place for many years?",
+	"answer": "CLIMATE",
+	"hint": "It stays the same for a very long time in one place."
   },
   {
-    "question": "The time of the year when there is a lot of rain, often with thunderstorms.",
-    "answer": "RAINY SEASON",
-    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+	"question": "What do we call a time of year that has the same kind of weather?",
+	"answer": "SEASON",
+	"hint": "The Philippines has two of these!"
   },
   {
-    "question": "The time of the year when there is little or no rain. The days are usually hot and sunny.",
-    "answer": "DRY SEASON",
-    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+	"question": "What do we call a strong wind that brings rain or dry weather?",
+	"answer": "MONSOON",
+	"hint": "The Philippines has two of these — Amihan and Habagat!"
   },
   {
-    "question": "The cool northeast wind that brings cold and dry air, usually from November to February.",
-    "answer": "AMIHAN",
-    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+	"question": "What do we call the time of year when it rains a lot?",
+	"answer": "RAINY SEASON",
+	"hint": "You need an umbrella during this time!"
   },
   {
-    "question": "The warm southwest wind that brings heavy rain, usually from June to October.",
-    "answer": "HABAGAT",
-    "hint": "It can change every day. Example: sunny, rainy, cloudy, windy."
+	"question": "What do we call the time of year when it is very hot and dry?",
+	"answer": "DRY SEASON",
+	"hint": "Great time to go to the beach!"
+  },
+  {
+	"question": "What do we call the cool northeast wind that brings cold and dry air?",
+	"answer": "AMIHAN",
+	"hint": "It comes from November to February!"
+  },
+  {
+	"question": "What do we call the warm southwest wind that brings heavy rain?",
+	"answer": "HABAGAT",
+	"hint": "It comes from June to October!"
+  },
+  {
+	"question": "What do we call a big bunch of air that is hot, cold, wet, or dry?",
+	"answer": "AIR MASS",
+	"hint": "Think of it like a giant invisible bubble of air!"
+  },
+  {
+	"question": "What do we call the place where two different air masses meet?",
+	"answer": "FRONT",
+	"hint": "When cold and warm air meet, this happens!"
   }
 ]

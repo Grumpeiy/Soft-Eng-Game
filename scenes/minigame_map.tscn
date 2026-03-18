@@ -1,12 +1,12 @@
-[gd_scene load_steps=46 format=4 uid="uid://bv3w1a46fgghq"]
+[gd_scene load_steps=53 format=4 uid="uid://bv3w1a46fgghq"]
 
 [ext_resource type="Texture2D" uid="uid://drahiyl4mug8e" path="res://Art/Sunnyside_World_ASSET_PACK_V2.1/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_sn5h5"]
 [ext_resource type="Script" uid="uid://cedcbjd20na1p" path="res://scenes/minigame_map.gd" id="1_yfmv5"]
 [ext_resource type="PackedScene" uid="uid://d2x31gs6cgc3x" path="res://scenes/sample_player.tscn" id="2_jky1d"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="3_ntu0u"]
-[ext_resource type="PackedScene" uid="uid://cru560jhjpjd8" path="res://scenes/cutscenes/undergroundpool.tscn" id="6_kaumx"]
 [ext_resource type="AudioStream" uid="uid://xwmasvpwywbg" path="res://Sounds/music/rock-sliding.mp3" id="6_npn7b"]
 [ext_resource type="AudioStream" uid="uid://cmiladovlsl6y" path="res://Sounds/music/DAVIDRENDA8bitUnderground.mp3" id="6_pvkf4"]
+[ext_resource type="Texture2D" uid="uid://baby4yn74ial1" path="res://Art/MinigameAssets/undergroundPool.png" id="8_npn7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jky1d"]
 texture = ExtResource("1_sn5h5")
@@ -3603,6 +3603,81 @@ size = Vector2(20, 1.8358002)
 font = ExtResource("3_ntu0u")
 font_size = 10
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdx0l"]
+atlas = ExtResource("8_npn7b")
+region = Rect2(0, 0, 112, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taqcx"]
+atlas = ExtResource("8_npn7b")
+region = Rect2(112, 0, 112, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vmep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdx0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taqcx")
+}],
+"loop": true,
+"name": &"spawning",
+"speed": 1.5
+}]
+
+[sub_resource type="Animation" id="Animation_kaumx"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666666, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_npn7b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bdx0l"]
+resource_name = "FadeInAndOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 1.3333334, 2.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdx0l"]
+_data = {
+&"FadeInAndOut": SubResource("Animation_bdx0l"),
+&"FadeOut": SubResource("Animation_kaumx"),
+&"RESET": SubResource("Animation_npn7b")
+}
+
 [node name="minigameMap" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -3879,13 +3954,6 @@ label_settings = SubResource("LabelSettings_5q8yr")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../samplePlayer")
-
-[node name="Sprite2D" parent="." instance=ExtResource("6_kaumx")]
-visible = false
-position = Vector2(246, 116)
-
 [node name="ColorRect2" type="ColorRect" parent="."]
 z_index = 4
 layout_mode = 0
@@ -3904,3 +3972,32 @@ parameters/looping = true
 stream = ExtResource("6_pvkf4")
 autoplay = true
 parameters/looping = true
+
+[node name="WaterPool" type="AnimatedSprite2D" parent="."]
+position = Vector2(238, 119)
+sprite_frames = SubResource("SpriteFrames_7vmep")
+animation = &"spawning"
+
+[node name="Confetti" type="CPUParticles2D" parent="."]
+z_index = 10
+position = Vector2(242, 266)
+emitting = false
+amount = 80
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.9
+randomness = 0.5
+direction = Vector2(0, -0.1)
+spread = 75.0
+gravity = Vector2(0, 120)
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+angular_velocity_min = 20.0
+angular_velocity_max = 80.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bdx0l")
+}
