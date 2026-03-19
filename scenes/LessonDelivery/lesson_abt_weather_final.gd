@@ -8,9 +8,9 @@ extends Control
 @onready var yes_button = $YesBtn
 @onready var no_button = $NoBtn
 
-@onready var img_sunny = $SunnyAnimated
-@onready var img_rainy = $RainyAnimated
-@onready var img_cloudy = $CloudyAnimated
+@onready var img_sunny = $SunnyImageChoice
+@onready var img_rainy = $RainyImageChoice
+@onready var img_cloudy = $CloudyImageChoice
 
 var thought_bubble_scene = preload("res://scenes/LessonDelivery/thoughtBubble.tscn")
 var dialogue: Array = []

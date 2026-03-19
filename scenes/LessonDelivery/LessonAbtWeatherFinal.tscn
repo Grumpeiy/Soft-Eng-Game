@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://ctvpol1niium1"]
+[gd_scene load_steps=80 format=3 uid="uid://ctvpol1niium1"]
 
 [ext_resource type="Script" uid="uid://dg2k7qc2lemep" path="res://scenes/LessonDelivery/lesson_abt_weather_final.gd" id="1_deuw4"]
 [ext_resource type="Texture2D" uid="uid://dawd3pi2uehaw" path="res://Art/LessonMaterials/Wizard Pack/Idle.png" id="1_twya0"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://ctldi1a1wvygv" path="res://Art/LessonMaterials/coldCana.jpg" id="19_svm1j"]
 [ext_resource type="Texture2D" uid="uid://csc0ccrucgvl" path="res://Art/LessonMaterials/drySeason.jpg" id="21_b07bo"]
 [ext_resource type="Texture2D" uid="uid://bdag7iyq1aj73" path="res://Art/LessonMaterials/wetseason.jpg" id="22_yqhxp"]
+[ext_resource type="Script" uid="uid://cnio40iihmx0w" path="res://scenes/LessonDelivery/ImageChoice.gd" id="24_yqhxp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfwi7"]
 atlas = ExtResource("1_twya0")
@@ -1005,6 +1006,15 @@ texture = ExtResource("14_s2k1v")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b07bo"]
 texture = ExtResource("15_kogg6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wur8s"]
+size = Vector2(100, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3sim"]
+size = Vector2(98, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qe5y"]
+size = Vector2(99.5, 52.5)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -1014,13 +1024,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_deuw4")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="LessonDeliveryUI" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 482.0
 offset_bottom = 264.0
 color = Color(1.732707e-06, 0.49653202, 0.66809887, 1)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect" type="ColorRect" parent="LessonDeliveryUI"]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 14.0
@@ -1029,7 +1039,7 @@ offset_bottom = 264.0
 scale = Vector2(0.9, 0.9)
 color = Color(0.39215687, 0.8039216, 1, 1)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect"]
+[node name="ColorRect" type="ColorRect" parent="LessonDeliveryUI/ColorRect"]
 layout_mode = 0
 offset_left = 105.55556
 offset_top = 281.1111
@@ -1476,21 +1486,6 @@ text = "front
 position = Vector2(355.00003, 179)
 scale = Vector2(0.6875, 0.6875)
 
-[node name="CloudyAnimated" parent="." instance=ExtResource("17_s2k1v")]
-visible = false
-position = Vector2(241, 95)
-scale = Vector2(0.40677088, 0.44999996)
-
-[node name="SunnyAnimated" parent="." instance=ExtResource("18_kogg6")]
-visible = false
-position = Vector2(384, 93.83)
-scale = Vector2(0.40677083, 0.33916664)
-
-[node name="RainyAnimated" parent="." instance=ExtResource("19_6ojia")]
-visible = false
-position = Vector2(98, 95.00001)
-scale = Vector2(0.56041664, 0.46388894)
-
 [node name="inviWall2" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
@@ -1515,6 +1510,58 @@ offset_left = -1.0
 offset_right = 487.0
 offset_bottom = 267.0
 color = Color(0, 0, 0, 0)
+
+[node name="SunnyImageChoice" type="Node2D" parent="."]
+script = ExtResource("24_yqhxp")
+
+[node name="SunnyAnimated" parent="SunnyImageChoice" instance=ExtResource("18_kogg6")]
+position = Vector2(384, 93.83)
+scale = Vector2(0.40677083, 0.33916664)
+
+[node name="ColorRect" type="ColorRect" parent="SunnyImageChoice"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Area2D" type="Area2D" parent="SunnyImageChoice"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SunnyImageChoice/Area2D"]
+position = Vector2(107, 96)
+shape = SubResource("RectangleShape2D_wur8s")
+
+[node name="RainyImageChoice" type="Node2D" parent="."]
+script = ExtResource("24_yqhxp")
+
+[node name="RainyAnimated" parent="RainyImageChoice" instance=ExtResource("19_6ojia")]
+position = Vector2(107, 95.99999)
+scale = Vector2(0.82187504, 0.2708333)
+
+[node name="ColorRect" type="ColorRect" parent="RainyImageChoice"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Area2D" type="Area2D" parent="RainyImageChoice"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RainyImageChoice/Area2D"]
+position = Vector2(241, 95)
+shape = SubResource("RectangleShape2D_t3sim")
+disabled = true
+
+[node name="CloudyImageChoice" type="Node2D" parent="."]
+script = ExtResource("24_yqhxp")
+
+[node name="CloudyAnimated" parent="CloudyImageChoice" instance=ExtResource("17_s2k1v")]
+position = Vector2(241, 95)
+scale = Vector2(0.40677088, 0.44999996)
+
+[node name="ColorRect" type="ColorRect" parent="CloudyImageChoice"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Area2D" type="Area2D" parent="CloudyImageChoice"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudyImageChoice/Area2D"]
+position = Vector2(384.25, 93.75)
+shape = SubResource("RectangleShape2D_4qe5y")
 
 [connection signal="pressed" from="NoBtn" to="." method="_on_no_btn_pressed"]
 [connection signal="pressed" from="YesBtn" to="." method="_on_yes_btn_pressed"]
