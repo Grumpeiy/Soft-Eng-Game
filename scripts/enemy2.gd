@@ -3,13 +3,13 @@ extends CharacterBody2D
 @onready var walk: AudioStreamPlayer2D = $walk
 
 var character_name : String = "Skeleton"
-var lvl            : int    = 5
+var lvl            : int    = 25
 var speed          = 50
 var player_chase   = false
 var player         = null
 
 const QUEST_ID    = 3
-const ENEMY_NUM   = 1   # ← 1 = easy questions
+const ENEMY_NUM   = 2   # ← 1 = easy questions
 
 func _physics_process(delta):
 	if player_chase and player:

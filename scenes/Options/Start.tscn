@@ -118,6 +118,8 @@ offset_right = -42.0
 offset_bottom = 119.0
 
 [node name="ConfirmDialog" type="ConfirmationDialog" parent="." unique_id=1331575128]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
 
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
@@ -128,3 +130,5 @@ offset_bottom = 119.0
 [connection signal="pressed" from="Erase" to="." method="_on_erase_pressed"]
 [connection signal="mouse_entered" from="Load" to="." method="_on_load_mouse_entered"]
 [connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="canceled" from="ConfirmDialog" to="." method="_on_confirm_dialog_canceled"]
+[connection signal="confirmed" from="ConfirmDialog" to="." method="_on_confirm_dialog_confirmed"]

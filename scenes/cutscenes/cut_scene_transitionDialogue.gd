@@ -7,36 +7,50 @@ const dialogLines : Array[Dictionary] = [
 	{"Text": "With your Grandfather's hardwork, it was sparkled with produce, [wave][color=green]vegetables[/color] and [color=orange]fruits[/color][/wave], left and right!"},
 	{"Text": "It was a [rainbow]place of harmony[/rainbow]. And he always had a blast taking care of his plants."},
 	{"Text": "However, a [color=red][shake]terrible[/shake][/color] news had struck his farm.."},
-	{"Text": "Biringan encountered its [color=red][shake]driest season[/shake][/color] yet"}, # ID 4
-	{"Text": "Your Grandfather's farm was no exception, all of the [color=blue][wave]water[/wave][/color] turned into [color=brown]dust.[/color]"}, # ID 5
-	{"Text": "Without water, vegetation can't continue. And soon enough, all the [color=green]plant life[/color] will start to [color=brown][pulse]dry out![/pulse][/color]"}, # ID 6
-	{"Text": "You are tasked to find all the [color=blue][wave]water[/wave][/color] in your province and save the [rainbow]Biringan[/rainbow]!"} # ID 7
+	{"Text": "Biringan encountered its [color=red][shake]driest season[/shake][/color] yet"}, 
+	{"Text": "Your Grandfather's farm was no exception, all of the [color=blue][wave]water[/wave][/color] turned into [color=brown]dust.[/color]"}, 
+	{"Text": "Without water, vegetation can't continue. And soon enough, all the [color=green]plant life[/color] will start to [color=brown][pulse]dry out![/pulse][/color]"}, 
+	{"Text": "You are tasked to find all the [color=blue][wave]water[/wave][/color] in your province and save the [rainbow]Biringan[/rainbow]!"}
 ]
 
 @onready var narration = $Path2D/PathFollow2D/CanvasLayer2/ColorRect/Narration
 @onready var path_follow = $Path2D/PathFollow2D
 @onready var camera = $Path2D/PathFollow2D/Camera2D
 @onready var anim_player = $Animation 
+@onready var skip_button = $Path2D/PathFollow2D/CanvasLayer2/ColorRect/SkipButton
+#@export var skip_button: Button
 
 var current_tween : Tween
 var currentDialogueID = -1 
 var dActive = false 
 var type_speed = 0.05
 var is_animating = false
+var is_skipping = false
+
+const INTRO_WATCHED_KEY = "intro_watched"
+
+func _on_dialogue_finished():
+	get_tree().change_scene_to_file("res://scenes/Well.tscn")
 
 func _ready():
+	#print(skip_button)
+	# Hide narration and skip button initially
 	narration.visible = false
+	skip_button.visible = false
 	$AnimatedSprite2D2.visible = false
+	
 	if anim_player.has_animation("RESET"):
 		anim_player.play("RESET")
 	
 	dialogueFinished.connect(_on_dialogue_finished)
+	skip_button.pressed.connect(_on_skip_pressed)
+	
+	# Show skip button immediately if player already watched before
+	if PlayerData.save_file_data.get(INTRO_WATCHED_KEY, false):
+		skip_button.visible = true
 	
 	await get_tree().create_timer(1.0).timeout
 	start_intro()
-
-func _on_dialogue_finished():
-	get_tree().change_scene_to_file("res://scenes/Well.tscn")
 
 func start_intro():
 	if dActive: return
@@ -44,7 +58,6 @@ func start_intro():
 	
 	run_animation_safely("IntroP1")
 	$AnimationPlayer.play("fadeOut")
-	
 	camera.enabled = true
 	start_camera_movement()
 	
@@ -72,7 +85,7 @@ func _input(event):
 			return
 			
 		next_script()
-		
+
 func next_script():
 	currentDialogueID += 1
 	
@@ -81,18 +94,12 @@ func next_script():
 		return
 		
 	match currentDialogueID:
-		0: 
-			pass
-		1:
-			run_animation_safely("IntroP2")
-		2:
-			run_animation_safely("IntroP3")
-		3:
-			run_animation_safely("IntroP4")
-		4:
-			run_animation_safely("IntroP5")
-		7:
-			run_animation_safely("IntroP6")
+		0: pass
+		1: run_animation_safely("IntroP2")
+		2: run_animation_safely("IntroP3")
+		3: run_animation_safely("IntroP4")
+		4: run_animation_safely("IntroP5")
+		7: run_animation_safely("IntroP6")
 		
 	var current_text = dialogLines[currentDialogueID]['Text']
 	narration.text = current_text
@@ -113,10 +120,19 @@ func run_animation_safely(anim_name: String):
 func end_intro():
 	dActive = false
 	narration.visible = false
+	skip_button.visible = false
+	
+	_mark_as_watched()
+	
+	if is_skipping:
+		dialogueFinished.emit()
+		return
+	
+	# 🎬 Normal flow → play animation
 	$AnimatedSprite2D2.visible = true
 	await iris_wipe_close($AnimatedSprite2D2, 3.0)
 	dialogueFinished.emit()
-	
+
 func iris_wipe_close(subject: Node2D, duration: float = 1.5):
 	var iris = $IrisColorRect
 	var viewport_size = get_viewport().get_visible_rect().size
@@ -133,3 +149,11 @@ func iris_wipe_close(subject: Node2D, duration: float = 1.5):
 		1.5, 0.0, duration
 	)
 	await tween.finished
+
+func _on_skip_pressed():
+	is_skipping = true
+	end_intro()
+
+# Mark the intro as watched in PlayerData
+func _mark_as_watched():
+	PlayerData.set_save_value(INTRO_WATCHED_KEY, true)

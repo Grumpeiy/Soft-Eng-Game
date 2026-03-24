@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dduw02ugw74ae"]
+[gd_scene format=3 uid="uid://dduw02ugw74ae"]
 
 [ext_resource type="Script" uid="uid://bnwb7trjpjta1" path="res://scripts/login_menu.gd" id="1_hhelq"]
 [ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="2_4n733"]
-[ext_resource type="VideoStream" uid="uid://b74yonck82dlf" path="res://Art/VideoAssets/0224.ogv" id="3_78ya1"]
+[ext_resource type="VideoStream" uid="uid://cwtytug7l4a0y" path="res://Art/VideoAssets/0224.ogv" id="3_78ya1"]
 [ext_resource type="Texture2D" uid="uid://bs7jmikksa1t1" path="res://Art/LogInMenu/eyeclose.png" id="4_x2epc"]
 [ext_resource type="Texture2D" uid="uid://b6ukx31g6ncq6" path="res://Art/LogInMenu/eyeopen.png" id="5_4hsiq"]
 
@@ -21,7 +21,7 @@ border_width_top = 3
 border_width_right = 1
 border_color = Color(0.76862746, 0.99215686, 0.8235294, 1)
 
-[node name="LoginMenu" type="Control"]
+[node name="LoginMenu" type="Control" unique_id=159603703]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,14 +31,13 @@ grow_vertical = 2
 pivot_offset = Vector2(264, 512)
 script = ExtResource("1_hhelq")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=551141164]
 layout_mode = 0
-offset_left = 1.0
 offset_right = 481.0
 offset_bottom = 270.0
 color = Color(0.07450981, 0.3764706, 0.4392157, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect2" type="ColorRect" parent="ColorRect" unique_id=727327682]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
@@ -46,7 +45,7 @@ offset_right = 455.0
 offset_bottom = 245.0
 color = Color(0.27450982, 0.6627451, 0.5803922, 1)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1897833221]
 clip_contents = true
 layout_direction = 4
 layout_mode = 1
@@ -62,7 +61,7 @@ stream = ExtResource("3_78ya1")
 autoplay = true
 loop = true
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1120204814]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 26.0
@@ -70,53 +69,66 @@ offset_right = 242.0
 offset_bottom = 245.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
 
-[node name="Panel2" type="Panel" parent="Panel"]
+[node name="Panel2" type="Panel" parent="Panel" unique_id=1249335028]
 layout_mode = 0
 offset_top = -1.0
 offset_right = 431.0
 offset_bottom = 220.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
 
-[node name="username" type="TextEdit" parent="Panel"]
+[node name="username" type="TextEdit" parent="Panel" unique_id=565360932]
 layout_mode = 0
 offset_left = 243.0
 offset_top = 63.0
 offset_right = 412.0
 offset_bottom = 82.0
-theme_override_colors/font_color = Color(0.04887691, 0.32329816, 0.24493617, 1)
+theme_override_colors/search_result_color = Color(0, 0, 0, 1)
+theme_override_colors/search_result_border_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 0.40392157)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
 theme_override_colors/background_color = Color(0.76862746, 0.99215686, 0.8235294, 1)
+theme_override_colors/current_line_color = Color(0, 0, 0, 1)
+theme_override_colors/word_highlighted_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_4n733")
 theme_override_font_sizes/font_size = 9
-theme_override_styles/normal = SubResource("StyleBoxFlat_78ya1")
-placeholder_text = "enter username
-"
 
-[node name="usernamePanel" type="Panel" parent="Panel/username"]
+[node name="usernamePanel" type="Panel" parent="Panel/username" unique_id=224168775]
 visible = false
 layout_mode = 0
 offset_right = 169.0
 offset_bottom = 19.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1010909184]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 134.0
 offset_right = 308.0
 offset_bottom = 174.0
 
-[node name="password" type="LineEdit" parent="TextureRect"]
+[node name="password" type="LineEdit" parent="TextureRect" unique_id=1447855922]
 layout_mode = 0
 offset_right = 169.0
 offset_bottom = 24.0
-theme_override_colors/font_color = Color(0.047058824, 0.32156864, 0.24313726, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.76862746, 0.99215686, 0.8235294, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 0.40392157)
+theme_override_colors/clear_button_color = Color(0, 0, 0, 1)
+theme_override_colors/clear_button_color_pressed = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_4n733")
 theme_override_font_sizes/font_size = 9
 theme_override_styles/normal = SubResource("StyleBoxFlat_78ya1")
-placeholder_text = "enter password"
 
-[node name="eye_button" type="TextureButton" parent="TextureRect/password"]
+[node name="eye_button" type="TextureButton" parent="TextureRect/password" unique_id=92577547]
 custom_minimum_size = Vector2(32, 2)
 layout_mode = 0
 offset_left = 150.0
@@ -128,14 +140,14 @@ texture_normal = ExtResource("4_x2epc")
 texture_pressed = ExtResource("5_4hsiq")
 ignore_texture_size = true
 
-[node name="passwordPanel" type="Panel" parent="TextureRect/password"]
+[node name="passwordPanel" type="Panel" parent="TextureRect/password" unique_id=1871462349]
 visible = false
 layout_mode = 0
 offset_right = 169.0
 offset_bottom = 19.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4n733")
 
-[node name="Label" type="Label" parent="TextureRect"]
+[node name="Label" type="Label" parent="TextureRect" unique_id=1999311404]
 layout_mode = 0
 offset_top = -57.0
 offset_right = 82.0
@@ -145,7 +157,7 @@ theme_override_fonts/font = ExtResource("2_4n733")
 theme_override_font_sizes/font_size = 9
 text = "Username"
 
-[node name="Label2" type="Label" parent="TextureRect"]
+[node name="Label2" type="Label" parent="TextureRect" unique_id=177434213]
 layout_mode = 0
 offset_top = -15.0
 offset_right = 82.0
@@ -155,7 +167,7 @@ theme_override_fonts/font = ExtResource("2_4n733")
 theme_override_font_sizes/font_size = 9
 text = "Password"
 
-[node name="Login" type="Button" parent="TextureRect"]
+[node name="Login" type="Button" parent="TextureRect" unique_id=1619823062]
 layout_mode = 0
 offset_left = 124.0
 offset_top = 36.0
@@ -167,7 +179,7 @@ theme_override_font_sizes/font_size = 8
 text = "LOG IN
 "
 
-[node name="ErrorPopup" type="AcceptDialog" parent="."]
+[node name="ErrorPopup" type="AcceptDialog" parent="." unique_id=12226696]
 oversampling_override = 1.0
 title = "Error"
 position = Vector2i(0, 36)

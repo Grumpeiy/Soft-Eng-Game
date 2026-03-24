@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://cse0arhb0fk5l"]
+
+[ext_resource type="Script" uid="uid://dyikt8jv8r1l5" path="res://scripts/quest.gd" id="1_882ba"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_q7bum"]
+[ext_resource type="Texture2D" uid="uid://dxaksmevd5kdc" path="res://Art/Buttons/Start/Start Box.png" id="3_j01if"]
+[ext_resource type="Texture2D" uid="uid://b5pl4cg5go1gb" path="res://Art/Buttons/Start/Large Capped Back.png" id="5_aldd7"]
+[ext_resource type="Texture2D" uid="uid://b72nnjdomcs4y" path="res://Art/wall BG.png" id="5_isjg8"]
+[ext_resource type="Texture2D" uid="uid://dw6kko1nch1bg" path="res://Art/Buttons/Start/Large Capped Back Clicked.png" id="6_o0ng3"]
+
+[node name="Progress" type="Node2D" unique_id=1719991470]
+position = Vector2(387, 40)
+script = ExtResource("1_882ba")
+
+[node name="background" type="TextureRect" parent="." unique_id=144256320]
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.869
+offset_left = -389.0
+offset_top = -41.0
+offset_right = 114.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_q7bum")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=939711971]
+bus = &"Narration"
+
+[node name="Start BG" type="TextureRect" parent="." unique_id=458122679]
+offset_left = -367.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 218.0
+texture = ExtResource("3_j01if")
+expand_mode = 1
+
+[node name="Back" type="TextureButton" parent="." unique_id=316798600]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -355.0
+offset_top = 174.0
+offset_right = -287.1143
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_aldd7")
+texture_hover = ExtResource("6_o0ng3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BackButton" type="TextureButton" parent="." unique_id=17278502]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -198.0
+offset_top = 174.0
+offset_right = -130.11429
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_aldd7")
+texture_hover = ExtResource("6_o0ng3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=518321247]
+offset_left = -355.0
+offset_top = -1.0
+offset_right = 69.0
+offset_bottom = 165.2
+texture = ExtResource("5_isjg8")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=76254239]
+offset_left = -350.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 162.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1531040488]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=376880439]
+offset_left = -342.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 159.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1313033509]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer" unique_id=1389511694]
+layout_mode = 2
+
+[node name="QuestTitle" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1268989699]
+layout_mode = 2
+
+[node name="Topic" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=8248440]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="PanelContainer/HBoxContainer/VBoxContainer" unique_id=1255988869]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1912685045]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer" unique_id=1314272076]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

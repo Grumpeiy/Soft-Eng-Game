@@ -1,24 +1,21 @@
 [gd_scene format=3 uid="uid://c8koqft4m03kn"]
 
-[ext_resource type="Script" uid="uid://q0557gao7sos" path="res://cutsceneIntroduction.gd" id="1_q4v7e"]
-
-[node name="DialogueUI" type="Control"]
+[node name="DialogueUI" type="Control" unique_id=1547413445]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_q4v7e")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2099980076]
 layout_mode = 0
 offset_top = 50.0
 offset_right = 368.0
 offset_bottom = 101.0
 color = Color(0, 0, 0, 0.4117647)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1526685016]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 58.0
@@ -27,3 +24,10 @@ offset_bottom = 84.0
 theme_override_font_sizes/normal_font_size = 10
 bbcode_enabled = true
 text = "[font=res://Art/Minecraftia-Regular.ttf]There once a thriving farm in Biringan.."
+
+[node name="SkipButton" type="Button" parent="." unique_id=669399086]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 363.0
+offset_bottom = 42.0
+text = "Skip"

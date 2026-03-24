@@ -1,6 +1,6 @@
 extends Control
 
-@onready var username_input = $TextureRect/username
+@onready var username_input = $Panel/username
 @onready var password_input = $TextureRect/password
 @onready var login_button = $TextureRect/Login
 @onready var error_popup = $ErrorPopup
@@ -19,9 +19,9 @@ func _ready() -> void:
 	http_request.request_completed.connect(_on_login_response)
 	
 	password_input.secret = true
-	login_button.pressed.connect(_on_login_pressed)
+	#login_button.pressed.connect(_on_login_pressed)
 	eye_button.texture_normal = eye_closed
-	eye_button.pressed.connect(_on_eye_button_pressed)
+	#eye_button.pressed.connect(_on_eye_button_pressed)
 	
 func _on_login_pressed() -> void:
 	

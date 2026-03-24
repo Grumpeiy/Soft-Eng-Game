@@ -40,6 +40,7 @@ func _on_option_pressed():
 
 
 func _on_progress_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/Options/Progress.tscn")
 	Audio.play_click()
 
 func _on_badges_button_pressed() -> void:

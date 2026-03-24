@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://djhy01saixd2e"]
+[gd_scene format=3 uid="uid://djhy01saixd2e"]
 
 [ext_resource type="Script" uid="uid://dyg4qywtdnky2" path="res://scripts/npc.gd" id="1_abqhh"]
 [ext_resource type="Texture2D" uid="uid://y4cjj3142mh8" path="res://Art/Sprites/Basic Charakter Spritesheet.png" id="2_abqhh"]
@@ -109,41 +109,41 @@ radius = 8.026347
 [sub_resource type="CircleShape2D" id="CircleShape2D_rv78h"]
 radius = 30.115704
 
-[node name="NPC" type="CharacterBody2D"]
+[node name="NPC" type="CharacterBody2D" unique_id=192193698]
 z_index = 1
 position = Vector2(12, 1)
 scale = Vector2(0.99671745, 0.9912596)
 script = ExtResource("1_abqhh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1398313008]
 position = Vector2(-12.03952, -1.0088176)
 sprite_frames = SubResource("SpriteFrames_abqhh")
 animation = &"IDLE"
 autoplay = "IDLE"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2001971239]
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-12.03952, -1.0088177)
 shape = SubResource("CircleShape2D_abqhh")
 
-[node name="ChatDetectionArea" type="Area2D" parent="."]
+[node name="ChatDetectionArea" type="Area2D" parent="." unique_id=98462100]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetectionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatDetectionArea" unique_id=932640991]
 position = Vector2(-12.03952, -1.0088167)
 shape = SubResource("CircleShape2D_rv78h")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=309298297]
 autostart = true
 
-[node name="Dialogue" parent="." instance=ExtResource("3_rv78h")]
+[node name="Dialogue" parent="." unique_id=563339462 instance=ExtResource("3_rv78h")]
 z_index = 0
 offset_left = -165.54341
 offset_top = -18.158714
 offset_right = -125.54341
 offset_bottom = 21.841286
 
-[node name="InteractionSpace" parent="." instance=ExtResource("4_7n8xq")]
+[node name="InteractionSpace" parent="." unique_id=1353640051 instance=ExtResource("4_7n8xq")]
 position = Vector2(-12.039519, -1.0088176)
 scale = Vector2(1.2333833, 1.2075295)
 

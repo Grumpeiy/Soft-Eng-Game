@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cimg2aw6ff0yr" path="res://scenes/enemy.tscn" id="3_kamyo"]
 [ext_resource type="Script" uid="uid://dkbakw0fabrln" path="res://scripts/battlescene.gd" id="5_f3uvx"]
 [ext_resource type="Texture2D" uid="uid://bn20obvys6hja" path="res://Art/Battle Background.PNG" id="5_jl2ly"]
+[ext_resource type="Script" uid="uid://bvcmn4oh885ji" path="res://scripts/enemy3.gd" id="6_0kkwr"]
 [ext_resource type="Texture2D" uid="uid://db3sovqnfi2l" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/BASE CHARACTER/PNG/WITH_FX/spr_idle_strip9.png" id="6_fv5mv"]
+[ext_resource type="Script" uid="uid://ctstroemvxfc3" path="res://scripts/enemy2.gd" id="6_kqrsl"]
 [ext_resource type="Texture2D" uid="uid://dy40t1obxb5dm" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/SKELETON/PNG/skeleton_idle_strip6.png" id="7_elhde"]
 [ext_resource type="Texture2D" uid="uid://cof6kfb2mpph7" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/BASE CHARACTER/PNG/WITH_FX/spr_sword_strip10.png" id="7_gs86h"]
 [ext_resource type="Texture2D" uid="uid://cxavr2n6xllch" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/BASE CHARACTER/PNG/WITH_FX/spr_death_strip13.png" id="8_3ukku"]
@@ -2656,16 +2658,18 @@ tile_map_data = PackedByteArray("AAAKAA4AAgAlABMAAABAAAQAAQAFAAgAAABAAAYAAQAFAAo
 tile_set = SubResource("TileSet_nrc38")
 
 [node name="player" parent="." unique_id=1395045386 instance=ExtResource("3_hflhd")]
-position = Vector2(1190, 151)
+position = Vector2(-56, -415)
 
 [node name="Enemy" parent="." unique_id=1058041998 instance=ExtResource("3_kamyo")]
-position = Vector2(-189, -525)
+position = Vector2(-126, -419)
 
 [node name="Enemy3" parent="." unique_id=1505910418 instance=ExtResource("3_kamyo")]
-position = Vector2(971, 175)
+position = Vector2(-374, -561)
+script = ExtResource("6_0kkwr")
 
 [node name="Enemy2" parent="." unique_id=735529266 instance=ExtResource("3_kamyo")]
-position = Vector2(-303, -476)
+position = Vector2(-251, -479)
+script = ExtResource("6_kqrsl")
 
 [node name="NPC" parent="." unique_id=1532129007 instance=ExtResource("3_3ukku")]
 position = Vector2(1144.0001, -5.9999847)
