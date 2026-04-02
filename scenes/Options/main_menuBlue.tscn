@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://ca8tveylnj1kl"]
+
+[ext_resource type="Script" uid="uid://ycyv85bi4gu8" path="res://scripts/main_menu_blue.gd" id="1_b2kro"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_rg1ej"]
+[ext_resource type="Texture2D" uid="uid://cidhj38d4lkua" path="res://Art/Buttons/Blue Themed/Large Capped/menu/student.png" id="3_rg1ej"]
+[ext_resource type="Texture2D" uid="uid://lh8h5qjjnepl" path="res://Art/Buttons/Blue Themed/Large Capped/menu/badge.png" id="4_gho4t"]
+[ext_resource type="Texture2D" uid="uid://ba228y06oc01i" path="res://Art/Buttons/Blue Themed/Large Capped/menu/quest.png" id="5_ert2u"]
+[ext_resource type="Texture2D" uid="uid://cksx526pk362o" path="res://Art/Buttons/Blue Themed/Large Capped/menu/rectangle bg.png" id="6_d7eun"]
+[ext_resource type="Texture2D" uid="uid://fmed1c63i8qe" path="res://Art/Buttons/Blue Themed/Large Capped/menu/start.png" id="7_r4ctu"]
+[ext_resource type="Texture2D" uid="uid://ccqmc21hvo4rb" path="res://Art/Buttons/Blue Themed/Large Capped/menu/start clicked.png" id="8_74ifa"]
+[ext_resource type="Texture2D" uid="uid://dsl6vr1uu8l37" path="res://Art/Buttons/Blue Themed/Large Capped/menu/options.png" id="9_sfhxs"]
+[ext_resource type="Texture2D" uid="uid://cq7mxp23xthga" path="res://Art/Buttons/Blue Themed/Large Capped/menu/options clicked.png" id="10_lx82k"]
+[ext_resource type="Texture2D" uid="uid://cm1o2dpj6fyla" path="res://Art/Buttons/Blue Themed/Large Capped/menu/exit.png" id="11_y5oab"]
+[ext_resource type="Texture2D" uid="uid://cnm7pvgjrt3qs" path="res://Art/Buttons/Blue Themed/Large Capped/menu/exit clicked.png" id="12_31my5"]
+[ext_resource type="Texture2D" uid="uid://078ggui2hwf2" path="res://Art/Buttons/Blue Themed/Large Capped/menu/progress.png" id="13_exkwp"]
+[ext_resource type="Texture2D" uid="uid://p8nwnkyosfc" path="res://Art/Buttons/Blue Themed/Large Capped/menu/progress clicked.png" id="14_bd6gw"]
+[ext_resource type="Texture2D" uid="uid://me8lvc5ebhu2" path="res://Art/Buttons/Blue Themed/Large Capped/menu/badges.png" id="15_uidxk"]
+[ext_resource type="Texture2D" uid="uid://cdfvncww1lwcv" path="res://Art/Buttons/Blue Themed/Large Capped/menu/badges clicked.png" id="16_2e5w4"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="17_qmvek"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="18_i0tbi"]
+
+[node name="Main Menu blue" type="Node2D" unique_id=1719991470]
+position = Vector2(387, 40)
+script = ExtResource("1_b2kro")
+
+[node name="background" type="TextureRect" parent="." unique_id=144256320]
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.869
+offset_left = -389.0
+offset_top = -41.0
+offset_right = 114.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rg1ej")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Student Profile" type="TextureRect" parent="." unique_id=1463688815]
+offset_left = -122.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 61.0
+texture = ExtResource("3_rg1ej")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Badges" type="TextureRect" parent="." unique_id=933165845]
+offset_left = -122.0
+offset_top = 171.0
+offset_right = 81.0
+offset_bottom = 218.5
+texture = ExtResource("4_gho4t")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest" type="TextureRect" parent="." unique_id=784879559]
+offset_left = -122.0
+offset_top = 71.0
+offset_right = 81.0
+offset_bottom = 156.0
+texture = ExtResource("5_ert2u")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GreenBG" type="TextureRect" parent="." unique_id=2137098979]
+offset_left = -367.0
+offset_top = -24.0
+offset_right = -162.0
+offset_bottom = 218.48761
+texture = ExtResource("6_d7eun")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="TextureButton" parent="." unique_id=2092931484]
+offset_left = -348.0
+offset_top = -8.0
+offset_right = -183.0
+offset_bottom = 28.0
+texture_normal = ExtResource("7_r4ctu")
+texture_hover = ExtResource("8_74ifa")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Option" type="TextureButton" parent="." unique_id=1699791284]
+offset_left = -348.0
+offset_top = 35.0
+offset_right = -183.0
+offset_bottom = 71.0
+texture_normal = ExtResource("9_sfhxs")
+texture_hover = ExtResource("10_lx82k")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="TextureButton" parent="." unique_id=581517196]
+offset_left = -348.0
+offset_top = 167.0
+offset_right = -183.0
+offset_bottom = 204.0
+texture_normal = ExtResource("11_y5oab")
+texture_hover = ExtResource("12_31my5")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Progress" type="TextureButton" parent="." unique_id=2030933053]
+offset_left = -348.0
+offset_top = 78.0
+offset_right = -183.0
+offset_bottom = 114.0
+texture_normal = ExtResource("13_exkwp")
+texture_hover = ExtResource("14_bd6gw")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="BadgesButton" type="TextureButton" parent="." unique_id=1089471628]
+offset_left = -348.0
+offset_top = 123.0
+offset_right = -183.0
+offset_bottom = 159.0
+texture_normal = ExtResource("15_uidxk")
+texture_hover = ExtResource("16_2e5w4")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("17_qmvek")]
+visible = false
+offset_left = -387.0
+offset_top = -50.0
+offset_right = 109.0
+offset_bottom = 260.0
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
+
+[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=939711971]
+bus = &"Narration"
+
+[node name="1" type="TextEdit" parent="." unique_id=1490431950]
+visible = false
+offset_left = -99.0
+offset_top = -11.0
+offset_right = 66.0
+offset_bottom = 4.0
+
+[node name="Student" type="Label" parent="." unique_id=1591078877]
+offset_left = -99.0
+offset_top = -11.0
+offset_right = 66.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_colors/font_outline_color = Color(0.76862746, 0.88235295, 0.9019608, 1)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("18_i0tbi")
+theme_override_font_sizes/font_size = 14
+text = "TEST"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Start" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="Option" to="." method="_on_option_mouse_entered"]
+[connection signal="pressed" from="Option" to="." method="_on_option_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Progress" to="." method="_on_progress_mouse_entered"]
+[connection signal="pressed" from="Progress" to="." method="_on_progress_pressed"]
+[connection signal="mouse_entered" from="BadgesButton" to="." method="_on_badges_button_mouse_entered"]
+[connection signal="pressed" from="BadgesButton" to="." method="_on_badges_button_pressed"]
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]

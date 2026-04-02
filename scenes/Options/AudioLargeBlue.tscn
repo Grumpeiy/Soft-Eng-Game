@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://7o26k0makxvb"]
+
+[ext_resource type="Script" uid="uid://dxlk08r7h5d7n" path="res://scripts/audio_large_blue.gd" id="1_m26h6"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_heusj"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_vn67j"]
+[ext_resource type="Texture2D" uid="uid://cxf642xixp32q" path="res://Art/Buttons/Blue Themed/Large Capped/Rectange BG.png" id="4_heusj"]
+[ext_resource type="Texture2D" uid="uid://hfrnq4l4og1g" path="res://Art/Buttons/Blue Themed/Large Capped/audio bg.png" id="5_vn67j"]
+[ext_resource type="Texture2D" uid="uid://b238sdwwfm2qf" path="res://Art/Buttons/Blue Themed/Large Capped/accessibility.png" id="6_s5syk"]
+[ext_resource type="Texture2D" uid="uid://dqhb4wl2u5kqe" path="res://Art/Buttons/Blue Themed/Large Capped/accessibility clicked.png" id="7_6bqvi"]
+[ext_resource type="Texture2D" uid="uid://co8adl03gbaov" path="res://Art/Buttons/Blue Themed/Large Capped/audio.png" id="8_v5tcq"]
+[ext_resource type="Texture2D" uid="uid://ddebo2vdmmc8c" path="res://Art/Buttons/Blue Themed/Large Capped/audio clicked.png" id="9_f0r3y"]
+[ext_resource type="Texture2D" uid="uid://b5mkadvv0ubk" path="res://Art/Buttons/Blue Themed/Large Capped/gameplay.png" id="10_k7o1p"]
+[ext_resource type="Texture2D" uid="uid://bsvgurcqefd25" path="res://Art/Buttons/Blue Themed/Large Capped/gameplay clicked.png" id="11_maqnk"]
+[ext_resource type="Texture2D" uid="uid://wtrca4162ga4" path="res://Art/Buttons/Blue Themed/Large Capped/other.png" id="12_3rsta"]
+[ext_resource type="Texture2D" uid="uid://dj78g0oiih2ym" path="res://Art/Buttons/Blue Themed/Large Capped/other clicked.png" id="13_oc8um"]
+[ext_resource type="Texture2D" uid="uid://cb3askwjnbxir" path="res://Art/Buttons/Blue Themed/Large Capped/Back.png" id="14_2mqop"]
+[ext_resource type="Texture2D" uid="uid://dxysxvpgb4q7" path="res://Art/Buttons/Blue Themed/Large Capped/Back clicked.png" id="15_bbu5p"]
+
+[node name="audioLargeblue" type="Node2D" unique_id=1719991470]
+position = Vector2(387, 40)
+script = ExtResource("1_m26h6")
+
+[node name="background" type="TextureRect" parent="." unique_id=144256320]
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.869
+offset_left = -389.0
+offset_top = -41.0
+offset_right = 114.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_heusj")
+expand_mode = 1
+
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("3_vn67j")]
+visible = false
+offset_left = -387.0
+offset_top = -50.0
+offset_right = 109.0
+offset_bottom = 260.0
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
+
+[node name="BigBar" type="TextureRect" parent="." unique_id=1850037059]
+offset_left = -367.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 218.5
+texture = ExtResource("4_heusj")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1725497235]
+offset_left = -176.0
+offset_top = -8.0
+offset_right = 69.0
+offset_bottom = 204.0
+texture = ExtResource("5_vn67j")
+expand_mode = 1
+
+[node name="Audio Settings 1" type="MarginContainer" parent="." unique_id=1467653802]
+offset_left = -107.0
+offset_top = 13.0
+offset_right = 59.0
+offset_bottom = 29.0
+
+[node name="Audio Settings" type="VBoxContainer" parent="Audio Settings 1" unique_id=1782442264]
+layout_mode = 2
+
+[node name="Master" type="HSlider" parent="Audio Settings 1/Audio Settings" unique_id=434068653]
+layout_mode = 2
+max_value = 4.0
+value = 2.0
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Audio Settings 2" type="MarginContainer" parent="." unique_id=946914097]
+offset_left = -107.0
+offset_top = 57.0
+offset_right = 59.0
+offset_bottom = 113.0
+
+[node name="Audio balance" type="VBoxContainer" parent="Audio Settings 2" unique_id=1636514580]
+layout_mode = 2
+
+[node name="Music" type="HSlider" parent="Audio Settings 2/Audio balance" unique_id=916495459]
+layout_mode = 2
+max_value = 4.0
+value = 2.0
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Narration" type="HSlider" parent="Audio Settings 2/Audio balance" unique_id=14169900]
+layout_mode = 2
+max_value = 4.0
+value = 2.0
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="SFX" type="HSlider" parent="Audio Settings 2/Audio balance" unique_id=851484311]
+layout_mode = 2
+max_value = 4.0
+value = 2.0
+tick_count = 5
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=434991633]
+bus = &"Narration"
+
+[node name="Accessibility" type="TextureButton" parent="." unique_id=429288000]
+offset_left = -348.0
+offset_top = -8.0
+offset_right = -183.0
+offset_bottom = 28.0
+texture_normal = ExtResource("6_s5syk")
+texture_hover = ExtResource("7_6bqvi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Audio" type="TextureButton" parent="." unique_id=796233614]
+offset_left = -348.0
+offset_top = 35.0
+offset_right = -183.0
+offset_bottom = 71.0
+texture_normal = ExtResource("8_v5tcq")
+texture_hover = ExtResource("9_f0r3y")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Gameplay" type="TextureButton" parent="." unique_id=582004269]
+offset_left = -348.0
+offset_top = 78.0
+offset_right = -183.0
+offset_bottom = 114.0
+texture_normal = ExtResource("10_k7o1p")
+texture_hover = ExtResource("11_maqnk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Other" type="TextureButton" parent="." unique_id=910234883]
+offset_left = -348.0
+offset_top = 123.0
+offset_right = -182.7
+offset_bottom = 159.0
+texture_normal = ExtResource("12_3rsta")
+texture_hover = ExtResource("13_oc8um")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Back" type="TextureButton" parent="." unique_id=78795193]
+offset_left = -348.0
+offset_top = 167.0
+offset_right = -278.0
+offset_bottom = 204.0
+texture_normal = ExtResource("14_2mqop")
+texture_hover = ExtResource("15_bbu5p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="mouse_entered" from="Audio Settings 1/Audio Settings/Master" to="." method="_on_master_mouse_entered"]
+[connection signal="value_changed" from="Audio Settings 1/Audio Settings/Master" to="." method="_on_master_value_changed"]
+[connection signal="mouse_entered" from="Audio Settings 2/Audio balance/Music" to="." method="_on_music_mouse_entered"]
+[connection signal="value_changed" from="Audio Settings 2/Audio balance/Music" to="." method="_on_music_value_changed"]
+[connection signal="mouse_entered" from="Audio Settings 2/Audio balance/Narration" to="." method="_on_narration_mouse_entered"]
+[connection signal="value_changed" from="Audio Settings 2/Audio balance/Narration" to="." method="_on_narration_value_changed"]
+[connection signal="mouse_entered" from="Audio Settings 2/Audio balance/SFX" to="." method="_on_sfx_mouse_entered"]
+[connection signal="value_changed" from="Audio Settings 2/Audio balance/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="mouse_entered" from="Accessibility" to="." method="_on_accessibility_mouse_entered"]
+[connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
+[connection signal="mouse_entered" from="Audio" to="." method="_on_audio_mouse_entered"]
+[connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
+[connection signal="mouse_entered" from="Gameplay" to="." method="_on_gameplay_mouse_entered"]
+[connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]
+[connection signal="mouse_entered" from="Other" to="." method="_on_other_mouse_entered"]
+[connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

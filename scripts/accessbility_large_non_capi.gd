@@ -129,3 +129,10 @@ func _on_check_box_pressed() -> void:
 	Audio.play_check()
 	pass # Replace with function body.
 	
+func _on_color_theme_item_selected(index: int) -> void:
+	match index:
+		0:
+			pass
+		1:
+			get_tree().change_scene_to_file("res://scenes/Options/accessbilityLargeNonCapiBlue.tscn")
+	

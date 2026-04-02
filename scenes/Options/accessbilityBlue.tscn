@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://dslced788oxu3"]
+
+[ext_resource type="Script" uid="uid://81ufw47ft550" path="res://scripts/accessbility_blue.gd" id="1_xhrjm"]
+[ext_resource type="Texture2D" uid="uid://cqvkfn87hovgn" path="res://Art/BG.png" id="2_sshbp"]
+[ext_resource type="PackedScene" uid="uid://wmqsk07jsb53" path="res://scenes/fade_transition.tscn" id="3_c5brg"]
+[ext_resource type="Texture2D" uid="uid://cxf642xixp32q" path="res://Art/Buttons/Blue Themed/Large Capped/Rectange BG.png" id="4_sshbp"]
+[ext_resource type="Texture2D" uid="uid://b238sdwwfm2qf" path="res://Art/Buttons/Blue Themed/Large Capped/accessibility.png" id="5_c5brg"]
+[ext_resource type="Texture2D" uid="uid://dqhb4wl2u5kqe" path="res://Art/Buttons/Blue Themed/Large Capped/accessibility clicked.png" id="6_ik0ic"]
+[ext_resource type="Texture2D" uid="uid://co8adl03gbaov" path="res://Art/Buttons/Blue Themed/Large Capped/audio.png" id="7_t4r1a"]
+[ext_resource type="Texture2D" uid="uid://ddebo2vdmmc8c" path="res://Art/Buttons/Blue Themed/Large Capped/audio clicked.png" id="8_xfnmk"]
+[ext_resource type="Texture2D" uid="uid://b5mkadvv0ubk" path="res://Art/Buttons/Blue Themed/Large Capped/gameplay.png" id="9_2caov"]
+[ext_resource type="Texture2D" uid="uid://bsvgurcqefd25" path="res://Art/Buttons/Blue Themed/Large Capped/gameplay clicked.png" id="10_i2qxx"]
+[ext_resource type="Texture2D" uid="uid://wtrca4162ga4" path="res://Art/Buttons/Blue Themed/Large Capped/other.png" id="11_8ks44"]
+[ext_resource type="Texture2D" uid="uid://dj78g0oiih2ym" path="res://Art/Buttons/Blue Themed/Large Capped/other clicked.png" id="12_ylgyd"]
+[ext_resource type="Texture2D" uid="uid://cb3askwjnbxir" path="res://Art/Buttons/Blue Themed/Large Capped/Back.png" id="13_la25v"]
+[ext_resource type="Texture2D" uid="uid://dxysxvpgb4q7" path="res://Art/Buttons/Blue Themed/Large Capped/Back clicked.png" id="14_gjiex"]
+[ext_resource type="Texture2D" uid="uid://ciwjydojmrc0h" path="res://Art/Buttons/Blue Themed/Large Capped/LargeCappedAccessibility.png" id="15_i0x4f"]
+[ext_resource type="FontFile" uid="uid://rwqbad3r1p2e" path="res://Art/Minecraftia-Regular.ttf" id="16_o5q7w"]
+
+[node name="Accessibilityblue" type="Node2D" unique_id=1719991470]
+position = Vector2(387, 40)
+script = ExtResource("1_xhrjm")
+
+[node name="background" type="TextureRect" parent="." unique_id=144256320]
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.869
+offset_left = -389.0
+offset_top = -41.0
+offset_right = 114.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sshbp")
+expand_mode = 1
+
+[node name="fade_transition" parent="." unique_id=522160399 instance=ExtResource("3_c5brg")]
+visible = false
+offset_left = -387.0
+offset_top = -50.0
+offset_right = 109.0
+offset_bottom = 260.0
+
+[node name="fade_timer" type="Timer" parent="fade_transition" unique_id=707293526]
+
+[node name="BigBar" type="TextureRect" parent="." unique_id=1850037059]
+offset_left = -367.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = 218.5
+texture = ExtResource("4_sshbp")
+expand_mode = 1
+
+[node name="Accessibility" type="TextureButton" parent="." unique_id=1186315259]
+offset_left = -348.0
+offset_top = -8.0
+offset_right = -183.0
+offset_bottom = 28.0
+texture_normal = ExtResource("5_c5brg")
+texture_hover = ExtResource("6_ik0ic")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Audio" type="TextureButton" parent="." unique_id=36848483]
+offset_left = -348.0
+offset_top = 35.0
+offset_right = -183.0
+offset_bottom = 71.0
+texture_normal = ExtResource("7_t4r1a")
+texture_hover = ExtResource("8_xfnmk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Gameplay" type="TextureButton" parent="." unique_id=2128705015]
+offset_left = -348.0
+offset_top = 78.0
+offset_right = -183.0
+offset_bottom = 114.0
+texture_normal = ExtResource("9_2caov")
+texture_hover = ExtResource("10_i2qxx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Other" type="TextureButton" parent="." unique_id=1613069606]
+offset_left = -348.0
+offset_top = 123.0
+offset_right = -182.7
+offset_bottom = 159.0
+texture_normal = ExtResource("11_8ks44")
+texture_hover = ExtResource("12_ylgyd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Back" type="TextureButton" parent="." unique_id=1215234391]
+offset_left = -348.0
+offset_top = 167.0
+offset_right = -278.0
+offset_bottom = 204.0
+texture_normal = ExtResource("13_la25v")
+texture_hover = ExtResource("14_gjiex")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DisplayBar2" type="TextureRect" parent="." unique_id=1435173276]
+offset_left = -176.0
+offset_top = -8.0
+offset_right = 69.0
+offset_bottom = 204.0
+texture = ExtResource("15_i0x4f")
+expand_mode = 1
+
+[node name="TextSettings" type="VBoxContainer" parent="." unique_id=1778434131]
+offset_left = 7.0
+offset_top = -4.0
+offset_right = 64.0
+offset_bottom = 88.0
+theme_override_constants/separation = 7
+
+[node name="TextSize" type="OptionButton" parent="TextSettings" unique_id=1614473607]
+layout_mode = 2
+size_flags_stretch_ratio = 0.37
+theme_override_font_sizes/font_size = 5
+selected = 1
+item_count = 2
+popup/item_0/text = "SMALL"
+popup/item_0/id = 0
+popup/item_1/text = "LARGE"
+popup/item_1/id = 1
+
+[node name="3 settings" type="VBoxContainer" parent="." unique_id=584916852]
+layout_direction = 3
+offset_left = -69.0
+offset_top = 19.0
+offset_right = -45.0
+offset_bottom = 101.0
+theme_override_constants/separation = 5
+
+[node name="Capitilzation" type="CheckBox" parent="3 settings" unique_id=2012512901]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_o5q7w")
+theme_override_font_sizes/font_size = 9
+
+[node name="MenuNarration" type="CheckBox" parent="3 settings" unique_id=331616386]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.21568628, 0.21568628, 0.21568628, 1)
+theme_override_fonts/font = ExtResource("16_o5q7w")
+theme_override_font_sizes/font_size = 9
+
+[node name="Sensory Settings" type="VBoxContainer" parent="." unique_id=678208929]
+offset_left = 45.0
+offset_top = 114.0
+offset_right = 69.0
+offset_bottom = 158.0
+theme_override_constants/separation = -4
+
+[node name="SoundCues" type="CheckBox" parent="Sensory Settings" unique_id=2040700287]
+layout_mode = 2
+
+[node name="ColorTheme" type="OptionButton" parent="." unique_id=1988874675]
+offset_left = 7.0
+offset_top = 143.0
+offset_right = 64.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 8
+selected = 0
+item_count = 2
+popup/item_0/text = "BLUE"
+popup/item_0/id = 1
+popup/item_1/text = "GREEN"
+popup/item_1/id = 0
+
+[node name="VoiceNarration" type="OptionButton" parent="." unique_id=1425504655]
+offset_left = 13.0
+offset_top = 75.0
+offset_right = 64.0
+offset_bottom = 95.0
+size_flags_stretch_ratio = 0.37
+theme_override_font_sizes/font_size = 5
+selected = 0
+item_count = 2
+popup/item_0/text = "MALE"
+popup/item_0/id = 0
+popup/item_1/text = "FEMALE"
+popup/item_1/id = 1
+
+[node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=1483310958]
+bus = &"Narration"
+
+[connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="mouse_entered" from="Accessibility" to="." method="_on_accessibility_mouse_entered"]
+[connection signal="pressed" from="Accessibility" to="." method="_on_accessibility_pressed"]
+[connection signal="mouse_entered" from="Audio" to="." method="_on_audio_mouse_entered"]
+[connection signal="pressed" from="Audio" to="." method="_on_audio_pressed"]
+[connection signal="mouse_entered" from="Gameplay" to="." method="_on_gameplay_mouse_entered"]
+[connection signal="pressed" from="Gameplay" to="." method="_on_gameplay_pressed"]
+[connection signal="mouse_entered" from="Other" to="." method="_on_other_mouse_entered"]
+[connection signal="pressed" from="Other" to="." method="_on_other_pressed"]
+[connection signal="mouse_entered" from="Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="item_selected" from="TextSettings/TextSize" to="." method="_on_text_size_item_selected"]
+[connection signal="mouse_entered" from="TextSettings/TextSize" to="." method="_on_text_size_mouse_entered"]
+[connection signal="mouse_entered" from="3 settings/Capitilzation" to="." method="_on_capitilzation_mouse_entered"]
+[connection signal="pressed" from="3 settings/Capitilzation" to="." method="_on_capitilzation_pressed"]
+[connection signal="mouse_entered" from="3 settings/MenuNarration" to="." method="_on_menu_narration_mouse_entered"]
+[connection signal="pressed" from="3 settings/MenuNarration" to="." method="_on_menu_narration_pressed"]
+[connection signal="mouse_entered" from="Sensory Settings/SoundCues" to="." method="_on_sound_cues_mouse_entered"]
+[connection signal="pressed" from="Sensory Settings/SoundCues" to="." method="_on_sound_cues_pressed"]
+[connection signal="item_selected" from="ColorTheme" to="." method="_on_color_theme_item_selected"]
+[connection signal="mouse_entered" from="ColorTheme" to="." method="_on_color_theme_mouse_entered"]
+[connection signal="item_selected" from="VoiceNarration" to="." method="_on_voice_narration_item_selected"]
+[connection signal="mouse_entered" from="VoiceNarration" to="." method="_on_voice_narration_mouse_entered"]
+[connection signal="pressed" from="VoiceNarration" to="." method="_on_voice_narration_pressed"]
+[connection signal="pressed" from="VoiceNarration" to="." method="_on_text_size_2_pressed"]

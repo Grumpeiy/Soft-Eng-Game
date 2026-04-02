@@ -54,16 +54,12 @@ func _on_autoplay_mouse_entered() -> void:
 
 func _on_difficulty_item_selected(index: int) -> void:
 	Audio.play_click()
-	
 	match index:
-		0:
-			Settings.difficulty_level = "easy"
-		1:
-			Settings.difficulty_level = "normal"
-		2:
-			Settings.difficulty_level = "hard"
-	
+		0: Settings.difficulty_level = "easy"
+		1: Settings.difficulty_level = "normal"
+		2: Settings.difficulty_level = "hard"
 	print("Difficulty set to: ", Settings.difficulty_level)
+	PlayerData.save_settings()  # <- ADD THIS
 
 func _on_guided_pressed() -> void:
 	Audio.play_check()
@@ -75,6 +71,7 @@ func _on_guided_pressed() -> void:
 		print("Guided Mode ENABLED - Adaptive assistance will help students")
 	else:
 		print("Guided Mode DISABLED - No adaptive assistance")
+	PlayerData.save_settings()  # <- ADD THIS
 
 func _on_tutorial_pressed() -> void:
 	Audio.play_check()
@@ -87,6 +84,7 @@ func _on_tutorial_pressed() -> void:
 		Settings.has_seen_tutorial = false
 	else:
 		print("Tutorial Mode DISABLED")
+	PlayerData.save_settings()  # <- ADD THIS
 
 func _on_autoplay_pressed() -> void:
 	Audio.play_check()

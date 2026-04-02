@@ -30,7 +30,7 @@ func _integrate_forces(state):
 		state.transform = t
 		set_deferred("freeze", true) 
 		
-func _physics_process(delta):
+func _physics_process(_delta):
 	if linear_velocity.length() > 1.0 and not was_moving:
 		was_moving = true
 		print("block moving, playing SFX")

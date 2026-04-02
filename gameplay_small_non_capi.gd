@@ -64,6 +64,8 @@ func _on_difficulty_options_item_selected(index: int) -> void:
 			Settings.difficulty_level = "hard"
 		
 	print("Difficulty set to: ", Settings.difficulty_level)
+	
+	PlayerData.save_settings()  # <- ADD THIS
 
 
 func _on_difficulty_options_pressed() -> void:
@@ -81,6 +83,7 @@ func _on_guided_pressed() -> void:
 		print("Guided Mode ENABLED - Adaptive assistance will help students")
 	else:
 		print("Guided Mode DISABLED - No adaptive assistance")
+	PlayerData.save_settings()  # <- ADD THIS
 
 
 func _on_tutorial_pressed() -> void:
@@ -94,6 +97,7 @@ func _on_tutorial_pressed() -> void:
 		Settings.has_seen_tutorial = false
 	else:
 		print("Tutorial Mode DISABLED")
+	PlayerData.save_settings()  # <- ADD THIS
 
 
 func _on_autoplay_pressed() -> void:

@@ -2666,10 +2666,12 @@ position = Vector2(-126, -419)
 [node name="Enemy3" parent="." unique_id=1505910418 instance=ExtResource("3_kamyo")]
 position = Vector2(-374, -561)
 script = ExtResource("6_0kkwr")
+enemy_number = 3
 
 [node name="Enemy2" parent="." unique_id=735529266 instance=ExtResource("3_kamyo")]
 position = Vector2(-251, -479)
 script = ExtResource("6_kqrsl")
+enemy_number = 2
 
 [node name="NPC" parent="." unique_id=1532129007 instance=ExtResource("3_3ukku")]
 position = Vector2(1144.0001, -5.9999847)

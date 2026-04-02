@@ -364,13 +364,16 @@ func win_battle():
 	$Panel/Label.text = "Victory!\n\nScore: %d pts\nFirst Try: %d  |  Assisted: %d" % [
 		total_score, correct_first_try, assisted_answers
 	]
-
+ 
 	if current_enemy_node != null:
 		current_enemy_node.queue_free()
-
+ 
+	# Mark this skeleton as defeated so it won't respawn
+	PlayerData.mark_enemy_defeated("skeleton_%d" % enemy_number)  # <- ADD THIS
+ 
 	if current_lrn != "" and current_quest_id != -1:
 		_complete_battle_on_server()
-
+ 
 	await get_tree().create_timer(5.0).timeout
 	$"../../Battle".stop()
 	_on_run_button_pressed()

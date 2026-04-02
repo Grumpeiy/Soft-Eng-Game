@@ -158,21 +158,6 @@ theme_override_constants/separation = -4
 [node name="SoundCues" type="CheckBox" parent="Sensory Settings" unique_id=2040700287]
 layout_mode = 2
 
-[node name="Motion Effects" type="CheckBox" parent="Sensory Settings" unique_id=1507872876]
-layout_mode = 2
-
-[node name="ColorTheme" type="OptionButton" parent="." unique_id=1988874675]
-offset_left = 7.0
-offset_top = 159.0
-offset_right = 64.0
-offset_bottom = 179.0
-
-[node name="CheckBox" type="CheckBox" parent="." unique_id=590833061]
-offset_left = 45.0
-offset_top = 178.0
-offset_right = 69.0
-offset_bottom = 202.0
-
 [node name="VoiceNarration" type="OptionButton" parent="." unique_id=1180905614]
 offset_left = 13.0
 offset_top = 75.0
@@ -189,6 +174,19 @@ popup/item_1/id = 1
 
 [node name="NarrationPlayer" type="AudioStreamPlayer" parent="." unique_id=688630347]
 bus = &"Narration"
+
+[node name="ColorTheme" type="OptionButton" parent="." unique_id=454978841]
+offset_left = 7.0
+offset_top = 143.0
+offset_right = 64.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 8
+selected = 0
+item_count = 2
+popup/item_0/text = "Green"
+popup/item_0/id = 0
+popup/item_1/text = "Blue"
+popup/item_1/id = 1
 
 [connection signal="timeout" from="fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
 [connection signal="mouse_entered" from="Accessibility" to="." method="_on_accessibility_mouse_entered"]
@@ -209,10 +207,6 @@ bus = &"Narration"
 [connection signal="pressed" from="3 settings/MenuNarration" to="." method="_on_menu_narration_pressed"]
 [connection signal="mouse_entered" from="Sensory Settings/SoundCues" to="." method="_on_sound_cues_mouse_entered"]
 [connection signal="pressed" from="Sensory Settings/SoundCues" to="." method="_on_sound_cues_pressed"]
-[connection signal="mouse_entered" from="Sensory Settings/Motion Effects" to="." method="_on_motion_effects_mouse_entered"]
-[connection signal="pressed" from="Sensory Settings/Motion Effects" to="." method="_on_motion_effects_pressed"]
-[connection signal="mouse_entered" from="ColorTheme" to="." method="_on_color_theme_mouse_entered"]
-[connection signal="mouse_entered" from="CheckBox" to="." method="_on_check_box_mouse_entered"]
-[connection signal="pressed" from="CheckBox" to="." method="_on_check_box_pressed"]
 [connection signal="item_selected" from="VoiceNarration" to="." method="_on_voice_narration_item_selected"]
 [connection signal="mouse_entered" from="VoiceNarration" to="." method="_on_voice_narration_mouse_entered"]
+[connection signal="item_selected" from="ColorTheme" to="." method="_on_color_theme_item_selected"]

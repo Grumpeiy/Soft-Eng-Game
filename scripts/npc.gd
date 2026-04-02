@@ -73,7 +73,7 @@ func choose(array):
 	array.shuffle() #shuffle godot command
 	return array.front()
 	
-func move(delta):
+func move(_delta):
 	if !isChatting:
 		velocity = dir * speed
 		move_and_slide()

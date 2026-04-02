@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dksjxlk13rgkp"
-path="res://.godot/imported/ACCESSIBILITY_OPENED.png-591ff470091ee4f8ddd042c5d8aa9599.ctex"
+uid="uid://4h07t2mg1ogj"
+path="res://.godot/imported/back.png-0bfb4a0baac40583bfce3e71606b772d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Buttons/Options/ACCESSIBILITY_OPENED.png"
-dest_files=["res://.godot/imported/ACCESSIBILITY_OPENED.png-591ff470091ee4f8ddd042c5d8aa9599.ctex"]
+source_file="res://Art/Buttons/Blue Themed/Small Non Capped/back.png"
+dest_files=["res://.godot/imported/back.png-0bfb4a0baac40583bfce3e71606b772d.ctex"]
 
 [params]
 

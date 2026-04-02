@@ -9,7 +9,7 @@ var inDialogue = false
 
 var current_direction = "down"
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if inDialogue:
 		velocity = Vector2.ZERO
 		move_and_slide()
