@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://ctvpol1niium1"]
+[gd_scene format=3 uid="uid://ctvpol1niium1"]
 
 [ext_resource type="Script" uid="uid://dg2k7qc2lemep" path="res://scenes/LessonDelivery/lesson_abt_weather_final.gd" id="1_deuw4"]
 [ext_resource type="Texture2D" uid="uid://dawd3pi2uehaw" path="res://Art/LessonMaterials/Wizard Pack/Idle.png" id="1_twya0"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://ctldi1a1wvygv" path="res://Art/LessonMaterials/coldCana.jpg" id="19_svm1j"]
 [ext_resource type="Texture2D" uid="uid://csc0ccrucgvl" path="res://Art/LessonMaterials/drySeason.jpg" id="21_b07bo"]
 [ext_resource type="Texture2D" uid="uid://bdag7iyq1aj73" path="res://Art/LessonMaterials/wetseason.jpg" id="22_yqhxp"]
-[ext_resource type="Script" uid="uid://cnio40iihmx0w" path="res://scenes/LessonDelivery/ImageChoice.gd" id="24_yqhxp"]
+[ext_resource type="Script" path="res://scenes/LessonDelivery/ImageChoice.gd" id="24_yqhxp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfwi7"]
 atlas = ExtResource("1_twya0")
@@ -1015,7 +1015,7 @@ size = Vector2(98, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qe5y"]
 size = Vector2(99.5, 52.5)
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=326927694]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1024,13 +1024,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_deuw4")
 
-[node name="LessonDeliveryUI" type="ColorRect" parent="."]
+[node name="LessonDeliveryUI" type="ColorRect" parent="." unique_id=1127680980]
 layout_mode = 0
 offset_right = 482.0
 offset_bottom = 264.0
 color = Color(1.732707e-06, 0.49653202, 0.66809887, 1)
 
-[node name="ColorRect" type="ColorRect" parent="LessonDeliveryUI"]
+[node name="ColorRect" type="ColorRect" parent="LessonDeliveryUI" unique_id=1099888835]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 14.0
@@ -1039,7 +1039,7 @@ offset_bottom = 264.0
 scale = Vector2(0.9, 0.9)
 color = Color(0.39215687, 0.8039216, 1, 1)
 
-[node name="ColorRect" type="ColorRect" parent="LessonDeliveryUI/ColorRect"]
+[node name="ColorRect" type="ColorRect" parent="LessonDeliveryUI/ColorRect" unique_id=72215109]
 layout_mode = 0
 offset_left = 105.55556
 offset_top = 281.1111
@@ -1048,31 +1048,29 @@ offset_bottom = 531.1111
 scale = Vector2(0.9, 0.9)
 color = Color(0.85269225, 0.70449734, 0.75113904, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_vwmsi")
-}
-autoplay = "introduction"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1131575614]
+libraries/ = SubResource("AnimationLibrary_vwmsi")
+autoplay = &"introduction"
 
-[node name="GandalfNameCard" type="Sprite2D" parent="."]
+[node name="GandalfNameCard" type="Sprite2D" parent="." unique_id=696348570]
 position = Vector2(-11.000001, 173.00002)
 scale = Vector2(0.16406249, 0.1557693)
 texture = ExtResource("8_n8kyo")
 
-[node name="wizardTeacher" parent="." instance=ExtResource("1_wlm4x")]
+[node name="wizardTeacher" parent="." unique_id=529617670 instance=ExtResource("1_wlm4x")]
 position = Vector2(-13, 218)
 sprite_frames = SubResource("SpriteFrames_se6jk")
 animation = &"run"
 frame_progress = 0.0
 
-[node name="MarginContainer" parent="." instance=ExtResource("6_tfeyy")]
+[node name="MarginContainer" parent="." unique_id=1706993030 instance=ExtResource("6_tfeyy")]
 layout_mode = 0
 offset_left = 62.0
 offset_top = 182.0
 offset_right = 484.0
 offset_bottom = 245.0
 
-[node name="climate" type="Label" parent="."]
+[node name="climate" type="Label" parent="." unique_id=1023430680]
 layout_mode = 0
 offset_left = -236.0
 offset_top = 75.0
@@ -1088,7 +1086,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "climate"
 
-[node name="climate2" type="Label" parent="climate"]
+[node name="climate2" type="Label" parent="climate" unique_id=2017446945]
 layout_mode = 0
 offset_left = -284.0
 offset_top = -53.0
@@ -1105,7 +1103,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "climate"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1639796124]
 layout_mode = 0
 offset_left = -310.0
 offset_top = 85.0
@@ -1122,7 +1120,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "workshop."
 
-[node name="Label2" type="Label" parent="Label"]
+[node name="Label2" type="Label" parent="Label" unique_id=1906168749]
 layout_mode = 0
 offset_left = -2.0
 offset_top = -8.0
@@ -1138,7 +1136,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 28
 text = "lesson"
 
-[node name="NoBtn" type="Button" parent="."]
+[node name="NoBtn" type="Button" parent="." unique_id=401253849]
 layout_mode = 0
 offset_left = 371.0
 offset_top = 189.0
@@ -1149,7 +1147,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_6ojia")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tkj4x")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kfptp")
 
-[node name="YesBtn" type="Button" parent="."]
+[node name="YesBtn" type="Button" parent="." unique_id=1537740942]
 layout_mode = 0
 offset_left = 342.0
 offset_top = 189.0
@@ -1160,7 +1158,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_svm1j")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_1soye")
 theme_override_styles/hover = SubResource("StyleBoxTexture_b07bo")
 
-[node name="climate2" type="Label" parent="."]
+[node name="climate2" type="Label" parent="." unique_id=1777366511]
 layout_mode = 0
 offset_left = -224.0
 offset_top = 76.0
@@ -1175,24 +1173,24 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "weather"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=845403184]
 layout_mode = 0
 offset_left = -403.0
 offset_top = 44.0
 offset_right = -10.0
 offset_bottom = 192.0
 
-[node name="RainyClimate" type="Sprite2D" parent="Panel"]
+[node name="RainyClimate" type="Sprite2D" parent="Panel" unique_id=1233249670]
 position = Vector2(290, 65.06249)
 scale = Vector2(0.20226121, 0.22196968)
 texture = ExtResource("16_6ojia")
 
-[node name="HotClimate" type="Sprite2D" parent="Panel"]
+[node name="HotClimate" type="Sprite2D" parent="Panel" unique_id=1617025371]
 position = Vector2(100.49999, 65.25)
 scale = Vector2(0.2190476, 0.19836956)
 texture = ExtResource("17_tkj4x")
 
-[node name="hot2" type="Label" parent="Panel"]
+[node name="hot2" type="Label" parent="Panel" unique_id=534067445]
 layout_mode = 0
 offset_left = 264.0
 offset_top = 125.0
@@ -1209,7 +1207,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "RAINY"
 
-[node name="hot" type="Label" parent="Panel"]
+[node name="hot" type="Label" parent="Panel" unique_id=1725305862]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 125.0
@@ -1226,18 +1224,18 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "HOT"
 
-[node name="Hawaii" type="Sprite2D" parent="Panel"]
+[node name="Hawaii" type="Sprite2D" parent="Panel" unique_id=294576623]
 position = Vector2(-684, 66)
 scale = Vector2(0.3670068, 0.29183677)
 texture = ExtResource("18_svm1j")
 
-[node name="Panel" type="Panel" parent="Panel"]
+[node name="Panel" type="Panel" parent="Panel" unique_id=1494532816]
 layout_mode = 0
 offset_left = -450.0
 offset_right = -57.0
 offset_bottom = 148.0
 
-[node name="cold" type="Label" parent="Panel/Panel"]
+[node name="cold" type="Label" parent="Panel/Panel" unique_id=1054879203]
 layout_mode = 0
 offset_left = 166.00003
 offset_top = 123.0
@@ -1254,17 +1252,17 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "COLD"
 
-[node name="ColdCanada" type="Sprite2D" parent="Panel/Panel"]
+[node name="ColdCanada" type="Sprite2D" parent="Panel/Panel" unique_id=930384054]
 position = Vector2(287, 65.49999)
 scale = Vector2(0.13499996, 0.07266667)
 texture = ExtResource("18_kfptp")
 
-[node name="ColdCana" type="Sprite2D" parent="Panel/Panel"]
+[node name="ColdCana" type="Sprite2D" parent="Panel/Panel" unique_id=770316942]
 position = Vector2(104, 65.37501)
 scale = Vector2(0.35130718, 0.23801742)
 texture = ExtResource("19_svm1j")
 
-[node name="season" type="Label" parent="Panel"]
+[node name="season" type="Label" parent="Panel" unique_id=1678272725]
 layout_mode = 0
 offset_left = -1249.0
 offset_top = 44.0
@@ -1280,7 +1278,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "season"
 
-[node name="season" type="Label" parent="Panel/season"]
+[node name="season" type="Label" parent="Panel/season" unique_id=1186866874]
 layout_mode = 0
 offset_left = -2854.0
 offset_top = 89.0
@@ -1296,19 +1294,19 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "season"
 
-[node name="Panel2" type="Panel" parent="Panel"]
+[node name="Panel2" type="Panel" parent="Panel" unique_id=27660679]
 layout_mode = 0
 offset_left = -1857.0
 offset_top = -4.0
 offset_right = -1464.0
 offset_bottom = 144.0
 
-[node name="DrySeason" type="Sprite2D" parent="Panel/Panel2"]
+[node name="DrySeason" type="Sprite2D" parent="Panel/Panel2" unique_id=1673447010]
 position = Vector2(104.00012, 71)
 scale = Vector2(0.20687501, 0.17682928)
 texture = ExtResource("21_b07bo")
 
-[node name="cold2" type="Label" parent="Panel/Panel2"]
+[node name="cold2" type="Label" parent="Panel/Panel2" unique_id=1809270420]
 layout_mode = 0
 offset_left = 235.99998
 offset_top = 120.0
@@ -1325,7 +1323,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "WET SEASON"
 
-[node name="drySeason" type="Label" parent="Panel/Panel2"]
+[node name="drySeason" type="Label" parent="Panel/Panel2" unique_id=772077440]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 120.0
@@ -1342,12 +1340,12 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "DRY SEASON"
 
-[node name="Wetseason" type="Sprite2D" parent="Panel/Panel2"]
+[node name="Wetseason" type="Sprite2D" parent="Panel/Panel2" unique_id=1070077642]
 position = Vector2(295, 70.625)
 scale = Vector2(0.18333332, 0.07895834)
 texture = ExtResource("22_yqhxp")
 
-[node name="monsoon" type="Label" parent="Panel"]
+[node name="monsoon" type="Label" parent="Panel" unique_id=1376919425]
 layout_mode = 0
 offset_left = -2219.0
 offset_top = 33.0
@@ -1363,7 +1361,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "monsoon"
 
-[node name="monsoon" type="Label" parent="Panel/monsoon"]
+[node name="monsoon" type="Label" parent="Panel/monsoon" unique_id=1573820903]
 layout_mode = 0
 offset_left = -2250.0
 offset_top = 308.0
@@ -1379,7 +1377,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "monsoon"
 
-[node name="airmass" type="Label" parent="Panel"]
+[node name="airmass" type="Label" parent="Panel" unique_id=1475193546]
 layout_mode = 0
 offset_left = -2597.0
 offset_top = 35.0
@@ -1395,7 +1393,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "airmass"
 
-[node name="airmass" type="Label" parent="Panel/airmass"]
+[node name="airmass" type="Label" parent="Panel/airmass" unique_id=365188625]
 layout_mode = 0
 offset_left = -2597.0
 offset_top = 35.0
@@ -1411,7 +1409,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "airmass"
 
-[node name="season2" type="Label" parent="Panel"]
+[node name="season2" type="Label" parent="Panel" unique_id=1179251486]
 layout_mode = 0
 offset_left = -4462.0
 offset_top = 222.0
@@ -1427,7 +1425,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "airmass"
 
-[node name="front2" type="Label" parent="Panel"]
+[node name="front2" type="Label" parent="Panel" unique_id=1603008533]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -1.1810001
@@ -1446,7 +1444,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "front"
 
-[node name="recap" type="Label" parent="Panel"]
+[node name="recap" type="Label" parent="Panel" unique_id=257334194]
 layout_mode = 0
 offset_left = -3351.0
 offset_top = 33.0
@@ -1462,7 +1460,7 @@ theme_override_fonts/font = ExtResource("9_eogry")
 theme_override_font_sizes/font_size = 68
 text = "recap"
 
-[node name="front3" type="Label" parent="."]
+[node name="front3" type="Label" parent="." unique_id=1735736962]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -1.1810001
@@ -1482,11 +1480,11 @@ theme_override_font_sizes/font_size = 68
 text = "front
 "
 
-[node name="visualCues" parent="." instance=ExtResource("16_4gw6i")]
+[node name="visualCues" parent="." unique_id=2047142822 instance=ExtResource("16_4gw6i")]
 position = Vector2(355.00003, 179)
 scale = Vector2(0.6875, 0.6875)
 
-[node name="inviWall2" type="ColorRect" parent="."]
+[node name="inviWall2" type="ColorRect" parent="." unique_id=1541510047]
 visible = false
 layout_mode = 0
 offset_top = 4.0
@@ -1494,7 +1492,7 @@ offset_right = 26.0
 offset_bottom = 255.0
 color = Color(0, 0.4977886, 0.66668326, 1)
 
-[node name="inviWall1" type="ColorRect" parent="."]
+[node name="inviWall1" type="ColorRect" parent="." unique_id=2075897144]
 visible = false
 layout_mode = 0
 offset_left = 460.0
@@ -1503,7 +1501,7 @@ offset_right = 486.0
 offset_bottom = 264.0
 color = Color(0, 0.4977886, 0.66668326, 0)
 
-[node name="fadein" type="ColorRect" parent="."]
+[node name="fadein" type="ColorRect" parent="." unique_id=338827350]
 visible = false
 layout_mode = 0
 offset_left = -1.0
@@ -1511,55 +1509,55 @@ offset_right = 487.0
 offset_bottom = 267.0
 color = Color(0, 0, 0, 0)
 
-[node name="SunnyImageChoice" type="Node2D" parent="."]
+[node name="SunnyImageChoice" type="Node2D" parent="." unique_id=1749979363]
 script = ExtResource("24_yqhxp")
 
-[node name="SunnyAnimated" parent="SunnyImageChoice" instance=ExtResource("18_kogg6")]
-position = Vector2(384, 93.83)
+[node name="SunnyAnimated" parent="SunnyImageChoice" unique_id=1659270668 instance=ExtResource("18_kogg6")]
+position = Vector2(421, -48)
 scale = Vector2(0.40677083, 0.33916664)
 
-[node name="ColorRect" type="ColorRect" parent="SunnyImageChoice"]
+[node name="ColorRect" type="ColorRect" parent="SunnyImageChoice" unique_id=106119208]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Area2D" type="Area2D" parent="SunnyImageChoice"]
+[node name="Area2D" type="Area2D" parent="SunnyImageChoice" unique_id=1449582930]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunnyImageChoice/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SunnyImageChoice/Area2D" unique_id=1607492158]
 position = Vector2(107, 96)
 shape = SubResource("RectangleShape2D_wur8s")
 
-[node name="RainyImageChoice" type="Node2D" parent="."]
+[node name="RainyImageChoice" type="Node2D" parent="." unique_id=1748184367]
 script = ExtResource("24_yqhxp")
 
-[node name="RainyAnimated" parent="RainyImageChoice" instance=ExtResource("19_6ojia")]
-position = Vector2(107, 95.99999)
+[node name="RainyAnimated" parent="RainyImageChoice" unique_id=1735690904 instance=ExtResource("19_6ojia")]
+position = Vector2(157, -59)
 scale = Vector2(0.82187504, 0.2708333)
 
-[node name="ColorRect" type="ColorRect" parent="RainyImageChoice"]
+[node name="ColorRect" type="ColorRect" parent="RainyImageChoice" unique_id=1039385738]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Area2D" type="Area2D" parent="RainyImageChoice"]
+[node name="Area2D" type="Area2D" parent="RainyImageChoice" unique_id=1101857256]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RainyImageChoice/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RainyImageChoice/Area2D" unique_id=152890443]
 position = Vector2(241, 95)
 shape = SubResource("RectangleShape2D_t3sim")
 disabled = true
 
-[node name="CloudyImageChoice" type="Node2D" parent="."]
+[node name="CloudyImageChoice" type="Node2D" parent="." unique_id=1728800270]
 script = ExtResource("24_yqhxp")
 
-[node name="CloudyAnimated" parent="CloudyImageChoice" instance=ExtResource("17_s2k1v")]
-position = Vector2(241, 95)
+[node name="CloudyAnimated" parent="CloudyImageChoice" unique_id=1304202576 instance=ExtResource("17_s2k1v")]
+position = Vector2(285, -54.99999)
 scale = Vector2(0.40677088, 0.44999996)
 
-[node name="ColorRect" type="ColorRect" parent="CloudyImageChoice"]
+[node name="ColorRect" type="ColorRect" parent="CloudyImageChoice" unique_id=1724208094]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Area2D" type="Area2D" parent="CloudyImageChoice"]
+[node name="Area2D" type="Area2D" parent="CloudyImageChoice" unique_id=1654021261]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudyImageChoice/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudyImageChoice/Area2D" unique_id=1285278689]
 position = Vector2(384.25, 93.75)
 shape = SubResource("RectangleShape2D_4qe5y")
 

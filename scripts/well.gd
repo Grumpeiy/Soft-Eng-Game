@@ -9,17 +9,27 @@ var dialog_canvas   = null
 var _position_save_timer : float = 0.0
 const POSITION_SAVE_INTERVAL : float = 5.0
 
-@onready var player_node = $player  # adjust if your player node has a different name
+@onready var player_node = $player
 
 func _ready():
 	$fade_transition/AnimationPlayer.play("fade_out")
 	MenuMusic.stop_music()
-
-	# Restore last saved position
 	if player_node:
 		var saved_pos = PlayerData.get_last_position(Vector2.ZERO)
 		if saved_pos != Vector2.ZERO:
 			player_node.global_position = saved_pos
+			
+	# Check if the quest menu sent teleport coordinates
+	var tp_x = PlayerData.get_save_value("teleport_x", null)
+	var tp_y = PlayerData.get_save_value("teleport_y", null)
+	
+	if tp_x != null and tp_y != null:
+		# Assuming your player node is named "Player". Change this path if needed!
+		$player.global_position = Vector2(tp_x, tp_y)
+		
+		# Clear the teleport data so normal entry into the Well doesn't trigger this
+		PlayerData.set_save_value("teleport_x", null)
+		PlayerData.set_save_value("teleport_y", null)
 
 func _process(delta):
 	if player_node:
@@ -37,11 +47,24 @@ func _on_choice_c_pressed() -> void:
 func _on_choice_d_pressed() -> void:
 	Audio.play_click()
 
+# ─────────────────────────────────────────────────────────────────────────────
+# PUZZLE ENTRANCE
+# Blocked permanently once quest 1 (Where's My Water) is completed
+# ─────────────────────────────────────────────────────────────────────────────
 func _on_puzzle_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.is_in_group("player"):
-		PlayerData.save_position(body.global_position)
-		get_tree().change_scene_to_file(PUZZLE_SCENE)
+	if not body.is_in_group("player"):
+		return
 
+	if PlayerData.get_save_value("quest_1_completed", false):
+		print("Well: puzzle already completed, entrance blocked")
+		return
+
+	PlayerData.save_position(body.global_position)
+	get_tree().call_deferred("change_scene_to_file", PUZZLE_SCENE)  # ← fixed
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TUTORIAL / LESSON AREA
+# ─────────────────────────────────────────────────────────────────────────────
 func _on_tutorial_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player") and lesson_instance == null:
 		dialog_canvas       = CanvasLayer.new()

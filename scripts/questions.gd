@@ -80,7 +80,7 @@ var questions = {
 			"correct": 0,
 			"hint": "This wind brings rain from May to October.",
 			"activity_id": 9,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "When does the Wet Season peak in the Philippines?",
@@ -88,7 +88,7 @@ var questions = {
 			"correct": 1,
 			"hint": "Think about when typhoons are most common.",
 			"activity_id": 10,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "What influences the seasons in the Philippines?",
@@ -96,7 +96,7 @@ var questions = {
 			"correct": 0,
 			"hint": "The Philippines is in the tropical region.",
 			"activity_id": 11,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "What is the Northeast Monsoon called?",
@@ -104,7 +104,7 @@ var questions = {
 			"correct": 0,
 			"hint": "This wind brings cool, dry weather.",
 			"activity_id": 12,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "During which months is the Dry Season in the Philippines?",
@@ -112,7 +112,7 @@ var questions = {
 			"correct": 1,
 			"hint": "Think about when it's very hot and sunny.",
 			"activity_id": 13,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "What are the two main factors affecting seasons in the Philippines?",
@@ -120,7 +120,7 @@ var questions = {
 			"correct": 0,
 			"hint": "Think about geography and wind patterns.",
 			"activity_id": 14,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "When does the Southwest Monsoon (Habagat) blow?",
@@ -128,7 +128,7 @@ var questions = {
 			"correct": 0,
 			"hint": "It happens during the rainy months.",
 			"activity_id": 15,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "When does the Northeast Monsoon (Amihan) blow?",
@@ -136,7 +136,7 @@ var questions = {
 			"correct": 0,
 			"hint": "It brings cool and dry winds.",
 			"activity_id": 16,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "What happens during the wettest month of the Wet Season?",
@@ -144,7 +144,7 @@ var questions = {
 			"correct": 0,
 			"hint": "Expect frequent rainfall.",
 			"activity_id": 17,
-			"reward_points": 15
+			"reward_points": 10
 		},
 		{
 			"text": "What is a prevailing wind?",
@@ -152,7 +152,7 @@ var questions = {
 			"correct": 0,
 			"hint": "It usually comes from one main direction.",
 			"activity_id": 18,
-			"reward_points": 15
+			"reward_points": 10
 		}
 	],
 
@@ -163,7 +163,7 @@ var questions = {
 			"correct": 0,
 			"hint": "The air is hot and humid during this season.",
 			"activity_id": 19,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "Which climate type has a pronounced rainy and dry season?",
@@ -171,7 +171,7 @@ var questions = {
 			"correct": 0,
 			"hint": "This is found in Occidental Mindoro and Palawan.",
 			"activity_id": 20,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "What happens when a warm front moves forward?",
@@ -179,7 +179,7 @@ var questions = {
 			"correct": 0,
 			"hint": "Clouds in the sky bring precipitation.",
 			"activity_id": 21,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "Where does the Northeast Monsoon (Amihan) originate?",
@@ -187,7 +187,7 @@ var questions = {
 			"correct": 0,
 			"hint": "It brings cool and dry winds.",
 			"activity_id": 22,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "What is an occluded front?",
@@ -195,7 +195,7 @@ var questions = {
 			"correct": 0,
 			"hint": "Two cold air masses trap warm air between them.",
 			"activity_id": 23,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "Which area receives the highest precipitation from Habagat?",
@@ -203,7 +203,7 @@ var questions = {
 			"correct": 0,
 			"hint": "The Southwest Monsoon strikes this area first.",
 			"activity_id": 24,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "What is the nighttime temperature range during the Wet Season?",
@@ -211,7 +211,7 @@ var questions = {
 			"correct": 0,
 			"hint": "It stays warm even at night.",
 			"activity_id": 25,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "Which climate type has no pronounced dry season?",
@@ -219,7 +219,7 @@ var questions = {
 			"correct": 0,
 			"hint": "It has heavy rainfall from November to April.",
 			"activity_id": 26,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "Which climate type has a short dry season and no maximum rain period?",
@@ -227,7 +227,7 @@ var questions = {
 			"correct": 0,
 			"hint": "Rainfall is not very pronounced.",
 			"activity_id": 27,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "Which climate type lacks a dry season?",
@@ -235,7 +235,7 @@ var questions = {
 			"correct": 0,
 			"hint": "Rainfall is evenly distributed.",
 			"activity_id": 28,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "What is a stationary front?",
@@ -243,7 +243,7 @@ var questions = {
 			"correct": 0,
 			"hint": "It stays in the same place for days.",
 			"activity_id": 29,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "What causes severe weather in a cold front?",
@@ -251,7 +251,7 @@ var questions = {
 			"correct": 0,
 			"hint": "Cold air forces warm air upward quickly.",
 			"activity_id": 30,
-			"reward_points": 20
+			"reward_points": 10
 		},
 		{
 			"text": "What determines the characteristics of an air mass?",
@@ -259,7 +259,7 @@ var questions = {
 			"correct": 0,
 			"hint": "It depends on the Earth's surface where it develops.",
 			"activity_id": 31,
-			"reward_points": 20
+			"reward_points": 10
 		}
 	]
 }

@@ -8,7 +8,7 @@ var sfx: AudioStreamPlayer
 func _ready():
 	sfx = AudioStreamPlayer.new()
 	sfx.stream = load("res://Sounds/music/rock-sliding.mp3")  # update to your sfx path
-	sfx.volume_db = -8.0
+	sfx.volume_db = -25.0
 	if sfx.stream == null:
 		print("ERROR: SFX file not found!")
 	else:

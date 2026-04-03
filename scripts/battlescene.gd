@@ -88,6 +88,15 @@ func init(enemy_node, character_name, lvl, quest_id: int = -1, lrn: String = "",
 	current_lrn        = lrn     if lrn != ""      else PlayerData.lrn
 	enemy_number       = enemy_num
 
+	# ── NEW: Dynamic Damage to ensure score equals exactly 100 ──
+	# Easy   (Enemy 1): takes 3 hits (34 dmg) -> 3 * 10 = 30 pts
+	# Normal (Enemy 2): takes 3 hits (34 dmg) -> 3 * 10 = 30 pts
+	# Hard   (Enemy 3): takes 4 hits (25 dmg) -> 4 * 10 = 40 pts
+	if enemy_number == 3:
+		player_damage = 25 
+	else:
+		player_damage = 34
+	# ────────────────────────────────────────────────────────────
 	$Panel/Label.text = "A wild %s lvl %s appears!" % [character_name, lvl]
 	$Panel/VBoxContainer.visible = false
 	$Panel/answer_button.visible = true
@@ -160,6 +169,12 @@ func load_new_question():
 	question_start_time         = Time.get_unix_time_from_system()
 
 	stop_visual_effects()
+	
+	# ── NEW: Ensure assistance resets to LOW for the new question ──
+	if Settings.guided_mode_enabled:
+		Settings.current_assistance_tier = Settings.AssistanceTier.LOW
+	# ───────────────────────────────────────────────────────────────
+	
 	apply_assistance_tier()
 
 	$Panel/answer_button.visible = false
@@ -286,8 +301,21 @@ func check_answer(selected_index):
 	
 	var chosen_text  = filtered_options[selected_index]
 	var correct_text = current_question_options[current_question["correct"]]
-	var is_correct   = (chosen_text == correct_text)  # <- compare text, not index
-	var score_earned = current_question.get("reward_points", 0) if is_correct else 0
+	var is_correct   = (chosen_text == correct_text)  
+	
+	# ── NEW: Fair Scoring with Assistance Penalty ──
+	var base_points = current_question.get("reward_points", 10)
+	var score_earned = 0
+	
+	if is_correct:
+		match Settings.current_assistance_tier:
+			Settings.AssistanceTier.HIGH:
+				score_earned = int(base_points * 0.2) # Highlighted answer = 2 points
+			Settings.AssistanceTier.MID:
+				score_earned = int(base_points * 0.5) # Used Hint / 50-50 = 5 points
+			_:
+				score_earned = base_points            # First Try = 10 points
+	# ───────────────────────────────────────────────
 
 	if is_correct:
 		total_score += score_earned
