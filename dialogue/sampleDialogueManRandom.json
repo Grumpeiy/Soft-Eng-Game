@@ -1,17 +1,17 @@
 [
-    [
-        {"Name": "Grandpa", "Text": "Any luck finding water?", "Portrait": "Grandpa"},
-        {"Name": "You", "Text": "I'm getting closer, I can feel it.", "Portrait": "You"},
-        {"Name": "Grandpa", "Text": "The forest is counting on you. Don't give up!", "Portrait": "Grandpa"}
-    ],
-    [
-        {"Name": "Grandpa", "Text": "There might be an underground spring somewhere nearby..", "Portrait": "Grandpa"},
-        {"Name": "You", "Text": "An underground spring? That could save everything!", "Portrait": "You"},
-        {"Name": "Grandpa", "Text": "Keep your eyes open. Biringan's hope rests on your shoulders!", "Portrait": "Grandpa"}
-    ],
-    [
-        {"Name": "Grandpa", "Text": "I'm worried about you. Stay safe!", "Portrait": "Grandpa"},
-        {"Name": "You", "Text": "I got this, grandpa!", "Portrait": "You"},
-        {"Name": "Grandpa", "Text": "I believe in you. Bring water back to Biringan!", "Portrait": "Grandpa"}
-    ]
+	[
+		{"Name": "Grandpa", "Text": "Any luck finding water?", "Portrait": "Grandpa"},
+		{"Name": "You", "Text": "I'm getting closer, I can feel it.", "Portrait": "You"},
+		{"Name": "Grandpa", "Text": "The forest is counting on you. Don't give up!", "Portrait": "Grandpa"}
+	],
+	[
+		{"Name": "Grandpa", "Text": "There might be an underground spring somewhere nearby..", "Portrait": "Grandpa"},
+		{"Name": "You", "Text": "An underground spring? That could save everything!", "Portrait": "You"},
+		{"Name": "Grandpa", "Text": "Keep your eyes open. Biringan's hope rests on your shoulders!", "Portrait": "Grandpa"}
+	],
+	[
+		{"Name": "Grandpa", "Text": "I'm worried about you. Stay safe!", "Portrait": "Grandpa"},
+		{"Name": "You", "Text": "I got this, grandpa!", "Portrait": "You"},
+		{"Name": "Grandpa", "Text": "I believe in you. Bring water back to Biringan!", "Portrait": "Grandpa"}
+	]
 ]

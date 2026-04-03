@@ -1,0 +1,10 @@
+[
+	{"Name": "You", "Text": "Grandpa! The skeletons have been defeated!", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "I can feel it.. the water is rushing back!", "Portrait": "Grandpa"},
+	{"Name": "Grandpa", "Text": "Listen! Can you hear it? The rivers of Biringan are alive again!", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "We did it. Biringan is saved.", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "You have shown incredible courage and wisdom, my child.", "Portrait": "Grandpa"},
+	{"Name": "Grandpa", "Text": "The trees will bloom again. The crops will grow.", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "It was worth every step.", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "Biringan will never forget what you have done today. Thank you.", "Portrait": "Grandpa"}
+]

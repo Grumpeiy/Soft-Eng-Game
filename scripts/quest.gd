@@ -14,6 +14,9 @@ const COLOR_LOCKED      = Color(0.5, 0.5, 0.5)
 const COLOR_NOT_STARTED = Color(1.0, 1.0, 1.0)
 
 func _ready():
+	Settings.narration_player = $NarrationPlayer
+	Settings.current_main_menu_scene = scene_file_path
+	
 	# Fix: was missing correct indentation causing back_button to be unconnected
 	#back_button.pressed.connect(_on_back_pressed)
 

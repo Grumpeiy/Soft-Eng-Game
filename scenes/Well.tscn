@@ -2658,18 +2658,18 @@ tile_map_data = PackedByteArray("AAAKAA4AAgAlABMAAABAAAQAAQAFAAgAAABAAAYAAQAFAAo
 tile_set = SubResource("TileSet_nrc38")
 
 [node name="player" parent="." unique_id=1395045386 instance=ExtResource("3_hflhd")]
-position = Vector2(-56, -415)
+position = Vector2(-245, 1)
 
 [node name="Enemy" parent="." unique_id=1058041998 instance=ExtResource("3_kamyo")]
-position = Vector2(-126, -419)
+position = Vector2(1149, -342)
 
 [node name="Enemy3" parent="." unique_id=1505910418 instance=ExtResource("3_kamyo")]
-position = Vector2(-374, -561)
+position = Vector2(1190, -487)
 script = ExtResource("6_0kkwr")
 enemy_number = 3
 
 [node name="Enemy2" parent="." unique_id=735529266 instance=ExtResource("3_kamyo")]
-position = Vector2(-251, -479)
+position = Vector2(1058, -452)
 script = ExtResource("6_kqrsl")
 enemy_number = 2
 

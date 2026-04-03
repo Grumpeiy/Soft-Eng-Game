@@ -1,0 +1,9 @@
+[
+	{"Name": "Grandpa", "Text": "Those skeletons are guarding something near the water source.", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "How many are there?", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "Three of them. Each one stronger than the last.", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "I'll answer their questions and prove I'm worthy.", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "Be careful. They only yield to those with knowledge!", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "Knowledge is what I have. I won't let Biringan down.", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "Go, my child. The fate of Biringan rests with you!", "Portrait": "Grandpa"}
+]

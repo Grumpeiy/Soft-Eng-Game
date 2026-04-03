@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2t1lvol68bvy" path="res://Art/sunnyside_world_chatacter_anim_human_v1.0.png" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://cxavr2n6xllch" path="res://Art/Sunnyside_World_ARCHIVED_ASSETS/SUNNYSIDE_WORLD_CHARACTERS_V0.3.1/CHARACTERS/ANIMATION/BASE CHARACTER/PNG/WITH_FX/spr_death_strip13.png" id="4_dqkch"]
 [ext_resource type="AudioStream" uid="uid://cjk8l2ix3h1ky" path="res://Sounds/SFX/grass_walk.mp3" id="5_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://dhhhpqh5dm8y4" path="res://scenes/quest_marker.tscn" id="5_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -487,3 +488,8 @@ shape = SubResource("CircleShape2D_qhqgy")
 [node name="walk" type="AudioStreamPlayer2D" parent="." unique_id=1649418769]
 stream = ExtResource("5_qlg0r")
 bus = &"SFX"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=573718633]
+
+[node name="QuestMarker" parent="CanvasLayer" unique_id=1365981642 instance=ExtResource("5_tuyoq")]
+step_positions = Array[Vector2]([Vector2(1150, 100), Vector2(1114, 150), Vector2(555, 11), Vector2(222, 22), Vector2(444, 216), Vector2(888, 2), Vector2(1111, 2)])

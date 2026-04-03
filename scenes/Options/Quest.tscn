@@ -52,6 +52,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=17278502]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

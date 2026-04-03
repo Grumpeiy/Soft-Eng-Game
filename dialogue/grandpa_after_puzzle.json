@@ -1,0 +1,10 @@
+[
+	{"Name": "You", "Text": "Grandpa! I found it — there was a blockage underground.", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "You fixed it?! I can already hear the water flowing!", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "The puzzle was tricky but I managed.", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "Incredible! Biringan owes you a great debt.", "Portrait": "Grandpa"},
+	{"Name": "Grandpa", "Text": "But wait.. the water is still slow. Something else must be blocking it.", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "What do you think it could be?", "Portrait": "You"},
+	{"Name": "Grandpa", "Text": "I heard strange noises near the eastern field. Skeletons, they say.", "Portrait": "Grandpa"},
+	{"Name": "You", "Text": "Skeletons? I'll check it out.", "Portrait": "You"}
+]

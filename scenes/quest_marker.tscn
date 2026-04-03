@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dhhhpqh5dm8y4"]
+
+[ext_resource type="Script" uid="uid://d1se88bmxmflm" path="res://scripts/quest_marker.gd" id="1_d5oiq"]
+
+[node name="QuestMarker" type="Control" unique_id=1365981642]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_d5oiq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=234019394]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+expand_mode = 1

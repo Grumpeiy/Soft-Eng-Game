@@ -70,27 +70,21 @@ func update_button_states(has_character: bool):
 		if save_info_label:
 			save_info_label.text = "No Character\nClick 'Create' to start"
 
-# ─────────────────────────────────────────────────────────────────────────────
-# ROUTING
-# new_game = true  → tutorial (if enabled) → cutscene → Well
-# new_game = false → skip straight to Well (position restored by Well.gd)
-# ─────────────────────────────────────────────────────────────────────────────
 func proceed_to_game(new_game: bool = false):
 	if new_game:
-		# Brand new character — show tutorial and/or cutscene
+		#Brand new character — show tutorial and/or cutscene
 		if Settings.tutorial_mode_enabled and not Settings.has_seen_tutorial:
 			get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 		else:
 			get_tree().change_scene_to_file(CUTSCENE_SCENE)
 	else:
-		# Returning player — skip intro and restore their saved position
+		#Returning player — skip intro and restore their saved position
 		get_tree().change_scene_to_file(WELL_SCENE)
 
 func _on_back_pressed() -> void:
 	Audio.play_click()
 	get_tree().change_scene_to_file("res://scenes/Options/main_menu.tscn")
 
-# ── CREATE ────────────────────────────────────────────────────────────────────
 func _on_create_pressed() -> void:
 	Audio.play_click()
 	create_button.disabled = true
@@ -125,7 +119,6 @@ func _on_create_completed(result, response_code, headers, body):
 		if save_info_label:
 			save_info_label.text = "Failed to create character."
 
-# ── LOAD ──────────────────────────────────────────────────────────────────────
 func _on_load_pressed() -> void:
 	Audio.play_click()
 	load_button.disabled = true
@@ -150,15 +143,13 @@ func _on_load_completed(result, response_code, headers, body):
 	if response.get("success", false):
 		PlayerData.set_character_data(response.get("character", {}))
 		print("Character loaded: ", PlayerData.character_data.get("username", "Unknown"))
-		# Re-read the save file from disk so position/settings are fresh
-		# (in memory data may be stale if player returned from main menu)
 		PlayerData.load_save_file()
-		proceed_to_game(false)  # returning player — skip to Well directly
+		proceed_to_game(false)
 	else:
 		if save_info_label:
 			save_info_label.text = "Failed to load character."
 
-# ── ERASE ─────────────────────────────────────────────────────────────────────
+#── ERASE ─────────────────────────────────────────────────────────────────────
 func _on_erase_pressed() -> void:
 	Audio.play_click()
 	if has_node("ConfirmDialog"):
